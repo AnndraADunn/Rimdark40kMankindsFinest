@@ -63,6 +63,11 @@
         <smeltable>false</smeltable>
         <burnableByRecipe>true</burnableByRecipe>
         <tradeability>Sellable</tradeability>
+        <modExtensions>
+            <li Class="Genes40k.DefModExtension_LegacyArmourHitPoints">
+                <hitPointsFactor>10</hitPointsFactor>
+            </li>
+        </modExtensions>
     </ThingDef>
 
 
@@ -123,6 +128,11 @@
         <smeltable>false</smeltable>
         <burnableByRecipe>true</burnableByRecipe>
         <tradeability>Sellable</tradeability>
+        <modExtensions>
+            <li Class="Genes40k.DefModExtension_LegacyArmourHitPoints">
+                <hitPointsFactor>10</hitPointsFactor>
+            </li>
+        </modExtensions>
     </ThingDef>
 
 </Defs>
