@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -7,13 +8,20 @@ namespace Genes40k;
 
 /// <summary>
 /// Picker opened by the chapter application surgery: every legion chapter and every player-made design listed once,
-/// with locked entries greyed out. Accepting creates a Bill_ApplyChapter pinned to the chosen chapter.
+/// with locked entries greyed out. Accepting creates a Bill_ApplyChapter pinned to the chosen chapter. Also used with a
+/// given choice list and accept action, such as the starting chapter scenario part.
 /// </summary>
 public class Dialog_SelectChapter : Window
 {
     private readonly Pawn pawn;
     private readonly RecipeDef recipe;
     private readonly BodyPartRecord part;
+
+    private readonly List<ChapterChoice> fixedChoices;
+    private readonly Action<ChapterChoice> onAccept;
+    private readonly TaggedString title;
+    private readonly TaggedString subtitle;
+    private readonly TaggedString closeLabel;
 
     private List<ChapterChoice> choices;
     private ChapterChoice selected;
@@ -35,26 +43,43 @@ public class Dialog_SelectChapter : Window
         this.pawn = pawn;
         this.recipe = recipe;
         this.part = part;
+        title = "BEWH.MankindsFinest.ApplyChapter.SelectChapter".Translate(pawn.LabelShortCap);
+        subtitle = "BEWH.MankindsFinest.ApplyChapter.SelectChapterDesc".Translate();
+        closeLabel = "Close".Translate();
         forcePause = true;
         absorbInputAroundWindow = true;
         doCloseX = true;
         closeOnAccept = false;
     }
 
+    public Dialog_SelectChapter(List<ChapterChoice> choices, TaggedString title, TaggedString subtitle, Action<ChapterChoice> onAccept, TaggedString closeLabel)
+    {
+        fixedChoices = choices;
+        this.title = title;
+        this.subtitle = subtitle;
+        this.onAccept = onAccept;
+        this.closeLabel = closeLabel;
+        forcePause = true;
+        absorbInputAroundWindow = true;
+        doCloseX = false;
+        closeOnCancel = false;
+        closeOnAccept = false;
+    }
+
     public override void PreOpen()
     {
         base.PreOpen();
-        choices = ChapterChoiceUtility.Choices();
+        choices = fixedChoices ?? ChapterChoiceUtility.Choices();
     }
 
     public override void DoWindowContents(Rect inRect)
     {
         Text.Font = GameFont.Medium;
-        Widgets.Label(new Rect(inRect.x, inRect.y, inRect.width, 35f), "BEWH.MankindsFinest.ApplyChapter.SelectChapter".Translate(pawn.LabelShortCap));
+        Widgets.Label(new Rect(inRect.x, inRect.y, inRect.width, 35f), title);
         Text.Font = GameFont.Small;
 
         GUI.color = ColoredText.SubtleGrayColor;
-        Widgets.Label(new Rect(inRect.x, inRect.y + 36f, inRect.width, Text.LineHeight), "BEWH.MankindsFinest.ApplyChapter.SelectChapterDesc".Translate());
+        Widgets.Label(new Rect(inRect.x, inRect.y + 36f, inRect.width, Text.LineHeight), subtitle);
         GUI.color = Color.white;
 
         var listTop = inRect.y + 36f + Text.LineHeight + 6f;
@@ -82,7 +107,7 @@ public class Dialog_SelectChapter : Window
 
         var buttonsRect = new Rect(inRect.x, inRect.yMax - ButSize.y, inRect.width, ButSize.y);
 
-        if (Widgets.ButtonText(new Rect(buttonsRect.x, buttonsRect.y, ButSize.x, ButSize.y), "Close".Translate()))
+        if (Widgets.ButtonText(new Rect(buttonsRect.x, buttonsRect.y, ButSize.x, ButSize.y), closeLabel))
         {
             Close();
         }
@@ -91,7 +116,15 @@ public class Dialog_SelectChapter : Window
 
         if (Widgets.ButtonText(new Rect(buttonsRect.xMax - ButSize.x, buttonsRect.y, ButSize.x, ButSize.y), "Accept".Translate(), true, true, canAccept) && canAccept)
         {
-            ChapterChoiceUtility.CreateBill(pawn, recipe, part, selected);
+            if (onAccept != null)
+            {
+                onAccept(selected);
+            }
+            else
+            {
+                ChapterChoiceUtility.CreateBill(pawn, recipe, part, selected);
+            }
+
             Close();
         }
     }

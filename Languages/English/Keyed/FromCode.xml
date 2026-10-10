@@ -369,6 +369,15 @@
   <BEWH.MankindsFinest.ApplyChapter.SelectChapter>Select chapter for {0}</BEWH.MankindsFinest.ApplyChapter.SelectChapter>
   <BEWH.MankindsFinest.ApplyChapter.SelectChapterDesc>Each chapter is listed once. Greyed entries need their legion material recovered first.</BEWH.MankindsFinest.ApplyChapter.SelectChapterDesc>
   <BEWH.MankindsFinest.ApplyChapter.LockedChapter>Not yet unlocked:</BEWH.MankindsFinest.ApplyChapter.LockedChapter>
+  <BEWH.MankindsFinest.Scenario.CrashInjuriesSummary>{0} start with {1}-{2} untended crash injuries.</BEWH.MankindsFinest.Scenario.CrashInjuriesSummary>
+  <BEWH.MankindsFinest.Scenario.InjuryCount>injuries: {0}</BEWH.MankindsFinest.Scenario.InjuryCount>
+  <BEWH.MankindsFinest.Scenario.InjurySeverity>damage per injury: {0}</BEWH.MankindsFinest.Scenario.InjurySeverity>
+  <BEWH.MankindsFinest.Scenario.ChooseAtStart>Choose at game start</BEWH.MankindsFinest.Scenario.ChooseAtStart>
+  <BEWH.MankindsFinest.Scenario.StartingChapterAsk>Starting Space Marines choose their chapter when the game begins.</BEWH.MankindsFinest.Scenario.StartingChapterAsk>
+  <BEWH.MankindsFinest.Scenario.StartingChapterFixed>Starting Space Marines belong to the {0}.</BEWH.MankindsFinest.Scenario.StartingChapterFixed>
+  <BEWH.MankindsFinest.Scenario.SelectStartingChapter>Choose your chapter</BEWH.MankindsFinest.Scenario.SelectStartingChapter>
+  <BEWH.MankindsFinest.Scenario.SelectStartingChapterDesc>Your marines and the gene-seed they carry will belong to this chapter.</BEWH.MankindsFinest.Scenario.SelectStartingChapterDesc>
+  <BEWH.MankindsFinest.Scenario.RemainChapterless>Stay chapterless</BEWH.MankindsFinest.Scenario.RemainChapterless>
   <BEWH.MankindsFinest.ImplantGeneseed.BillLabel>Implant gene-seed: {0}</BEWH.MankindsFinest.ImplantGeneseed.BillLabel>
   <BEWH.MankindsFinest.ImplantGeneseed.KindChapterless>{0} (chapterless)</BEWH.MankindsFinest.ImplantGeneseed.KindChapterless>
   <BEWH.MankindsFinest.ImplantGeneseed.KindWithChapter>{0} - {1}</BEWH.MankindsFinest.ImplantGeneseed.KindWithChapter>

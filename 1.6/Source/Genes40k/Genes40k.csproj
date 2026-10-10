@@ -200,6 +200,8 @@
     <Compile Include="Quest\IncidentWorker_LegionHeist.cs" />
     <Compile Include="Rank\ChapterRankDef.cs" />
     <Compile Include="RoleRequirement\RoleRequirement_MustBeSpaceMarine.cs" />
+    <Compile Include="Scenario\ScenPart_CrashInjuries.cs" />
+    <Compile Include="Scenario\ScenPart_StartingChapter.cs" />
     <Compile Include="StockGenerator\StockGenerator_TagSangprimusMaterialNoDupe.cs" />
     <Compile Include="ThingClasses\Building_ChapterBanner.cs" />
     <Compile Include="ThingClasses\Building_ChapterBuildingMulti.cs" />

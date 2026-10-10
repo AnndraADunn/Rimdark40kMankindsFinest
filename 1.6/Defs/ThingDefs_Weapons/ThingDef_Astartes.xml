@@ -185,6 +185,9 @@
       <ComponentSpacer>4</ComponentSpacer>
     </costList>
     <costStuffCount>45</costStuffCount>
+    <weaponTags>
+      <li>BEWH_AstartesPowerSword</li>
+    </weaponTags>
     <stuffCategories>
       <li>Metallic</li>
     </stuffCategories>
