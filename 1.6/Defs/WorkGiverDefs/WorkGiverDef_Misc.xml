@@ -2,6 +2,34 @@
 <Defs>
 
   <WorkGiverDef>
+    <defName>BEWH_SecureGeneseed</defName>
+    <label>secure loose gene-seed</label>
+    <giverClass>Genes40k.WorkGiver_SecureGeneseed</giverClass>
+    <workType>Doctor</workType>
+    <verb>secure</verb>
+    <gerund>securing</gerund>
+    <priorityInType>85</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <canBeDoneByMechs>false</canBeDoneByMechs>
+  </WorkGiverDef>
+
+  <WorkGiverDef>
+    <defName>BEWH_DepositGeneseed</defName>
+    <label>deposit carried gene-seed</label>
+    <giverClass>Genes40k.WorkGiver_DepositGeneseed</giverClass>
+    <workType>Doctor</workType>
+    <verb>deposit</verb>
+    <gerund>depositing</gerund>
+    <priorityInType>84</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <canBeDoneByMechs>false</canBeDoneByMechs>
+  </WorkGiverDef>
+
+  <WorkGiverDef>
     <defName>BEWH_CarryMatrixToGeneGestator</defName>
     <label>carry matrix to gene gestator</label>
     <giverClass>Genes40k.WorkGiver_CarryMatrixToGeneGestator</giverClass>

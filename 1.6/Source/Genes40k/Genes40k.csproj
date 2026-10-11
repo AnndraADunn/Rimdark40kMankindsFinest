@@ -207,6 +207,12 @@
     <Compile Include="Rank\ChapterRankDef.cs" />
     <Compile Include="RoleRequirement\RoleRequirement_MustBeSpaceMarine.cs" />
     <Compile Include="Scenario\ScenPart_CrashInjuries.cs" />
+    <Compile Include="FloatMenu\FloatMenuOptionProvider_CarryGeneseedVial.cs" />
+    <Compile Include="GeneseedKeeperUtility.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch_KeeperKeepsGeneseedWhenDowned.cs" />
+    <Compile Include="Workers\WorkGiver_SecureGeneseed.cs" />
+    <Compile Include="Workers\WorkGiver_DepositGeneseed.cs" />
+    <Compile Include="Workers\JobDriver\JobDriver_DepositGeneseedVial.cs" />
     <Compile Include="Scenario\ScenPart_StartingChapter.cs" />
     <Compile Include="StockGenerator\StockGenerator_TagSangprimusMaterialNoDupe.cs" />
     <Compile Include="ThingClasses\Building_ChapterBanner.cs" />

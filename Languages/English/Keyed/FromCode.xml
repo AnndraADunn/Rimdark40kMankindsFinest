@@ -395,6 +395,7 @@
   <BEWH.MankindsFinest.Scenario.SelectStartingChapter>Choose your chapter</BEWH.MankindsFinest.Scenario.SelectStartingChapter>
   <BEWH.MankindsFinest.Scenario.SelectStartingChapterDesc>Your marines and the gene-seed they carry will belong to this chapter.</BEWH.MankindsFinest.Scenario.SelectStartingChapterDesc>
   <BEWH.MankindsFinest.Scenario.RemainChapterless>Stay chapterless</BEWH.MankindsFinest.Scenario.RemainChapterless>
+  <BEWH.MankindsFinest.GeneseedKeeper.CarryVial>Carry {0} in inventory</BEWH.MankindsFinest.GeneseedKeeper.CarryVial>
   <BEWH.MankindsFinest.ImplantGeneseed.BillLabel>Implant gene-seed: {0}</BEWH.MankindsFinest.ImplantGeneseed.BillLabel>
   <BEWH.MankindsFinest.ImplantGeneseed.KindChapterless>{0} (chapterless)</BEWH.MankindsFinest.ImplantGeneseed.KindChapterless>
   <BEWH.MankindsFinest.ImplantGeneseed.KindWithChapter>{0} - {1}</BEWH.MankindsFinest.ImplantGeneseed.KindWithChapter>

@@ -33,6 +33,20 @@ public static class ChapterChoiceUtility
         .OrderBy(def => def.GetModExtension<DefModExtension_ChapterMaterial>().orderInt)
         .ToList();
 
+    /// <summary>
+    /// The vial texture of the legion whose material carries this chapter gene, or null for other genes.
+    /// </summary>
+    public static string LegionVialTexture(GeneDef chapterGene)
+    {
+        if (chapterGene == null)
+        {
+            return null;
+        }
+
+        var material = ChapterMaterials.FirstOrDefault(def => def.GetModExtension<DefModExtension_GeneFromMaterial>().addedGene == chapterGene);
+        return material?.GetModExtension<DefModExtension_GeneFromMaterial>().newGeneseedVialTexture;
+    }
+
     private static bool? genericChapterRecipeExists;
 
     public static bool GenericChapterRecipeExists => genericChapterRecipeExists ??= DefDatabase<RecipeDef>.AllDefsListForReading

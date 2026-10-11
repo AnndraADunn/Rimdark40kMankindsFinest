@@ -585,6 +585,10 @@ public static class Genes40kUtils
                 {
                     geneseedVial.newGeneseedVialTexture = CustomChapterGeneUtility.Tuning.vialTexturePath;
                 }
+                else
+                {
+                    geneseedVial.newGeneseedVialTexture = ChapterChoiceUtility.LegionVialTexture(gene.def);
+                }
             }
         }
 

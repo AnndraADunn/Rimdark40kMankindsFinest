@@ -76,6 +76,10 @@
         <givesHediffs>
             <li>BEWH_LifeSupportSystems</li>
         </givesHediffs>
+        <customEffectDescriptions>
+            <li>Bleeding rate x60%</li>
+            <li>Immunity gain speed +20%</li>
+        </customEffectDescriptions>
         <cost>
             <Plasteel>40</Plasteel>
             <ComponentSpacer>2</ComponentSpacer>
@@ -93,6 +97,10 @@
         <givesHediffs>
             <li>BEWH_SusAnAutoInjector</li>
         </givesHediffs>
+        <customEffectDescriptions>
+            <li>Puts the wearer into Sus-an stasis when downed or when blood loss reaches 60%</li>
+            <li>Rearms 1 day after triggering</li>
+        </customEffectDescriptions>
         <cost>
             <Plasteel>40</Plasteel>
             <ComponentSpacer>2</ComponentSpacer>

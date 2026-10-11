@@ -93,6 +93,7 @@ public class ScenPart_StartingChapter : ScenPart
         var material = ChapterChoiceUtility.ChapterMaterials.FirstOrDefault(def => def.GetModExtension<DefModExtension_GeneFromMaterial>().addedGene == gene);
         var unlockedMaterials = GameComponent_UnlockedMaterials.Instance;
         var chapterColours = Genes40kUtils.ChapterColourFor(gene);
+        var vialTexture = ChapterChoiceUtility.LegionVialTexture(gene);
 
         if (material != null && unlockedMaterials != null && !unlockedMaterials.HasMaterial(material))
         {
@@ -121,7 +122,13 @@ public class ScenPart_StartingChapter : ScenPart
 
             foreach (var vial in pawn.inventory.innerContainer.OfType<GeneseedVial>())
             {
-                vial.extraGeneFromMaterial ??= gene;
+                if (vial.extraGeneFromMaterial != null)
+                {
+                    continue;
+                }
+
+                vial.extraGeneFromMaterial = gene;
+                vial.newGeneseedVialTexture = vialTexture;
             }
         }
     }

@@ -2,6 +2,13 @@
 <Defs>
 
     <JobDef>
+        <defName>BEWH_DepositGeneseedVial</defName>
+        <driverClass>Genes40k.JobDriver_DepositGeneseedVial</driverClass>
+        <reportString>securing TargetA.</reportString>
+        <suspendable>false</suspendable>
+    </JobDef>
+
+    <JobDef>
         <defName>BEWH_CarryMatrixToGeneGestator</defName>
         <driverClass>Genes40k.JobDriver_CarryMatrixToGeneGestator</driverClass>
         <reportString>filling TargetA with TargetB.</reportString>

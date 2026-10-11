@@ -101,6 +101,9 @@
         <givesHediffs>
             <li>BEWH_VictrixAura</li>
         </givesHediffs>
+        <customEffectDescriptions>
+            <li>Colonists within 4 cells gain +5% sharp and blunt armour</li>
+        </customEffectDescriptions>
         <cost>
             <Plasteel>10</Plasteel>
         </cost>
@@ -157,6 +160,9 @@
         <givesHediffs>
             <li>BEWH_VictrixAura</li>
         </givesHediffs>
+        <customEffectDescriptions>
+            <li>Colonists within 4 cells gain +5% sharp and blunt armour</li>
+        </customEffectDescriptions>
         <cost>
             <Plasteel>10</Plasteel>
         </cost>

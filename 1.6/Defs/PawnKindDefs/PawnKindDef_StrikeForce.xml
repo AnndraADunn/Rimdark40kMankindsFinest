@@ -40,6 +40,25 @@
                     </li>
                 </ranks>
             </li>
+            <li Class="Core40k.DefModExtension_PawnKindCustomization">
+                <extraDecorations>
+                    <li>
+                        <key>BEWH_MkVIIPowerArmor</key>
+                        <value>
+                            <li>BEWH_DecoPSeal_1</li>
+                            <li>BEWH_DecoPSeal_5</li>
+                            <li>BEWH_Deco_Grenade_2</li>
+                            <li>BEWH_Deco_HonourCords_1</li>
+                        </value>
+                    </li>
+                    <li>
+                        <key>BEWH_MkVIIPowerArmorHelmet</key>
+                        <value>
+                            <li>BEWH_DecoSkull</li>
+                        </value>
+                    </li>
+                </extraDecorations>
+            </li>
         </modExtensions>
     </PawnKindDef>
 
@@ -65,8 +84,14 @@
             <li>BEWH_Narthecium</li>
         </weaponTags>
         <inventoryOptions Inherit="False">
-            <thingDef>BEWH_GeneseedVialFirstborn</thingDef>
-            <countRange>2~2</countRange>
+            <subOptionsTakeAll>
+                <li>
+                    <thingDef>BEWH_GeneseedVialFirstborn</thingDef>
+                </li>
+                <li>
+                    <thingDef>BEWH_GeneseedVialFirstborn</thingDef>
+                </li>
+            </subOptionsTakeAll>
         </inventoryOptions>
         <modExtensions>
             <li Class="Core40k.DefModExtension_PawnKindRanks">
@@ -75,6 +100,18 @@
                         <rank>BEWH_AstartesRankApothecary</rank>
                     </li>
                 </ranks>
+            </li>
+            <li Class="Core40k.DefModExtension_PawnKindCustomization">
+                <extraDecorationPreset>
+                    <li>
+                        <key>BEWH_MkVIIPowerArmor</key>
+                        <value>BEWH_ApothecaryBodyMkVII</value>
+                    </li>
+                    <li>
+                        <key>BEWH_MkVIIPowerArmorHelmet</key>
+                        <value>BEWH_ApothecaryHeadMkVII</value>
+                    </li>
+                </extraDecorationPreset>
             </li>
         </modExtensions>
     </PawnKindDef>
@@ -104,6 +141,9 @@
         <weaponTags Inherit="False">
             <li>BEWH_AstartesRanged</li>
         </weaponTags>
+        <techHediffsRequired>
+            <li>BionicArm</li>
+        </techHediffsRequired>
         <modExtensions>
             <li Class="Core40k.DefModExtension_PawnKindRanks">
                 <ranks>
@@ -111,6 +151,22 @@
                         <rank>BEWH_AstartesRankTechmarine</rank>
                     </li>
                 </ranks>
+            </li>
+            <li Class="Core40k.DefModExtension_PawnKindCustomization">
+                <extraDecorations>
+                    <li>
+                        <key>BEWH_MkVIIPowerArmor</key>
+                        <value>
+                            <li>BEWH_Upgrade_ToolHarness</li>
+                        </value>
+                    </li>
+                    <li>
+                        <key>BEWH_MkVIIPowerArmorHelmet</key>
+                        <value>
+                            <li>BEWH_Upgrade_AutoSenses</li>
+                        </value>
+                    </li>
+                </extraDecorations>
             </li>
         </modExtensions>
     </PawnKindDef>

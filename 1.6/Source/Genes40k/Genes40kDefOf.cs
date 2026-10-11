@@ -166,6 +166,7 @@ public static class Genes40kDefOf
     public static JobDef BEWH_CarryMaterialToSangprimus;
     public static JobDef BEWH_InducedFearJob;
     public static JobDef BEWH_WaitLegionHeist;
+    public static JobDef BEWH_DepositGeneseedVial;
 
     //ThoughtDefs
     public static ThoughtDef BEWH_LivingSaintHolyRadianceThought;
