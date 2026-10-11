@@ -4,7 +4,7 @@
     <!-- Lost Strike Force scenario: Firstborn marines for the player's starting squad -->
     <PawnKindDef ParentName="BEWH_ImperiumFirstbornMarine" Name="BEWH_StrikeForceMarineBase" Abstract="True">
         <defaultFactionDef>PlayerColony</defaultFactionDef>
-        <gearHealthRange>0.35~0.7</gearHealthRange>
+        <gearHealthRange Inherit="False">0.35~0.7</gearHealthRange>
         <techHediffsRequired Inherit="False" />
         <inventoryOptions Inherit="False">
             <skipChance>1</skipChance>

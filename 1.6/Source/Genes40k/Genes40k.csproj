@@ -123,7 +123,9 @@
     <Compile Include="Comps\Primarch\Comp_TwinLink.cs" />
     <Compile Include="Comps\Primarch\Comp_TwinTeleport.cs" />
     <Compile Include="Comps\Rank\CompAbilityEffect_GeneseedHarvest.cs" />
+    <Compile Include="Comps\Rank\CompAbilityEffect_OathOfService.cs" />
     <Compile Include="Comps\Rank\CompAbilityEffect_StrengthenFaith.cs" />
+    <Compile Include="Comps\Rank\CompProperties_AbilityOathOfService.cs" />
     <Compile Include="Comps\Rank\CompProperties_AbilityGeneseedHarvest.cs" />
     <Compile Include="Comps\Rank\CompProperties_AbilityStrengthenFaith.cs" />
     <Compile Include="Comps\SpaceMarine\CompAbilityEffect_Remembrance.cs" />
@@ -186,6 +188,9 @@
     <Compile Include="HarmonyPatches\HarmonyPatch_SecondProgenoidGlandProgress.cs" />
     <Compile Include="HarmonyPatches\HarmonyPatch_SerfBuffOnSpawn.cs" />
     <Compile Include="HarmonyPatches\HarmonyPatch_SerfGainTrait.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch_SerfInductOnRecruit.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch_SerfSavedByRescue.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch_SerfSavedByTend.cs" />
     <Compile Include="HarmonyPatches\HarmonyPatch_SpaceMarineChapterSpawn.cs" />
     <Compile Include="HarmonyPatches\HarmonyPatch_ZealousFuryStopMentalBreak.cs" />
     <Compile Include="HarmonyPatches\HarmonyPatch_ZealousFuryStopMentalState.cs" />
@@ -295,6 +300,7 @@
     <Compile Include="Workers\WorkerClass_GeneProgenoidRemovalSpaceMarine.cs" />
     <Compile Include="Workers\WorkerClass_GeneProgenoidRemovalBase.cs" />
     <Compile Include="Genes40kUtils.cs" />
+    <Compile Include="SerfUtility.cs" />
     <Compile Include="CustomChapterGene.cs" />
     <Compile Include="CustomGeneKind.cs" />
     <Compile Include="CustodesDisciplineDef.cs" />

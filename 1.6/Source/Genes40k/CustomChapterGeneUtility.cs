@@ -290,6 +290,7 @@ public static class CustomChapterGeneUtility
             if (!chapterName.NullOrEmpty())
             {
                 pawn.genes.xenotypeName = chapterName;
+                pawn.genes.iconDef ??= pawn.IsPrimaris() ? Genes40kDefOf.BEWH_PrimarisIcon : Genes40kDefOf.BEWH_AstartesIcon;
             }
         }
 

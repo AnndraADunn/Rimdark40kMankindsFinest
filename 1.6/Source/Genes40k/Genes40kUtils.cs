@@ -480,9 +480,6 @@ public static class Genes40kUtils
             return null;
         }
         
-        var chapterColourPrimary = chapter.primaryColour;
-        var chapterColourSecondary = chapter.secondaryColour;
-        var chapterColourTertiary = chapter.tertiaryColour ?? chapter.secondaryColour;
         var shoulderIconDef = chapter.relatedChapterIcon;
         GeneDef chapterGene = null;
 
@@ -511,26 +508,7 @@ public static class Genes40kUtils
             }
         }
 
-        if (pawn.apparel?.WornApparel != null)
-        {
-            foreach (var apparel in pawn.apparel.WornApparel)
-            {
-                var comp = apparel.GetComp<CompChapterColor>();
-                if (comp == null)
-                {
-                    continue;
-                }
-            
-                comp.SetColors(chapterColourPrimary, chapterColourSecondary, chapterColourTertiary);
-                comp.SetOriginals();
-
-                if (comp is CompChapterColorWithShoulderDecoration compExtended)
-                {
-                    compExtended.SetChapterIcon(shoulderIconDef);
-                    compExtended.DecorativeComp?.SetOriginalDecorations();
-                }
-            }
-        }
+        ApplyChapterColoursToApparel(pawn, chapter);
         
         var equipment = pawn.equipment?.PrimaryEq?.parent;
         if (equipment != null && equipment.HasComp<CompMultiColor>())
@@ -539,6 +517,49 @@ public static class Genes40kUtils
             equipment.GetComp<CompMultiColor>().SetOriginals();
         }
         return chapter;
+    }
+
+    /// <summary>
+    /// The colour preset belonging to a chapter gene, matched directly or through the preset's shoulder icon.
+    /// </summary>
+    public static ChapterColourDef ChapterColourFor(GeneDef chapterGene)
+    {
+        if (chapterGene == null)
+        {
+            return null;
+        }
+
+        return ChapterColourDefs.FirstOrDefault(chapter => chapter.relatedChapterGene == chapterGene)
+               ?? ChapterColourDefs.FirstOrDefault(chapter => chapter.relatedChapterGene == null && chapter.relatedChapterIcon?.relatedChapterGene == chapterGene);
+    }
+
+    /// <summary>
+    /// Paints the pawn's worn chapter-coloured apparel in the chapter's colours and gives it the chapter's shoulder icon.
+    /// </summary>
+    public static void ApplyChapterColoursToApparel(Pawn pawn, ChapterColourDef chapter)
+    {
+        if (chapter == null || pawn.apparel?.WornApparel == null)
+        {
+            return;
+        }
+
+        foreach (var apparel in pawn.apparel.WornApparel)
+        {
+            var comp = apparel.GetComp<CompChapterColor>();
+            if (comp == null)
+            {
+                continue;
+            }
+
+            comp.SetColors(chapter.primaryColour, chapter.secondaryColour, chapter.tertiaryColour ?? chapter.secondaryColour);
+            comp.SetOriginals();
+
+            if (comp is CompChapterColorWithShoulderDecoration compExtended)
+            {
+                compExtended.SetChapterIcon(chapter.relatedChapterIcon);
+                compExtended.DecorativeComp?.SetOriginalDecorations();
+            }
+        }
     }
 
     public static void MakeGeneseedVial(Pawn pawn, bool isPrimaris)

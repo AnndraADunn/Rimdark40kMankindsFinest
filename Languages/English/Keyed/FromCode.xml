@@ -300,6 +300,23 @@
   <BEWH.MankindsFinest.Ability.MustHaveIdeo>{0} must be part of an ideology.</BEWH.MankindsFinest.Ability.MustHaveIdeo>
   <BEWH.MankindsFinest.Ability.MustHaveSameIdeo>{0} must be part of {1} ideology.</BEWH.MankindsFinest.Ability.MustHaveSameIdeo>
 
+  <!-- Serf -->
+  <BEWH.MankindsFinest.Serf.FailedImplantTitle>{PAWN_nameDef} rejected the gene-seed</BEWH.MankindsFinest.Serf.FailedImplantTitle>
+  <BEWH.MankindsFinest.Serf.FailedImplantText>{PAWN_nameDef}'s body has rejected the gene-seed, yet against the odds {PAWN_pronoun} lives. The gene-seed is lost.\n\nThose who fail but survive are often kept by the Chapter as serfs. Is serfdom the way for {PAWN_nameDef}?\n\nAs a serf {PAWN_pronoun} will serve for life and can never again receive gene-seed. Otherwise {PAWN_pronoun} remains as {PAWN_pronoun} was, shaken by the failure, and may be implanted again.</BEWH.MankindsFinest.Serf.FailedImplantText>
+  <BEWH.MankindsFinest.Serf.FailedImplantAccept>Serfdom</BEWH.MankindsFinest.Serf.FailedImplantAccept>
+  <BEWH.MankindsFinest.Serf.FailedImplantRefuse>Not a serf</BEWH.MankindsFinest.Serf.FailedImplantRefuse>
+  <BEWH.MankindsFinest.Serf.SavedOathTitle>{PAWN_nameDef} asks to serve</BEWH.MankindsFinest.Serf.SavedOathTitle>
+  <BEWH.MankindsFinest.Serf.SavedOathText>Saved by {SAVIOUR_nameDef}, {PAWN_nameDef} wishes to swear {PAWN_objective}self to the service of the Chapter.\n\nAs a serf {PAWN_pronoun} will serve for life and can never receive gene-seed. If refused, {PAWN_pronoun} will not ask again.</BEWH.MankindsFinest.Serf.SavedOathText>
+  <BEWH.MankindsFinest.Serf.SavedOathAccept>Accept the oath</BEWH.MankindsFinest.Serf.SavedOathAccept>
+  <BEWH.MankindsFinest.Serf.SavedOathRefuse>Refuse</BEWH.MankindsFinest.Serf.SavedOathRefuse>
+  <BEWH.MankindsFinest.Serf.OathConfirm>{PAWN_nameDef} will be bound to the Chapter as a serf. This is permanent, and {PAWN_pronoun} can never receive gene-seed.</BEWH.MankindsFinest.Serf.OathConfirm>
+  <BEWH.MankindsFinest.Serf.OathTaken>{PAWN_nameDef} has sworn the oath of service before {CHAPLAIN_nameDef} and is now a serf of the Chapter.</BEWH.MankindsFinest.Serf.OathTaken>
+  <BEWH.MankindsFinest.Serf.Inducted>{PAWN_nameDef} has joined as a serf of the Chapter.</BEWH.MankindsFinest.Serf.Inducted>
+  <BEWH.MankindsFinest.Serf.MustBeColonist>{PAWN_nameDef} must be a free colonist.</BEWH.MankindsFinest.Serf.MustBeColonist>
+  <BEWH.MankindsFinest.Serf.MustBeAdult>{PAWN_nameDef} must be an adult.</BEWH.MankindsFinest.Serf.MustBeAdult>
+  <BEWH.MankindsFinest.Serf.AlreadySerf>{PAWN_nameDef} is already a serf.</BEWH.MankindsFinest.Serf.AlreadySerf>
+  <BEWH.MankindsFinest.Serf.CannotBecomeSerf>{PAWN_nameDef} cannot become a serf.</BEWH.MankindsFinest.Serf.CannotBecomeSerf>
+
   <!-- Misc -->
   <BEWH.MankindsFinest.Ability.CantUseInVacuum>Cannot use {0} in vacuum.</BEWH.MankindsFinest.Ability.CantUseInVacuum>
 

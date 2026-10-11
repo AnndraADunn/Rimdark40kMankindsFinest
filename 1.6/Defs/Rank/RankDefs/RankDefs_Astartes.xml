@@ -633,6 +633,10 @@
             <li>BEWH_ChaplainInspire</li>
         </givesVFEAbilities>
 
+        <givesAbilities>
+            <li>BEWH_ChaplainOathOfService</li>
+        </givesAbilities>
+
         <unlocksRankIcon>BEWH_RankIconChaplain</unlocksRankIcon>
 
         <specialistRank>true</specialistRank>

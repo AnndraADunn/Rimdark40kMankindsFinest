@@ -110,6 +110,11 @@ public class WorkerClass_ImplantGeneseed : Recipe_Surgery
             
         if (Rand.Chance(failChance / 100f))
         {
+            if (SerfUtility.TrySurviveFailedImplantation(pawn))
+            {
+                return;
+            }
+
             pawn.Kill(null);
             return;
         }

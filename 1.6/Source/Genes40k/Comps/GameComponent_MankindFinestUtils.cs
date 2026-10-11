@@ -33,6 +33,12 @@ public class GameComponent_MankindFinestUtils : GameComponent
         }
     }
 
+    private HashSet<Pawn> serfOathDeclined = new HashSet<Pawn>();
+
+    public bool HasDeclinedSerfOath(Pawn pawn) => serfOathDeclined.Contains(pawn);
+
+    public void Notify_SerfOathDeclined(Pawn pawn) => serfOathDeclined.Add(pawn);
+
     public GameComponent_MankindFinestUtils(Game game) { }
 
     public override void StartedNewGame()
@@ -44,6 +50,8 @@ public class GameComponent_MankindFinestUtils : GameComponent
     public override void LoadedGame()
     {
         base.LoadedGame();
+
+        SerfUtility.GrantOathAbilityToChaplains();
 
         if (legacyArmourHitPointsScaled)
         {
@@ -144,5 +152,18 @@ public class GameComponent_MankindFinestUtils : GameComponent
         Scribe_Values.Look(ref useNewRandomChapter, "useNewRandomChapter", true);
         Scribe_Defs.Look(ref currentChapterColour, "currentChapterColour");
         Scribe_Values.Look(ref legacyArmourHitPointsScaled, "legacyArmourHitPointsScaled", false);
+
+        if (Scribe.mode == LoadSaveMode.Saving)
+        {
+            serfOathDeclined.RemoveWhere(pawn => pawn == null || pawn.Dead || pawn.Destroyed);
+        }
+
+        Scribe_Collections.Look(ref serfOathDeclined, "serfOathDeclined", LookMode.Reference);
+
+        if (Scribe.mode == LoadSaveMode.PostLoadInit)
+        {
+            serfOathDeclined ??= new HashSet<Pawn>();
+            serfOathDeclined.RemoveWhere(pawn => pawn == null);
+        }
     }
 }

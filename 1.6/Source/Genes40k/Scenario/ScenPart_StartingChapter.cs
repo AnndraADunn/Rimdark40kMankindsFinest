@@ -80,8 +80,8 @@ public class ScenPart_StartingChapter : ScenPart
     }
 
     /// <summary>
-    /// Gives every chapterless Firstborn of the player the chapter gene, marks the chapter's legion material as known and
-    /// assigns the chapter to the unassigned gene-seed vials those marines carry.
+    /// Gives every chapterless Firstborn of the player the chapter gene and the chapter's armour colours, marks the chapter's
+    /// legion material as known and assigns the chapter to the unassigned gene-seed vials those marines carry.
     /// </summary>
     public static void ApplyChapter(GeneDef gene)
     {
@@ -92,6 +92,7 @@ public class ScenPart_StartingChapter : ScenPart
 
         var material = ChapterChoiceUtility.ChapterMaterials.FirstOrDefault(def => def.GetModExtension<DefModExtension_GeneFromMaterial>().addedGene == gene);
         var unlockedMaterials = GameComponent_UnlockedMaterials.Instance;
+        var chapterColours = Genes40kUtils.ChapterColourFor(gene);
 
         if (material != null && unlockedMaterials != null && !unlockedMaterials.HasMaterial(material))
         {
@@ -111,6 +112,7 @@ public class ScenPart_StartingChapter : ScenPart
             }
 
             CustomChapterGeneUtility.AddChapterGene(pawn, gene, true, false);
+            Genes40kUtils.ApplyChapterColoursToApparel(pawn, chapterColours);
 
             if (pawn.inventory?.innerContainer == null)
             {

@@ -31,4 +31,46 @@
         <hediff>BEWH_SerfBuff</hediff>
     </ThoughtDef>
 
+    <ThoughtDef>
+        <defName>BEWH_SerfStillServe</defName>
+        <thoughtClass>Thought_Memory</thoughtClass>
+        <durationDays>20</durationDays>
+        <stackLimit>1</stackLimit>
+        <stages>
+            <li>
+                <label>still able to serve</label>
+                <description>My body rejected the gene-seed, but the Chapter did not cast me out. At least I can still serve.</description>
+                <baseMoodEffect>6</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>BEWH_FailedImplantation</defName>
+        <thoughtClass>Thought_Memory</thoughtClass>
+        <durationDays>15</durationDays>
+        <stackLimit>1</stackLimit>
+        <stages>
+            <li>
+                <label>failed implantation</label>
+                <description>My body rejected the gene-seed. I was found unworthy, and I can still feel where it burned.</description>
+                <baseMoodEffect>-8</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>BEWH_SavedByAngels</defName>
+        <thoughtClass>Thought_Memory</thoughtClass>
+        <durationDays>15</durationDays>
+        <stackLimit>1</stackLimit>
+        <stages>
+            <li>
+                <label>saved by the Emperor's Angels</label>
+                <description>I was helpless, and one of the Emperor's own chosen stooped to save me.</description>
+                <baseMoodEffect>6</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
 </Defs>

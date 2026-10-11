@@ -52,6 +52,36 @@
     </AbilityDef>-->
 
 
+    <!-- Chaplain: Oath of Service -->
+    <AbilityDef>
+        <defName>BEWH_ChaplainOathOfService</defName>
+        <label>Oath of service</label>
+        <description>Hear a mortal colonist's oath of service, binding them to the Chapter as a serf for life.\nThe serf trait is permanent, and a serf can never receive gene-seed.</description>
+        <cooldownTicksRange>180000</cooldownTicksRange>
+        <iconPath>UI/Abilities/BEWH_AbilityChaplainSFaith</iconPath>
+        <jobDef>CastAbilityOnThingMelee</jobDef>
+        <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+        <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+        <targetRequired>true</targetRequired>
+        <showWhenDrafted>true</showWhenDrafted>
+        <hostile>false</hostile>
+        <verbProperties>
+            <verbClass>Verb_CastAbilityTouch</verbClass>
+            <range>-1</range>
+            <warmupTime>3</warmupTime>
+            <targetParams>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetAnimals>false</canTargetAnimals>
+                <canTargetMechs>false</canTargetMechs>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="Genes40k.CompProperties_AbilityOathOfService" />
+        </comps>
+    </AbilityDef>
+
+
     <!-- Ancient: Raise Legion Banner -->
     <VEF.Abilities.AbilityDef>
         <defName>BEWH_RaiseChapterBanner</defName>
