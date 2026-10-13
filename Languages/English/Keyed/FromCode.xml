@@ -311,7 +311,6 @@
   <BEWH.MankindsFinest.Serf.SavedOathRefuse>Refuse</BEWH.MankindsFinest.Serf.SavedOathRefuse>
   <BEWH.MankindsFinest.Serf.OathConfirm>{PAWN_nameDef} will be bound to the Chapter as a serf. This is permanent, and {PAWN_pronoun} can never receive gene-seed.</BEWH.MankindsFinest.Serf.OathConfirm>
   <BEWH.MankindsFinest.Serf.OathTaken>{PAWN_nameDef} has sworn the oath of service before {CHAPLAIN_nameDef} and is now a serf of the Chapter.</BEWH.MankindsFinest.Serf.OathTaken>
-  <BEWH.MankindsFinest.Serf.Inducted>{PAWN_nameDef} has joined as a serf of the Chapter.</BEWH.MankindsFinest.Serf.Inducted>
   <BEWH.MankindsFinest.Serf.MustBeColonist>{PAWN_nameDef} must be a free colonist.</BEWH.MankindsFinest.Serf.MustBeColonist>
   <BEWH.MankindsFinest.Serf.MustBeAdult>{PAWN_nameDef} must be an adult.</BEWH.MankindsFinest.Serf.MustBeAdult>
   <BEWH.MankindsFinest.Serf.AlreadySerf>{PAWN_nameDef} is already a serf.</BEWH.MankindsFinest.Serf.AlreadySerf>

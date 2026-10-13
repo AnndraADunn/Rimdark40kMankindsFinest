@@ -9,7 +9,6 @@ public static class SerfUtility
 {
     public const float ImplantSurvivalChance = 0.2f;
     public const float SavedOathChance = 0.15f;
-    public const float InductResistanceFactorChaplain = 1.5f;
 
     public static bool CanBecomeSerf(Pawn pawn)
     {
@@ -36,11 +35,9 @@ public static class SerfUtility
         pawn.story.traits.GainTrait(new Trait(Genes40kDefOf.BEWH_Serf));
     }
 
-    public static bool IsChaplain(Pawn pawn)
+    public static bool IsSerf(Pawn pawn)
     {
-        var rankComp = pawn?.GetComp<CompRankInfo>();
-
-        return rankComp != null && (rankComp.HasRank(Genes40kDefOf.BEWH_AstartesRankChaplain) || rankComp.HasRank(Genes40kDefOf.BEWH_AstartesRankMasterOfSanctity));
+        return pawn?.story?.traits != null && pawn.story.traits.HasTrait(Genes40kDefOf.BEWH_Serf);
     }
 
     /// <summary>

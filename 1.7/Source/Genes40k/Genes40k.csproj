@@ -176,7 +176,8 @@
     <Compile Include="HarmonyPatches\HarmonyPatch_SecondProgenoidGlandProgress.cs" />
     <Compile Include="HarmonyPatches\HarmonyPatch_SerfBuffOnSpawn.cs" />
     <Compile Include="HarmonyPatches\HarmonyPatch_SerfGainTrait.cs" />
-    <Compile Include="HarmonyPatches\HarmonyPatch_SerfInductOnRecruit.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch_RemovedPrisonerInteractions.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch_SerfHereditaryBirth.cs" />
     <Compile Include="HarmonyPatches\HarmonyPatch_SerfSavedByRescue.cs" />
     <Compile Include="HarmonyPatches\HarmonyPatch_SerfSavedByTend.cs" />
     <Compile Include="HarmonyPatches\HarmonyPatch_SpaceMarineChapterSpawn.cs" />

@@ -24,6 +24,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+      <Reference Include="0Harmony">
+        <HintPath>..\..\..\..\..\..\..\workshop\content\294100\2009463077\1.6\Assemblies\0Harmony.dll</HintPath>
+        <Private>False</Private>
+      </Reference>
       <Reference Include="System" />
       <Reference Include="System.Core" />
       <Reference Include="System.Xml.Linq" />
@@ -32,10 +36,6 @@
       <Reference Include="System.Data" />
       <Reference Include="System.Net.Http" />
       <Reference Include="System.Xml" />
-    <Reference Include="0Harmony">
-      <HintPath>..\..\..\..\..\..\..\workshop\content\294100\2009463077\Current\Assemblies\0Harmony.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
@@ -188,7 +188,8 @@
     <Compile Include="HarmonyPatches\HarmonyPatch_SecondProgenoidGlandProgress.cs" />
     <Compile Include="HarmonyPatches\HarmonyPatch_SerfBuffOnSpawn.cs" />
     <Compile Include="HarmonyPatches\HarmonyPatch_SerfGainTrait.cs" />
-    <Compile Include="HarmonyPatches\HarmonyPatch_SerfInductOnRecruit.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch_RemovedPrisonerInteractions.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch_SerfHereditaryBirth.cs" />
     <Compile Include="HarmonyPatches\HarmonyPatch_SerfSavedByRescue.cs" />
     <Compile Include="HarmonyPatches\HarmonyPatch_SerfSavedByTend.cs" />
     <Compile Include="HarmonyPatches\HarmonyPatch_SpaceMarineChapterSpawn.cs" />

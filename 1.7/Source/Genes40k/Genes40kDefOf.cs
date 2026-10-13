@@ -190,9 +190,7 @@ public static class Genes40kDefOf
     public static ThoughtDef BEWH_FailedImplantation;
     public static ThoughtDef BEWH_SavedByAngels;
     public static AbilityDef BEWH_ChaplainOathOfService;
-    public static PrisonerInteractionModeDef BEWH_InductAsSerf;
     public static ChapterRankDef BEWH_AstartesRankChaplain;
-    public static ChapterRankDef BEWH_AstartesRankMasterOfSanctity;
         
     //ResearchDefs
     public static ResearchProjectDef BEWH_StasisResurrection;
