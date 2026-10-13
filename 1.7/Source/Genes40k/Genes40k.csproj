@@ -17,9 +17,7 @@
     <NoWarn>$(NoWarn);MSB3277;NU1702</NoWarn>
     <RimWorldDir>$(MSBuildProjectDirectory)\..\..\..\..\..\</RimWorldDir>
     <WorkshopDir>$(MSBuildProjectDirectory)\..\..\..\..\..\..\..\workshop\content\294100\</WorkshopDir>
-    <FrameworkDir>$(MSBuildProjectDirectory)\..\..\..\..\Rimdark40kFramework\1.7\</FrameworkDir>
-    <VefDir>$(WorkshopDir)2023507013\1.6\Assemblies\</VefDir>
-    <VefDir Condition="Exists('$(WorkshopDir)2023507013\1.7\Assemblies\VEF.dll')">$(WorkshopDir)2023507013\1.7\Assemblies\</VefDir>
+    <VefDir>$(WorkshopDir)2023507013\1.7\Assemblies\</VefDir>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DebugType>none</DebugType>
@@ -58,13 +56,6 @@
       <HintPath>$(VefDir)VEF.dll</HintPath>
       <Private>False</Private>
     </Reference>
-  </ItemGroup>
-  <ItemGroup Condition="!Exists('$(WorkshopDir)2023507013\1.7\Assemblies\VEF.dll')">
-    <ProjectReference Include="$(FrameworkDir)Source\UnityFacades\UnityFacades.csproj" Private="false" />
-    <ProjectReference Include="$(FrameworkDir)Source\UnityFacades\UnityFacades.csproj" AdditionalProperties="FacadeName=UnityEngine.IMGUIModule" Private="false" />
-    <ProjectReference Include="$(FrameworkDir)Source\UnityFacades\UnityFacades.csproj" AdditionalProperties="FacadeName=UnityEngine.TextRenderingModule" Private="false" />
-    <ProjectReference Include="$(FrameworkDir)Source\UnityFacades\UnityFacades.csproj" AdditionalProperties="FacadeName=UnityEngine.PhysicsModule" Private="false" />
-    <ProjectReference Include="$(FrameworkDir)Source\UnityFacades\UnityFacades.csproj" AdditionalProperties="FacadeName=UnityEngine.TilemapModule" Private="false" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abilities\Ability_ChapterBanner.cs" />
