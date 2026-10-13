@@ -4,7 +4,7 @@
     <exclude>.git</exclude>
     <exclude>1.5\Source</exclude>
     <exclude>1.6\Source</exclude>
-    <exclude>Notes.md</exclude>
+    <exclude>1.7\Source</exclude>
     <exclude>README.md</exclude>
   </Excluded>
 </Configuration>
