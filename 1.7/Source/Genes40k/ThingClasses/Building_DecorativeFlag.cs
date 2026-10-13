@@ -1,0 +1,161 @@
+﻿using System.Collections.Generic;
+using UnityEngine;
+using Verse;
+
+namespace Genes40k;
+
+[StaticConstructorOnStartup]
+public class Building_DecorativeFlag : Building
+{
+    private Genes40kModSettings modSettings = null;
+    private Genes40kModSettings ModSettings => modSettings ??= LoadedModManager.GetMod<Genes40kMod>().GetSettings<Genes40kModSettings>();
+
+    public Building_DecorativeFlag()
+    {
+        drawColorOne = ModSettings?.CurrentlySelectedPreset.primaryColour ?? Color.white;
+        originalColorOne = drawColorOne;
+        drawColorTwo = ModSettings?.CurrentlySelectedPreset.secondaryColour ?? Color.white;
+        originalColorTwo = drawColorTwo;
+
+        flagInsigniaFilePath = ModSettings?.CurrentlySelectedPreset?.relatedChapterIcon?.iconPath ?? originalFlagInsigniaFilePath;
+
+        currentlySelectedPreset = ModSettings?.CurrentlySelectedPreset == ModSettings?.CustomPreset ? null : ModSettings?.CurrentlySelectedPreset;
+    }
+    
+    private Color drawColorOne;
+    private Color originalColorOne;
+    public override Color DrawColor => drawColorOne;
+    
+    private Color drawColorTwo;
+    private Color originalColorTwo;
+    public override Color DrawColorTwo => drawColorTwo;
+
+    public ChapterColourDef currentlySelectedPreset;
+    
+    private static readonly CachedTexture EditFlagIcon = new ("UI/Gizmos/BEWH_CogIcon");
+
+    private static readonly DefModExtension_DecorativeFlag DefaultFlagExtension = new DefModExtension_DecorativeFlag();
+    
+    [Unsaved(false)]
+    private DefModExtension_DecorativeFlag flagExtension;
+    private DefModExtension_DecorativeFlag FlagExtension => flagExtension ??= def.GetModExtension<DefModExtension_DecorativeFlag>() ?? DefaultFlagExtension;
+    
+    [Unsaved(false)]
+    private readonly Graphic[] flagInsigniaGraphics = new Graphic[4];
+    
+    private string originalFlagInsigniaFilePath = "UI/Decoration/LegionBadges/BEWH_iconUI_Aquila";
+    private string flagInsigniaFilePath;
+    public string FlagInsigniaFilePath => flagInsigniaFilePath;
+    
+    private Graphic FlagInsigniaGraphicFor(Rot4 rotation)
+    {
+        //No path means no insignia, see SetFlagInsignia.
+        if (flagInsigniaFilePath.NullOrEmpty())
+        {
+            return null;
+        }
+
+        var index = rotation.AsInt;
+        return flagInsigniaGraphics[index] ??= GraphicDatabase.Get<Graphic_Single>(flagInsigniaFilePath, ShaderDatabase.Cutout, FlagExtension.InsigniaDrawSize(rotation), Color.white);
+    }
+
+    private void ClearInsigniaGraphicCache()
+    {
+        for (var i = 0; i < flagInsigniaGraphics.Length; i++)
+        {
+            flagInsigniaGraphics[i] = null;
+        }
+    }
+
+    public void SetFlagInsignia(string path, bool noIcon = false)
+    {
+        flagInsigniaFilePath = noIcon ? null : path;
+        ClearInsigniaGraphicCache();
+        Notify_ColorChanged();
+    }
+    
+    protected override void DrawAt(Vector3 drawLoc, bool flip = false)
+    {
+        base.DrawAt(drawLoc, flip);
+
+        var rotation = Rotation;
+        var extension = FlagExtension;
+
+        //A FlagIconDef with setsNull leaves the path empty, which means no insignia at all.
+        //Each direction can also be turned off individually, all four are on by default.
+        if (flagInsigniaFilePath.NullOrEmpty() || !extension.DrawsInsignia(rotation))
+        {
+            return;
+        }
+
+        var newDrawLoc = drawLoc + extension.InsigniaDrawOffset(rotation);
+        
+        //Rot4.North keeps the insignia upright, the offset above is what places it for this rotation.
+        FlagInsigniaGraphicFor(rotation).DrawFromDef(newDrawLoc, Rot4.North, null, extension.InsigniaExtraRotation(rotation));
+    }
+
+    public override IEnumerable<Gizmo> GetGizmos()
+    {
+        foreach (var gizmo in base.GetGizmos())
+        {
+            yield return gizmo;
+        }
+        
+        var command_Action = new Command_Action
+        {
+            defaultLabel = "BEWH.MankindsFinest.Decorations.EditFlag".Translate() + "...",
+            defaultDesc = "BEWH.MankindsFinest.Decorations.EditFlagDesc".Translate(),
+            icon = EditFlagIcon.Texture,
+            action = delegate
+            {
+                Find.WindowStack.Add(new Dialog_ChangeFlagColour(this));
+            }
+        };
+        yield return command_Action;
+    }
+    
+    public void SetOriginals()
+    {
+        originalFlagInsigniaFilePath = flagInsigniaFilePath;
+        originalColorOne = drawColorOne;
+        originalColorTwo = drawColorTwo;
+    }
+    public void Reset()
+    {
+        flagInsigniaFilePath = originalFlagInsigniaFilePath;
+        drawColorOne = originalColorOne;
+        drawColorTwo = originalColorTwo;
+        ClearInsigniaGraphicCache();
+        Notify_ColorChanged();
+    }
+    
+    public void SetPrimaryColor(Color color)
+    {
+        drawColorOne = color;
+        Notify_ColorChanged();
+    }
+    public void SetSecondaryColor(Color color)
+    {
+        drawColorTwo = color;
+        Notify_ColorChanged();
+    }
+    
+    public override void ExposeData()
+    {
+        base.ExposeData();
+        Scribe_Values.Look(ref originalColorOne, "originalColorOne", Color.white);
+        Scribe_Values.Look(ref originalColorTwo, "originalColorTwo", Color.white);
+        Scribe_Values.Look(ref drawColorTwo, "drawColorTwo", Color.white);
+        Scribe_Values.Look(ref drawColorOne, "drawColorOne", Color.white);
+        
+        Scribe_Values.Look(ref flagInsigniaFilePath, "flagInsigniaFilePath");
+        Scribe_Values.Look(ref originalFlagInsigniaFilePath, "originalFlagInsigniaFilePath");
+        Scribe_Defs.Look(ref currentlySelectedPreset, "currentlySelectedPreset");
+
+        if (Scribe.mode == LoadSaveMode.PostLoadInit)
+        {
+            ClearInsigniaGraphicCache();
+            Notify_ColorChanged();
+        }
+    }
+}

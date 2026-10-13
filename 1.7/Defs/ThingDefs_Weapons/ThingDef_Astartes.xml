@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Bolter -->
+  <ThingDef ParentName="BEWH_AstartesRangedBase">
+    <defName>BEWH_AstartesBolter</defName>
+    <label>bolter</label>
+    <description>The Mk Vb boltgun is the iconic standard-issue firearm of the Adeptus Astartes. Firing mass-reactive rounds with deadly efficiency, it combines reliability, adaptability, and stopping power, making it the definitive Space Marine weapon. \n\nAvalible Loadout: Standard, Inferno, Metal Storm</description>
+    <graphicData>
+      <texPath>Things/Weapons/BEWH_BoltCarbine</texPath>
+      <shaderType>BEWH_CutoutThreeColor</shaderType>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.1</drawSize>
+    </graphicData>
+    <soundInteract>Interact_ChargeRifle</soundInteract>
+    <statBases>
+      <WorkToMake>45000</WorkToMake>
+      <Mass>4.6</Mass>
+      <AccuracyTouch>0.6</AccuracyTouch>
+      <AccuracyShort>0.7</AccuracyShort>
+      <AccuracyMedium>0.6</AccuracyMedium>
+      <AccuracyLong>0.4</AccuracyLong>
+      <RangedWeapon_Cooldown>2.00</RangedWeapon_Cooldown>
+    </statBases>
+    <recipeMaker>
+      <skillRequirements>
+        <Crafting>11</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <costList>
+      <Steel>40</Steel>
+      <Plasteel>55</Plasteel>
+      <ComponentSpacer>3</ComponentSpacer>
+    </costList>
+    <verbs>
+      <li>
+        <verbClass>Core40k.Verb_ShootChangeableBullets</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>BEWH_BolterRound</defaultProjectile>
+        <warmupTime>1.0</warmupTime>
+        <range>35.9</range>
+        <ticksBetweenBurstShots>12</ticksBetweenBurstShots>
+        <burstShotCount>3</burstShotCount>
+        <soundCast>BEWH_SFX_BolterShot</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>12</muzzleFlashScale>
+      </li>
+    </verbs>
+    <comps>
+      <li Class="Core40k.CompProperties_AmmoChanger">
+        <compClass>Core40k.Comp_AmmoChanger</compClass>
+        <availableProjectiles>
+          <li>BEWH_BolterRound</li>
+          <li>BEWH_BolterRoundMetalStorm</li>
+          <li>BEWH_BolterRoundInferno</li>
+          <!--<li>BEWH_BolterRoundKraken</li>
+          <li>BEWH_BolterRoundTempest</li>-->
+        </availableProjectiles>
+      </li>
+      <li Class="Core40k.CompProperties_MultiColor">
+        <colorMaskAmount>3</colorMaskAmount>
+        <defaultPrimaryColor>(0.23,0.23,0.23)</defaultPrimaryColor>        <!-- If this is not set, it will default to use color of the stuff its made out of (if any)-->
+        <defaultSecondaryColor>(0.38,0.38,0.38)</defaultSecondaryColor>
+        <defaultTertiaryColor>(0.79,0.58,0.08)</defaultTertiaryColor>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="VEF.Things.ThingDefExtension">
+        <weaponCarryDrawOffsets>
+          <north>
+            <drawOffset>(0, 0, -0.2)</drawOffset>
+          </north>
+          <east>
+            <drawOffset>(-0.1, 0, -0.2)</drawOffset>
+          </east>
+          <south>
+            <angleOffset>-20</angleOffset>
+            <drawOffset>(0, 0, -0.2)</drawOffset>
+          </south>
+          <west>
+            <drawOffset>(0.1, 0, -0.2)</drawOffset>
+          </west>
+        </weaponCarryDrawOffsets>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <!-- Chainsword -->
+  <ThingDef ParentName="BEWH_AstartesMeleeBase">
+    <defName>BEWH_AstartesChainsword</defName>
+    <label>chainsword</label>
+    <description>A vicious and brutal weapon, the Chainsword is an iconic tool of the Adeptus Astartes. It tears through flesh with ease and is relatively inexpensive to produce. However, it lacks the armor-penetrating capability of more advanced power weapons.</description>
+    <soundInteract>BEWH_SFX_ChainswordInteract</soundInteract>
+    <meleeHitSound>BEWH_SFX_ChainswordHit</meleeHitSound>
+    <recipeMaker>
+      <skillRequirements>
+        <Crafting>10</Crafting>
+      </skillRequirements>
+      <workSkill>Crafting</workSkill>
+    </recipeMaker>
+    <statBases>
+      <WorkToMake>45000</WorkToMake>
+    </statBases>
+    <costList>
+      <Plasteel>10</Plasteel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <costStuffCount>65</costStuffCount>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <graphicData>
+      <texPath>Things/Weapons/BEWH_Chainsword</texPath>
+      <shaderType>BEWH_CutoutThreeColor</shaderType>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.15</drawSize>
+    </graphicData>
+    <tools>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>16</power>
+        <cooldownTime>1.5</cooldownTime>
+      </li>
+      <li>
+        <label>chain</label>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>28</power>
+        <cooldownTime>1.8</cooldownTime>
+        <armorPenetration>0.65</armorPenetration>
+      </li>
+    </tools>
+    <comps>
+      <li Class="Core40k.CompProperties_MultiColor">
+        <colorMaskAmount>3</colorMaskAmount>
+        <defaultPrimaryColor>(111,111,111)</defaultPrimaryColor>        <!-- If this is not set, it will default to use color of the stuff its made out of (if any)-->
+        <defaultSecondaryColor>(213,158,76)</defaultSecondaryColor>
+        <defaultTertiaryColor>(179,179,179)</defaultTertiaryColor>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="VEF.Things.ThingDefExtension">
+        <weaponCarryDrawOffsets>
+          <north>
+            <drawOffset>(0, 0, -0.15)</drawOffset>
+          </north>
+          <east>
+            <drawOffset>(0, 0, -0.15)</drawOffset>
+          </east>
+          <south>
+            <drawOffset>(0, 0, -0.15)</drawOffset>
+          </south>
+          <west>
+            <drawOffset>(0, 0, -0.15)</drawOffset>
+          </west>
+        </weaponCarryDrawOffsets>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <!-- Power Sword -->
+  <ThingDef ParentName="BEWH_AstartesMeleeBase">
+    <defName>BEWH_AstartesPowerSword</defName>
+    <label>power sword</label>
+    <description>A melee weapon with an energy field, the Power Sword is capable of slicing through armor with ease. Its energy blade hums with deadly force, allowing the wielder to strike with precision and overwhelming power.</description>
+    <soundInteract>BEWH_SFX_PowerswordInteract</soundInteract>
+    <meleeHitSound>BEWH_SFX_PowerswordHit</meleeHitSound>
+    <recipeMaker>
+      <skillRequirements>
+        <Crafting>12</Crafting>
+      </skillRequirements>
+      <workSkill>Crafting</workSkill>
+    </recipeMaker>
+    <statBases>
+      <WorkToMake>45000</WorkToMake>
+    </statBases>
+    <costList>
+      <Plasteel>30</Plasteel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+      <ComponentSpacer>4</ComponentSpacer>
+    </costList>
+    <costStuffCount>45</costStuffCount>
+    <weaponTags>
+      <li>BEWH_AstartesPowerSword</li>
+    </weaponTags>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <graphicData>
+      <texPath>Things/Weapons/BEWH_Powersword</texPath>
+      <shaderType>BEWH_CutoutThreeColor</shaderType>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.15</drawSize>
+    </graphicData>
+    <tools>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>16</power>
+        <cooldownTime>1.5</cooldownTime>
+      </li>
+      <li>
+        <label>edge</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>22</power>
+        <cooldownTime>2</cooldownTime>
+        <armorPenetration>1.2</armorPenetration>
+      </li>
+    </tools>
+    <comps>
+      <li Class="Core40k.CompProperties_MultiColor">
+        <colorMaskAmount>3</colorMaskAmount>
+        <defaultPrimaryColor>(213,158,76)</defaultPrimaryColor>
+        <defaultSecondaryColor>(98,98,98)</defaultSecondaryColor>
+        <defaultTertiaryColor>(116,219,232)</defaultTertiaryColor>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="VEF.Things.ThingDefExtension">
+        <weaponCarryDrawOffsets>
+          <north>
+            <drawOffset>(0, 0, -0.15)</drawOffset>
+          </north>
+          <east>
+            <drawOffset>(0, 0, -0.15)</drawOffset>
+          </east>
+          <south>
+            <drawOffset>(0, 0, -0.15)</drawOffset>
+          </south>
+          <west>
+            <drawOffset>(0, 0, -0.15)</drawOffset>
+          </west>
+        </weaponCarryDrawOffsets>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+</Defs>

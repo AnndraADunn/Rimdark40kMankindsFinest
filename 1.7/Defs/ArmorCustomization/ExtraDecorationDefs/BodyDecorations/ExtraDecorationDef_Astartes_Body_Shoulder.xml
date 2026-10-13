@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <!-- Custom shoulders -->
+    <Core40k.ExtraDecorationDef>
+        <defName>BEWH_DecoDWatchPauldron</defName>
+        <label>Deathwatch pauldron</label>
+        <description>...</description>
+        <iconPath>UI/Decoration/Icons/Astartes/Armor/BEWH_Deco_DeathWatch_Shoulder_icon</iconPath>
+        <drawnTextureIconPath>Things/Decorations/Armor/Common/Pauldrons/BEWH_Deco_DeathWatch_Shoulder</drawnTextureIconPath>
+        <sortOrder>0</sortOrder>
+        <defaultShowRotation>
+            <li>North</li>
+            <li>South</li>
+            <li>West</li>
+        </defaultShowRotation>
+        <appliesTo>
+            <li>BEWH_MkVIIPowerArmor</li>
+            <li>BEWH_MkXPowerArmor</li>
+            <li>BEWH_MkXPowerArmorChaplain</li>
+        </appliesTo>
+        <drawData>
+            <scaleOffsetByBodySize>true</scaleOffsetByBodySize>
+            <dataNorth>
+                <layer>98</layer>
+            </dataNorth>
+            <dataSouth>
+                <layer>69</layer>
+            </dataSouth>
+            <dataEast>
+                <layer>78</layer>
+                <flip>true</flip>
+            </dataEast>
+            <dataWest>
+                <layer>78</layer>
+            </dataWest>
+        </drawData>
+        <flipable>true</flipable>
+        <decorationType>BEWH_DecoCategory_Shoulder</decorationType>
+        <pawnStatOffsets>
+            <TerrorSource MayRequire="Ludeon.RimWorld.Ideology">6</TerrorSource>
+        </pawnStatOffsets>
+        <pawnStatFactors>
+            <GlobalLearningFactor>1.05</GlobalLearningFactor>
+            <BEWH_RankLearningFactor>0.90</BEWH_RankLearningFactor>
+        </pawnStatFactors>
+        <cost>
+            <Plasteel>10</Plasteel>
+            <ComponentSpacer>1</ComponentSpacer>
+        </cost>
+        <workAmount>900</workAmount>
+    </Core40k.ExtraDecorationDef>
+
+    <Core40k.ExtraDecorationDef>
+        <defName>BEWH_DecoColorPauldron_2</defName>
+        <label>Colorable shoulder 2</label>
+        <description>...</description>
+        <iconPath>UI/Decoration/Icons/Astartes/Armor/BEWH_Deco_Color_Shoulder1_icon</iconPath>
+        <drawnTextureIconPath>Things/Decorations/Armor/Common/Pauldrons/BEWH_Deco_Color_Shoulder1</drawnTextureIconPath>
+        <sortOrder>0.2</sortOrder>
+        <defaultShowRotation>
+            <li>North</li>
+            <li>South</li>
+            <li>West</li>
+            <!-- <li>East</li> -->
+        </defaultShowRotation>
+        <appliesTo>
+            <li>BEWH_MkVIIPowerArmor</li>
+            <li>BEWH_MkXPowerArmor</li>
+            <li>BEWH_MkXPowerArmorChaplain</li>
+        </appliesTo>
+        <drawData>
+            <scaleOffsetByBodySize>true</scaleOffsetByBodySize>
+            <dataNorth>
+                <layer>89</layer>
+            </dataNorth>
+            <dataSouth>
+                <layer>61</layer>
+            </dataSouth>
+            <dataEast>
+                <layer>75</layer>
+            </dataEast>
+            <dataWest>
+                <layer>75</layer>
+            </dataWest>
+        </drawData>
+        <colourable>true</colourable>
+        <shaderType>Cutout</shaderType>
+        <availablePresets />
+        <decorationType>BEWH_DecoCategory_Shoulder</decorationType>
+        <!-- Custom chapter colors here -->
+    </Core40k.ExtraDecorationDef>
+
+    <Core40k.ExtraDecorationDef>
+        <defName>BEWH_DecoColorPauldron_1</defName>
+        <label>Colorable shoulder 1</label>
+        <description>...</description>
+        <iconPath>UI/Decoration/Icons/Astartes/Armor/BEWH_Deco_Color_Shoulder2_icon</iconPath>
+        <drawnTextureIconPath>Things/Decorations/Armor/Common/Pauldrons/BEWH_Deco_Color_Shoulder2</drawnTextureIconPath>
+        <sortOrder>0.1</sortOrder>
+        <defaultShowRotation>
+            <li>North</li>
+            <li>South</li>
+            <li>East</li>
+        </defaultShowRotation>
+        <appliesTo>
+            <li>BEWH_MkVIIPowerArmor</li>
+            <li>BEWH_MkXPowerArmor</li>
+            <li>BEWH_MkXPowerArmorChaplain</li>
+        </appliesTo>
+        <drawData>
+            <scaleOffsetByBodySize>true</scaleOffsetByBodySize>
+            <dataNorth>
+                <layer>89</layer>
+            </dataNorth>
+            <dataSouth>
+                <layer>61</layer>
+            </dataSouth>
+            <dataEast>
+                <layer>75</layer>
+            </dataEast>
+            <dataWest>
+                <layer>75</layer>
+            </dataWest>
+        </drawData>
+        <colourable>true</colourable>
+        <shaderType>Cutout</shaderType>
+        <availablePresets />
+        <decorationType>BEWH_DecoCategory_Shoulder</decorationType>
+    </Core40k.ExtraDecorationDef>
+
+</Defs>

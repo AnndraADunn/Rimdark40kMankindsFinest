@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Gold 3 channels-->
+    <Core40k.DecorationColourPresetDef>
+        <defName>BEWH_DecoPaletteGold</defName>
+        <label>Gold</label>
+        <colour>(240,176,29)</colour>
+        <colourTwo>(240,176,29)</colourTwo>
+        <colourThree>(240,176,29)</colourThree>
+    </Core40k.DecorationColourPresetDef>
+
+    <!-- Bronze 3 channels-->
+    <Core40k.DecorationColourPresetDef>
+        <defName>BEWH_DecoPaletteBronze</defName>
+        <label>Bronze</label>
+        <colour>(230,163,92)</colour>
+        <colourTwo>(230,163,92)</colourTwo>
+        <colourThree>(230,163,92)</colourThree>
+    </Core40k.DecorationColourPresetDef>
+
+    <!-- Silver 3 channels-->
+    <Core40k.DecorationColourPresetDef>
+        <defName>BEWH_DecoPaletteSilver</defName>
+        <label>Silver</label>
+        <colour>(173, 179, 179)</colour>
+        <colourTwo>(173, 179, 179)</colourTwo>
+        <colourThree>(173, 179, 179)</colourThree>
+    </Core40k.DecorationColourPresetDef>
+
+    <!-- Green 3 channels-->
+    <Core40k.DecorationColourPresetDef>
+        <defName>BEWH_DecoPaletteGreen</defName>
+        <label>Green</label>
+        <colour>(75,97,32)</colour>
+    </Core40k.DecorationColourPresetDef>
+
+    <!-- Black -->
+    <Core40k.DecorationColourPresetDef>
+        <defName>BEWH_DecoPaletteIFBlack</defName>
+        <label>Black</label>
+        <colour>(50,51,50)</colour>
+        <colourTwo>(240,176,29)</colourTwo> <!-- +gold -->
+    </Core40k.DecorationColourPresetDef>
+
+    <!-- Helmet stripe Red -->
+    <Core40k.DecorationColourPresetDef>
+        <defName>BEWH_DecoPaletteStripeRed</defName>
+        <label>UM Red</label>
+        <colour>(140,3,3)</colour>
+    </Core40k.DecorationColourPresetDef>
+
+    <!-- Leather Brown-->
+    <Core40k.DecorationColourPresetDef>
+        <defName>BEWH_DecoPaletteLeatherBrown</defName>
+        <label>Brown</label>
+        <colour>(173, 130, 87)</colour>
+    </Core40k.DecorationColourPresetDef>
+
+    <!-- Leather Grey -->
+    <Core40k.DecorationColourPresetDef>
+        <defName>BEWH_DecoPaletteLeatherGrey</defName>
+        <label>Grey</label>
+        <colour>(114, 114, 114)</colour>
+    </Core40k.DecorationColourPresetDef>
+
+    <!-- Fabric Beige -->
+    <Core40k.DecorationColourPresetDef>
+        <defName>BEWH_DecoPaletteFabricBeige</defName>
+        <label>Beige</label>
+        <colour>(160, 158, 137)</colour>
+        <colourTwo>(240,176,29)</colourTwo> <!-- +gold -->
+    </Core40k.DecorationColourPresetDef>
+    
+    <!-- Fabric Red -->
+    <Core40k.DecorationColourPresetDef>
+        <defName>BEWH_DecoPaletteFabricRed</defName>
+        <label>Maroon</label>
+        <colour>(104, 24, 33)</colour>
+        <colourTwo>(240,176,29)</colourTwo> <!-- +gold -->
+    </Core40k.DecorationColourPresetDef>
+
+    <!-- Apothecary Red -->
+    <Core40k.DecorationColourPresetDef>
+        <defName>BEWH_DecoPaletteApothecaryRed</defName>
+        <label>Light Red</label>
+        <colour>(162, 54, 39)</colour>
+        <colourTwo>(240,176,29)</colourTwo> <!-- +gold -->
+    </Core40k.DecorationColourPresetDef>
+
+    <!-- Living Saint -->
+    <Core40k.DecorationColourPresetDef>
+        <defName>BEWH_DecoPaletteSaintLight</defName>
+        <label>Saint's Light</label>
+        <colour>(245, 245, 210)</colour>
+    </Core40k.DecorationColourPresetDef>
+
+    <Core40k.DecorationColourPresetDef>
+        <defName>BEWH_DecoPaletteSaintRose</defName>
+        <label>Rose</label>
+        <colour>(126, 51, 60)</colour>
+    </Core40k.DecorationColourPresetDef>
+
+    <Core40k.DecorationColourPresetDef>
+        <defName>BEWH_DecoPaletteSaintVengeance</defName>
+        <label>Vengeance</label>
+        <colour>(140, 35, 47)</colour>
+    </Core40k.DecorationColourPresetDef>
+
+    <!-- Lense Glow -->
+    <Core40k.DecorationColourPresetDef>
+        <defName>BEWH_DecoPaletteLenseGlowRed</defName>
+        <label>Red Glow</label>
+        <colour>(189, 28, 28)</colour>
+    </Core40k.DecorationColourPresetDef>
+
+    <Core40k.DecorationColourPresetDef>
+        <defName>BEWH_DecoPaletteLenseGlowGreen</defName>
+        <label>Green Glow</label>
+        <colour>(28, 189, 42)</colour>
+    </Core40k.DecorationColourPresetDef>
+
+    <Core40k.DecorationColourPresetDef>
+        <defName>BEWH_DecoPaletteLenseGlowBlue</defName>
+        <label>Blue Glow</label>
+        <colour>(28, 173, 189)</colour>
+    </Core40k.DecorationColourPresetDef>
+
+    <Core40k.DecorationColourPresetDef>
+        <defName>BEWH_DecoPaletteLenseGlowYellow</defName>
+        <label>Yellow Glow</label>
+        <colour>(189, 148, 28)</colour>
+    </Core40k.DecorationColourPresetDef>
+
+    <Core40k.DecorationColourPresetDef>
+        <defName>BEWH_DecoPaletteLenseGlowOrange</defName>
+        <label>Orange Glow</label>
+        <colour>(233, 101, 11)</colour>
+    </Core40k.DecorationColourPresetDef>
+
+    <Core40k.DecorationColourPresetDef>
+        <defName>BEWH_DecoPaletteLenseGlowWhite</defName>
+        <label>White Glow</label>
+        <colour>(191, 191, 191)</colour>
+    </Core40k.DecorationColourPresetDef>
+
+    <!-- Thunder Warriors -->
+    <Core40k.DecorationColourPresetDef>
+        <defName>BEWH_DecoPaletteGlassGreen</defName>
+        <label>Green</label>
+        <colour>(129, 205, 63)</colour>
+    </Core40k.DecorationColourPresetDef>
+
+    <Core40k.DecorationColourPresetDef>
+        <defName>BEWH_DecoPaletteGlassBlue</defName>
+        <label>Blue</label>
+        <colour>(13, 178, 255)</colour>
+    </Core40k.DecorationColourPresetDef>
+
+    <Core40k.DecorationColourPresetDef>
+        <defName>BEWH_DecoPaletteGlassRed</defName>
+        <label>Red</label>
+        <colour>(178, 0, 0)</colour>
+    </Core40k.DecorationColourPresetDef>
+
+    <Core40k.DecorationColourPresetDef>
+        <defName>BEWH_DecoPaletteFurBrown</defName>
+        <label>Brown</label>
+        <colour>(81, 64, 50)</colour>
+    </Core40k.DecorationColourPresetDef>
+</Defs>

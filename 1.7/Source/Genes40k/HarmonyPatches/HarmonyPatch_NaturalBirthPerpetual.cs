@@ -1,0 +1,83 @@
+﻿using Core40k;
+using HarmonyLib;
+using RimWorld;
+using System;
+using System.Linq;
+using Verse;
+
+namespace Genes40k;
+
+[StaticConstructorOnStartup]
+public static class NaturalBirthPerpetual
+{
+    static NaturalBirthPerpetual()
+    {
+        Genes40kMod.harmony.Patch(AccessTools.Method(typeof(PregnancyUtility), "ApplyBirthOutcome"), null, new HarmonyMethod(AccessTools.Method(typeof(NaturalBirthPerpetual), "Postfix")));
+    }
+
+    public static void Postfix(ref Thing __result, Pawn geneticMother)
+    {
+        if (__result is not Pawn pawn)
+        {
+            return;
+        }
+
+        var modSettings = Genes40kUtils.ModSettings;
+        if (!modSettings.perpetualBirth)
+        {
+            return;
+        }
+        
+        if (pawn.Faction == null || pawn.Faction != Faction.OfPlayer)
+        {
+            return;
+        }
+        
+        if (pawn.genes == null || pawn.genes.GenesListForReading.NullOrEmpty() || Enumerable.Any(pawn.genes.GenesListForReading, gene => gene.def.HasModExtension<DefModExtension_PerpetualGene>()))
+        {
+            return;
+        }
+        
+        foreach (var gene in pawn.genes.GenesListForReading)
+        {
+            if (gene.def.exclusionTags.NullOrEmpty())
+            {
+                continue;
+            }
+            if (gene.def.exclusionTags.Contains("Perpetual"))
+            {
+                return;
+            }
+        }
+        
+        var unnaturalChance = modSettings.perpetualBirthChance;
+        if (!Rand.Chance(unnaturalChance / 100f))
+        {
+            return;
+        }
+        
+        var weightedSelection = new WeightedSelection<GeneDef>();
+        
+        foreach (var perpetualGene in Genes40kUtils.PerpetualGenes)
+        {
+            weightedSelection.AddEntry(perpetualGene, perpetualGene.GetModExtension<DefModExtension_PerpetualGene>().naturalBornSelectionWeight);
+        }
+            
+        var chosenGene = weightedSelection.GetRandomUnique();
+        var typeBorn = "BEWH.MankindsFinest.CommonKeywords.Perpetual".Translate();
+            
+        var geneticMomName = geneticMother?.Named("PAWN") ?? "BEWH.MankindsFinest.CommonKeywords.Unknown".Translate();
+        
+        var letter = new StandardLetter
+        {
+            lookTargets = pawn,
+            def = Genes40kDefOf.BEWH_NaturalBornX,
+            Text = "BEWH.MankindsFinest.Event.NaturalBornXMessage".Translate(geneticMomName, pawn.Named("PAWN"), typeBorn),
+            Label = "BEWH.MankindsFinest.Event.NaturalBornXLetter".Translate(typeBorn),
+
+        };
+
+        Find.LetterStack.ReceiveLetter(letter);
+        pawn.genes.AddGene(chosenGene, true);
+    }
+}

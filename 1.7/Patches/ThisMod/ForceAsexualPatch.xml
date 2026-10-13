@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+    <!-- ===== Thunder Warrior ===== -->
+    <Operation Class="VEF.PatchOperationToggableSequence">
+        <enabled>False</enabled>
+        <mods>
+            <li>RimDark 40k - Mankinds Finest</li>
+        </mods>
+        <label>Force Thunder Warriors to be asexual:</label>
+        <operations>
+            <li Class="PatchOperationAdd">
+                <xpath>Defs/GeneDef[defName = "BEWH_ProtoOssmodula"]</xpath>
+                <value>
+                    <forcedTraits>
+                        <li>
+                            <def>Asexual</def>
+                        </li>
+                    </forcedTraits>
+                </value>
+            </li>
+        </operations>
+    </Operation>
+
+    <!-- ===== Space Marine ===== -->
+    <Operation Class="VEF.PatchOperationToggableSequence">
+        <enabled>False</enabled>
+        <mods>
+            <li>RimDark 40k - Mankinds Finest</li>
+        </mods>
+        <label>Force Space Marines to be asexual:</label>
+        <operations>
+            <li Class="PatchOperationAdd">
+                <xpath>Defs/GeneDef[defName = "BEWH_Ossmodula"]</xpath>
+                <value>
+                    <forcedTraits>
+                        <li>
+                            <def>Asexual</def>
+                        </li>
+                    </forcedTraits>
+                </value>
+            </li>
+        </operations>
+    </Operation>
+
+    <!-- ===== Custodes ===== -->
+    <Operation Class="VEF.PatchOperationToggableSequence">
+        <enabled>False</enabled>
+        <mods>
+            <li>RimDark 40k - Mankinds Finest</li>
+        </mods>
+        <label>Force Custodes to be asexual:</label>
+        <operations>
+            <li Class="PatchOperationAdd">
+                <xpath>Defs/GeneDef[defName = "BEWH_AtlasMorphogen"]</xpath>
+                <value>
+                    <forcedTraits>
+                        <li>
+                            <def>Asexual</def>
+                        </li>
+                    </forcedTraits>
+                </value>
+            </li>
+        </operations>
+    </Operation>
+
+</Patch>

@@ -27,4 +27,20 @@
 		<li IfModActive="ferny.replacelib">1.6/Mods/ReplaceLib</li>
 	</v1.6>
 
+	<v1.7>
+		<li>/</li>
+		<li>1.7</li>
+		<li IfModActive="Ludeon.RimWorld.Royalty">1.7/Mods/Royalty</li>
+		<li IfModActive="Ludeon.RimWorld.Ideology">1.7/Mods/Ideology</li>
+		<li IfModActive="Ludeon.RimWorld.Anomaly">1.7/Mods/Anomaly</li>
+		<li IfModActive="dubwise.dubsbadhygiene">1.7/Mods/DubsHygiene</li>
+		<li IfModActive="dubwise.rimatomics">1.7/Mods/DubsRimatomicsRadiation</li>
+		<li IfModActive="katavrik.crashlanding">1.7/Mods/CrashLanding</li>
+		<li IfModActive="jaxe.rimhud">1.7/Mods/RimHUD</li>
+		<li IfModActive="kentington.saveourship2">1.7/Mods/SOS2</li>
+		<li IfModActive="sicefe.senseofdepth">1.7/Mods/SenseOfDepthForTallBuildings</li>
+		<li IfModActive="scorpio.resourcedictionary">1.7/Mods/ResourceDictionary</li>
+		<li IfModActive="ferny.replacelib">1.7/Mods/ReplaceLib</li>
+	</v1.7>
+
 </loadFolders>

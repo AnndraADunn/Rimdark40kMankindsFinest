@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <!-- MkVII -->
+    <Core40k.MaskDef ParentName="BEWH_MaskDef_Thing">
+        <defName>BEWH_MkVIIHelmetHalvedMask</defName>
+        <label>Halved</label>
+        <description>Halved helmet paint pattern.</description>
+        <maskPath>Things/Headgear/Imperium/PowerArmor/MkVIIPowerArmorHelmet/Masks/Halved/BEWH_MkVII_HalvedHelmet</maskPath>
+        <appliesTo>
+            <li>BEWH_MkVIIPowerArmorHelmet</li>
+        </appliesTo>
+        <shaderType>BEWH_CutoutThreeColor</shaderType>
+        <colorAmount>3</colorAmount>
+        <sortOrder>1</sortOrder>
+    </Core40k.MaskDef>
+
+    <Core40k.MaskDef ParentName="BEWH_MaskDef_Thing">
+        <defName>BEWH_MkVIIHelmetFaceplateMask</defName>
+        <label>Faceplate</label>
+        <description>Colorable faceplate paint pattern.</description>
+        <maskPath>Things/Headgear/Imperium/PowerArmor/MkVIIPowerArmorHelmet/Masks/Faceplate/BEWH_MkVII_Faceplate</maskPath>
+        <appliesTo>
+            <li>BEWH_MkVIIPowerArmorHelmet</li>
+        </appliesTo>
+        <shaderType>BEWH_CutoutThreeColor</shaderType>
+        <colorAmount>3</colorAmount>
+        <sortOrder>2</sortOrder>
+    </Core40k.MaskDef>
+
+    <Core40k.MaskDef ParentName="BEWH_MaskDef_Thing">
+        <defName>BEWH_MkVIIHelmetFaceplateStripeMask</defName>
+        <label>Faceplate with Stripe</label>
+        <description>Colorable faceplate with a vertical stripe paint pattern.</description>
+        <maskPath>Things/Headgear/Imperium/PowerArmor/MkVIIPowerArmorHelmet/Masks/FaceplateStripe/BEWH_MkVII_FaceplateStripe</maskPath>
+        <appliesTo>
+            <li>BEWH_MkVIIPowerArmorHelmet</li>
+        </appliesTo>
+        <shaderType>BEWH_CutoutThreeColor</shaderType>
+        <colorAmount>3</colorAmount>
+        <sortOrder>3</sortOrder>
+    </Core40k.MaskDef>
+
+    <!-- MkX -->
+    <Core40k.MaskDef ParentName="BEWH_MaskDef_Thing">
+        <defName>BEWH_MkXHelmetHalvedMask</defName>
+        <label>Halved</label>
+        <description>Halved helmet paint pattern.</description>
+        <maskPath>Things/Headgear/Imperium/PowerArmor/MkXPowerArmorHelmet/Masks/Halved/BEWH_MkX_HalvedHelmet</maskPath>
+        <appliesTo>
+            <li>BEWH_MkXPowerArmorHelmet</li>
+        </appliesTo>
+        <shaderType>BEWH_CutoutThreeColor</shaderType>
+        <colorAmount>3</colorAmount>
+        <sortOrder>1</sortOrder>
+    </Core40k.MaskDef>
+
+    <Core40k.MaskDef ParentName="BEWH_MaskDef_Thing">
+        <defName>BEWH_MkXHelmetFaceplateMask</defName>
+        <label>Faceplate</label>
+        <description>Colorable faceplate paint pattern.</description>
+        <maskPath>Things/Headgear/Imperium/PowerArmor/MkXPowerArmorHelmet/Masks/Faceplate/BEWH_MkX_Faceplate</maskPath>
+        <appliesTo>
+            <li>BEWH_MkXPowerArmorHelmet</li>
+        </appliesTo>
+        <shaderType>BEWH_CutoutThreeColor</shaderType>
+        <colorAmount>3</colorAmount>
+        <sortOrder>2</sortOrder>
+    </Core40k.MaskDef>
+
+    <Core40k.MaskDef ParentName="BEWH_MaskDef_Thing">
+        <defName>BEWH_MkXHelmetFaceplateStripeMask</defName>
+        <label>Faceplate with Stripe</label>
+        <description>Colorable faceplate with a vertical stripe paint pattern.</description>
+        <maskPath>Things/Headgear/Imperium/PowerArmor/MkXPowerArmorHelmet/Masks/FaceplateStripe/BEWH_MkX_FaceplateStripe</maskPath>
+        <appliesTo>
+            <li>BEWH_MkXPowerArmorHelmet</li>
+        </appliesTo>
+        <shaderType>BEWH_CutoutThreeColor</shaderType>
+        <colorAmount>3</colorAmount>
+        <sortOrder>3</sortOrder>
+    </Core40k.MaskDef>
+
+</Defs>

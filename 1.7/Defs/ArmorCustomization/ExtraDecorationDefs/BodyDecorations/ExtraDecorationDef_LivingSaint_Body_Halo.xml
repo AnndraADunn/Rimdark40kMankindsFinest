@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <!-- Halos -->
+    <Core40k.ExtraDecorationDef>
+        <defName>BEWH_LivingSaintHalo_1</defName>
+        <label>Holy Radiance</label>
+        <description>...</description>
+        <iconPath>UI/Decoration/Icons/LivingSaint/Armor/BEWH_Deco_HolyRadiance_icon</iconPath>
+        <drawnTextureIconPath>Things/Decorations/Armor/LivingSaint/BEWH_Deco_HolyRadiance</drawnTextureIconPath>
+        <drawSize>(0.75, 0.75)</drawSize>
+        <sortOrder>4</sortOrder>
+        <defaultShowRotation>
+            <li>South</li>
+            <li>West</li>
+            <li>East</li>
+            <li>North</li>
+        </defaultShowRotation>
+        <appliesTo>
+            <li>BEWH_LivingSaintArmor</li>
+        </appliesTo>
+        <drawData>
+            <dataNorth>
+                <layer>98</layer>
+                <offset>(0, 0, 0.1)</offset>
+            </dataNorth>
+            <dataSouth>
+                <layer>10</layer>
+                <offset>(0, -1, 0.11)</offset>
+            </dataSouth>
+            <dataEast>
+                <layer>0</layer>
+                <offset>(-0.31, 0, 0.11)</offset>
+            </dataEast>
+            <dataWest>
+                <layer>0</layer>
+                <offset>(0.31, 0, 0.11)</offset>
+            </dataWest>
+        </drawData>
+        <shaderType>TransparentPostLight</shaderType>
+        <flipable>false</flipable>
+        <drawInHeadSpace>true</drawInHeadSpace>
+        <colourable>true</colourable>
+        <defaultColour>(245, 245, 210)</defaultColour>
+        <availablePresets>
+            <li>BEWH_DecoPaletteGold</li>
+            <li>BEWH_DecoPaletteSaintLight</li>
+            <li>BEWH_DecoPaletteSaintVengeance</li>
+        </availablePresets>
+        <decorationType>BEWH_DecoCategory_Halo</decorationType>
+        <statOffsets>
+            <EnergyShieldEnergyMax>1.2</EnergyShieldEnergyMax>
+            <EnergyShieldRechargeRate>0.18</EnergyShieldRechargeRate>
+        </statOffsets>
+        <cost>
+            <Plasteel>30</Plasteel>
+            <ComponentSpacer>2</ComponentSpacer>
+            <Uranium>10</Uranium>
+        </cost>
+        <workAmount>1500</workAmount>
+    </Core40k.ExtraDecorationDef>
+
+    <Core40k.ExtraDecorationDef>
+        <defName>BEWH_LivingSaintHalo_2</defName>
+        <label>Iron Halo</label>
+        <description>...</description>
+        <iconPath>UI/Decoration/Icons/LivingSaint/Armor/BEWH_Deco_LSaintHalo_icon</iconPath>
+        <drawnTextureIconPath>Things/Decorations/Armor/LivingSaint/BEWH_Deco_LSaintHalo</drawnTextureIconPath>
+        <sortOrder>2</sortOrder>
+        <defaultShowRotation>
+            <li>South</li>
+            <li>West</li>
+            <li>East</li>
+            <li>North</li>
+        </defaultShowRotation>
+        <appliesTo>
+            <li>BEWH_LivingSaintArmor</li>
+        </appliesTo>
+        <drawData>
+            <scaleOffsetByBodySize>true</scaleOffsetByBodySize>
+            <dataNorth>
+                <layer>100</layer>
+                <!-- +1 z offset to override a layer 100 cap -->
+                <offset>(0, 1, 0)</offset>
+            </dataNorth>
+            <dataSouth>
+                <layer>0</layer>
+            </dataSouth>
+            <dataEast>
+                <layer>0</layer>
+            </dataEast>
+            <dataWest>
+                <layer>0</layer>
+            </dataWest>
+        </drawData>
+        <flipable>false</flipable>
+        <colourable>true</colourable>
+        <defaultColour>(173, 179, 179)</defaultColour>
+        <hasParentColourPaletteOption>true</hasParentColourPaletteOption>
+        <availablePresets>
+            <li>BEWH_DecoPaletteGold</li>
+            <li>BEWH_DecoPaletteSilver</li>
+        </availablePresets>
+        <drawInHeadSpace>true</drawInHeadSpace>
+        <decorationType>BEWH_DecoCategory_Halo</decorationType>
+        <incompatibleDecorations>
+            <li>BEWH_LivingSaintHalo_1</li>
+        </incompatibleDecorations>
+        <statOffsets>
+            <EnergyShieldEnergyMax>1.2</EnergyShieldEnergyMax>
+            <EnergyShieldRechargeRate>0.18</EnergyShieldRechargeRate>
+        </statOffsets>
+        <cost>
+            <Plasteel>30</Plasteel>
+            <ComponentSpacer>2</ComponentSpacer>
+            <Uranium>10</Uranium>
+        </cost>
+        <workAmount>1500</workAmount>
+    </Core40k.ExtraDecorationDef>
+</Defs>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Make legin material from primarch -->
+    <RecipeDef ParentName="SurgeryFlesh">
+        <defName>BEWH_LeginoMaterialFromPrimarch</defName>
+        <label>create Legion material using the Primarch's genetic code</label>
+        <description>Create Legion material using the Primarch's genetic code.</description>
+        <jobString>Creating Legion material from Primarch.</jobString>
+        <successfullyRemovedHediffMessage>{0} has successfully created Legion material from {1}'s genetic code.</successfullyRemovedHediffMessage>
+        <workAmount>5000</workAmount>
+        <researchPrerequisite>BEWH_LegionAstartes</researchPrerequisite>
+        <workerClass>Genes40k.WorkerClass_LegionMaterialCreation</workerClass>
+        <hideBodyPartNames>true</hideBodyPartNames>
+        <targetsBodyPart>false</targetsBodyPart>
+        <surgerySuccessChanceFactor>2</surgerySuccessChanceFactor>
+        <recipeUsers>
+            <li>Human</li>
+            <li MayRequire="Ludeon.RimWorld.Anomaly">CreepJoiner</li>
+        </recipeUsers>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>MedicineUltratech</li>
+                    </thingDefs>
+                </filter>
+                <count>5</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>ComponentIndustrial</li>
+                    </thingDefs>
+                </filter>
+                <count>10</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>ComponentSpacer</li>
+                    </thingDefs>
+                </filter>
+                <count>3</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>MedicineUltratech</li>
+                <li>ComponentIndustrial</li>
+                <li>ComponentSpacer</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <skillRequirements>
+            <Medicine>14</Medicine>
+            <Crafting>8</Crafting>
+            <Intellectual>12</Intellectual>
+        </skillRequirements>
+    </RecipeDef>
+
+    <!-- Legion Material from other legion Material -->
+    <RecipeDef Name="BEWH_LegionMaterialCreationFromOther" Abstract="True">
+        <workAmount>15000</workAmount>
+        <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Machining</soundWorking>
+        <unfinishedThingDef>BEWH_UnfinishedChapterMaterial</unfinishedThingDef>
+        <recipeUsers>
+            <li>BEWH_GeneManipulationTable</li>
+        </recipeUsers>
+        <researchPrerequisites>
+            <li>BEWH_LegionAstartes</li>
+        </researchPrerequisites>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>MedicineUltratech</li>
+                <li>ComponentSpacer</li>
+                <li>Neutroamine</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>MedicineUltratech</li>
+                    </thingDefs>
+                </filter>
+                <count>2</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>ComponentSpacer</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>Neutroamine</li>
+                    </thingDefs>
+                </filter>
+                <count>100</count>
+            </li>
+        </ingredients>
+        <workSkill>Crafting</workSkill>
+        <skillRequirements>
+            <Medicine>11</Medicine>
+            <Crafting>9</Crafting>
+            <Intellectual>12</Intellectual>
+        </skillRequirements>
+    </RecipeDef>
+
+</Defs>

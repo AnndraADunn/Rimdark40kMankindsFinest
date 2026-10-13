@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <!-- ===== TOGGLABLE PATCH ===== -->
+
+    <Operation Class="VEF.PatchOperationToggableSequence">
+        <enabled>False</enabled>
+        <mods>
+            <li>RimDark 40k - Mankinds Finest</li>
+        </mods>
+        <label>Remove Gene Size Increase:</label>
+        <operations>
+
+            <li Class="PatchOperationRemove">
+                <xpath>Defs/GeneDef[defName = "BEWH_Ossmodula"]/statOffsets/VEF_BodySize_Offset</xpath>
+            </li>
+
+            <li Class="PatchOperationRemove">
+                <xpath>Defs/GeneDef[defName = "BEWH_Magnificat"]/statOffsets/VEF_BodySize_Offset</xpath>
+            </li>
+
+            <li Class="PatchOperationRemove">
+                <xpath>Defs/GeneDef[defName = "BEWH_AtlasMorphogen"]/statOffsets/VEF_BodySize_Offset</xpath>
+            </li>
+
+            <li Class="PatchOperationRemove">
+                <xpath>Defs/GeneDef[defName = "BEWH_ImmortisGland"]/statOffsets/VEF_BodySize_Offset</xpath>
+            </li>
+
+        </operations>
+    </Operation>
+</Patch>

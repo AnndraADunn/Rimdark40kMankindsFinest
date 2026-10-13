@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <Genes40k.ChapterColourDef Name="BEWH_ChapterColourPresets" Abstract="True">
+        <appliesTo>
+            <li>BEWH_MkVIIPowerArmor</li>
+            <li>BEWH_MkVIIPowerArmorHelmet</li>
+            <li>BEWH_MkXPowerArmor</li>
+            <li>BEWH_MkXPowerArmorHelmet</li>
+            <li>BEWH_MkXPowerArmorChaplain</li>
+            <li>BEWH_MkXPowerArmorChaplainHelmet</li>
+        </appliesTo>
+        <appliesToKind>Armor</appliesToKind>
+        <colorAmount>2</colorAmount>
+    </Genes40k.ChapterColourDef>
+
+    <Genes40k.ChapterColourDef ParentName="BEWH_ChapterColourPresets">
+        <defName>BEWH_ChapterColourI</defName>
+        <label>Dark Angels</label>
+        <colorAmount>3</colorAmount>
+        <primaryColour>(38,65,54)</primaryColour>
+        <secondaryColour>(71,71,71)</secondaryColour>
+        <tertiaryColour>(216,192,150)</tertiaryColour>
+        <relatedChapterGene>BEWH_ChapterIDarkAngels</relatedChapterGene>
+        <relatedChapterIcon>BEWH_ChapterIconI</relatedChapterIcon>
+    </Genes40k.ChapterColourDef>
+
+    <Genes40k.ChapterColourDef ParentName="BEWH_ChapterColourPresets">
+        <defName>BEWH_ChapterColourIII</defName>
+        <label>Emperor's Children</label>
+        <primaryColour>(119,77,118)</primaryColour>
+        <secondaryColour>(203,150,43)</secondaryColour>
+        <relatedChapterGene>BEWH_ChapterIIIEmperorsChildren</relatedChapterGene>
+        <relatedChapterIcon>BEWH_ChapterIconIII</relatedChapterIcon>
+        <loyalist>false</loyalist>
+    </Genes40k.ChapterColourDef>
+
+    <Genes40k.ChapterColourDef ParentName="BEWH_ChapterColourPresets">
+        <defName>BEWH_ChapterColourIV</defName>
+        <label>Iron Warriors</label>
+        <colorAmount>3</colorAmount>
+        <primaryColour>(110,110,110)</primaryColour>
+        <secondaryColour>(170,152,77)</secondaryColour>
+        <tertiaryColour>(170,170,170)</tertiaryColour>
+        <relatedChapterGene>BEWH_ChapterIVIronWarriors</relatedChapterGene>
+        <relatedChapterIcon>BEWH_ChapterIconIV</relatedChapterIcon>
+        <loyalist>false</loyalist>
+    </Genes40k.ChapterColourDef>
+
+    <Genes40k.ChapterColourDef ParentName="BEWH_ChapterColourPresets">
+        <defName>BEWH_ChapterColourV</defName>
+        <label>White Scars</label>
+        <primaryColour>(186,185,179)</primaryColour>
+        <secondaryColour>(137,34,34)</secondaryColour>
+        <relatedChapterGene>BEWH_ChapterVWhiteScars</relatedChapterGene>
+        <relatedChapterIcon>BEWH_ChapterIconV</relatedChapterIcon>
+    </Genes40k.ChapterColourDef>
+
+    <Genes40k.ChapterColourDef ParentName="BEWH_ChapterColourPresets">
+        <defName>BEWH_ChapterColourVI</defName>
+        <label>Space Wolves</label>
+        <primaryColour>(77,94,116)</primaryColour>
+        <secondaryColour>(213,170,68)</secondaryColour>
+        <relatedChapterGene>BEWH_ChapterVISpaceWolves</relatedChapterGene>
+        <relatedChapterIcon>BEWH_ChapterIconVI</relatedChapterIcon>
+    </Genes40k.ChapterColourDef>
+
+    <Genes40k.ChapterColourDef ParentName="BEWH_ChapterColourPresets">
+        <defName>BEWH_ChapterColourVII</defName>
+        <label>Imperial Fists</label>
+        <primaryColour>(202,149,21)</primaryColour>
+        <secondaryColour>(50,51,50)</secondaryColour>
+        <relatedChapterGene>BEWH_ChapterVIIImperialFists</relatedChapterGene>
+        <relatedChapterIcon>BEWH_ChapterIconVII</relatedChapterIcon>
+    </Genes40k.ChapterColourDef>
+
+    <Genes40k.ChapterColourDef ParentName="BEWH_ChapterColourPresets">
+        <defName>BEWH_ChapterColourVIII</defName>
+        <label>Night Lords</label>
+        <colorAmount>3</colorAmount>
+        <primaryColour>(39,60,86)</primaryColour>
+        <secondaryColour>(143,143,143)</secondaryColour>
+        <tertiaryColour>(134,48,54)</tertiaryColour>
+        <relatedChapterGene>BEWH_ChapterVIIINightLords</relatedChapterGene>
+        <relatedChapterIcon>BEWH_ChapterIconVIII</relatedChapterIcon>
+        <loyalist>false</loyalist>
+    </Genes40k.ChapterColourDef>
+
+    <Genes40k.ChapterColourDef ParentName="BEWH_ChapterColourPresets">
+        <defName>BEWH_ChapterColourIX</defName>
+        <label>Blood Angels</label>
+        <primaryColour>(145,33,34)</primaryColour>
+        <secondaryColour>(42,42,42)</secondaryColour>
+        <relatedChapterGene>BEWH_ChapterIXBloodAngels</relatedChapterGene>
+        <relatedChapterIcon>BEWH_ChapterIconIX</relatedChapterIcon>
+    </Genes40k.ChapterColourDef>
+
+    <Genes40k.ChapterColourDef ParentName="BEWH_ChapterColourPresets">
+        <defName>BEWH_ChapterColourX</defName>
+        <label>Iron Hands</label>
+        <primaryColour>(57,57,57)</primaryColour>
+        <secondaryColour>(141,141,141)</secondaryColour>
+        <relatedChapterGene>BEWH_ChapterXIronHands</relatedChapterGene>
+        <relatedChapterIcon>BEWH_ChapterIconX</relatedChapterIcon>
+    </Genes40k.ChapterColourDef>
+
+    <Genes40k.ChapterColourDef ParentName="BEWH_ChapterColourPresets">
+        <defName>BEWH_ChapterColourXII</defName>
+        <label>World Eaters</label>
+        <colorAmount>3</colorAmount>
+        <primaryColour>(191,191,191)</primaryColour>
+        <secondaryColour>(34,68,128)</secondaryColour>
+        <tertiaryColour>(231,169,54)</tertiaryColour>
+        <relatedChapterGene>BEWH_ChapterXIIWorldEaters</relatedChapterGene>
+        <relatedChapterIcon>BEWH_ChapterIconXII</relatedChapterIcon>
+        <loyalist>false</loyalist>
+    </Genes40k.ChapterColourDef>
+
+    <Genes40k.ChapterColourDef ParentName="BEWH_ChapterColourPresets">
+        <defName>BEWH_ChapterColourXIII</defName>
+        <label>Ultramarines</label>
+        <primaryColour>(37,79,152)</primaryColour>
+        <secondaryColour>(224,155,29)</secondaryColour>
+        <relatedChapterGene>BEWH_ChapterXIIIUltramarines</relatedChapterGene>
+        <relatedChapterIcon>BEWH_ChapterIconXIII</relatedChapterIcon>
+    </Genes40k.ChapterColourDef>
+
+    <Genes40k.ChapterColourDef ParentName="BEWH_ChapterColourPresets">
+        <defName>BEWH_ChapterColourXIV</defName>
+        <label>Death Guard</label>
+        <colorAmount>3</colorAmount>
+        <primaryColour>(196,195,166)</primaryColour>
+        <secondaryColour>(66,85,44)</secondaryColour>
+        <tertiaryColour>(207,164,63)</tertiaryColour>
+        <relatedChapterGene>BEWH_ChapterXIVDeathGuard</relatedChapterGene>
+        <relatedChapterIcon>BEWH_ChapterIconXIV</relatedChapterIcon>
+        <loyalist>false</loyalist>
+    </Genes40k.ChapterColourDef>
+
+    <Genes40k.ChapterColourDef ParentName="BEWH_ChapterColourPresets">
+        <defName>BEWH_ChapterColourXV</defName>
+        <label>Thousand Sons</label>
+        <primaryColour>(152,51,48)</primaryColour>
+        <secondaryColour>(219,183,95)</secondaryColour>
+        <relatedChapterGene>BEWH_ChapterXVThousandSons</relatedChapterGene>
+        <relatedChapterIcon>BEWH_ChapterIconXV</relatedChapterIcon>
+        <loyalist>false</loyalist>
+    </Genes40k.ChapterColourDef>
+
+    <Genes40k.ChapterColourDef ParentName="BEWH_ChapterColourPresets">
+        <defName>BEWH_ChapterColourXVI</defName>
+        <label>Sons of Horus</label>
+        <colorAmount>3</colorAmount>
+        <primaryColour>(75,108,100)</primaryColour>
+        <secondaryColour>(50,51,50)</secondaryColour>
+        <tertiaryColour>(215,169,77)</tertiaryColour>
+        <relatedChapterGene>BEWH_ChapterXVISonsOfHorus</relatedChapterGene>
+        <relatedChapterIcon>BEWH_ChapterIconXVI</relatedChapterIcon>
+        <loyalist>false</loyalist>
+    </Genes40k.ChapterColourDef>
+
+    <Genes40k.ChapterColourDef ParentName="BEWH_ChapterColourPresets">
+        <defName>BEWH_ChapterColourXVII</defName>
+        <label>Word Bearers</label>
+        <primaryColour>(62,63,62)</primaryColour>
+        <secondaryColour>(99,99,99)</secondaryColour>
+        <relatedChapterGene>BEWH_ChapterXVIIWordBearers</relatedChapterGene>
+        <relatedChapterIcon>BEWH_ChapterIconXVII</relatedChapterIcon>
+        <loyalist>false</loyalist>
+    </Genes40k.ChapterColourDef>
+
+    <Genes40k.ChapterColourDef ParentName="BEWH_ChapterColourPresets">
+        <defName>BEWH_ChapterColourXVIII</defName>
+        <label>Salamanders</label>
+        <colorAmount>3</colorAmount>
+        <primaryColour>(36,98,55)</primaryColour>
+        <secondaryColour>(43,43,43)</secondaryColour>
+        <tertiaryColour>(221,152,49)</tertiaryColour>
+        <relatedChapterGene>BEWH_ChapterXVIIISalamanders</relatedChapterGene>
+        <relatedChapterIcon>BEWH_ChapterIconXVIII</relatedChapterIcon>
+    </Genes40k.ChapterColourDef>
+
+    <Genes40k.ChapterColourDef ParentName="BEWH_ChapterColourPresets">
+        <defName>BEWH_ChapterColourXIX</defName>
+        <label>Raven Guard</label>
+        <primaryColour>(42,42,42)</primaryColour>
+        <secondaryColour>(191,191,191)</secondaryColour>
+        <relatedChapterGene>BEWH_ChapterXIXRavenGuard</relatedChapterGene>
+        <relatedChapterIcon>BEWH_ChapterIconXIX</relatedChapterIcon>
+    </Genes40k.ChapterColourDef>
+
+    <Genes40k.ChapterColourDef ParentName="BEWH_ChapterColourPresets">
+        <defName>BEWH_ChapterColourXX</defName>
+        <label>Alpha Legion</label>
+        <colorAmount>3</colorAmount>
+        <primaryColour>(51,113,123)</primaryColour>
+        <secondaryColour>(145,154,156)</secondaryColour>
+        <tertiaryColour>(115,145,92)</tertiaryColour>
+        <relatedChapterGene>BEWH_ChapterXXAlphaLegion</relatedChapterGene>
+        <relatedChapterIcon>BEWH_ChapterIconXX</relatedChapterIcon>
+        <loyalist>false</loyalist>
+    </Genes40k.ChapterColourDef>
+
+    <Genes40k.ChapterColourDef ParentName="BEWH_ChapterColourPresets">
+        <defName>BEWH_ChapterColourDW</defName>
+        <label>Deathwatch</label>
+        <colorAmount>3</colorAmount>
+        <primaryColour>(71,71,71)</primaryColour>
+        <secondaryColour>(106,106,106)</secondaryColour>
+        <tertiaryColour>(50,50,50)</tertiaryColour>
+    </Genes40k.ChapterColourDef>
+
+    <Genes40k.ChapterColourDef ParentName="BEWH_ChapterColourPresets">
+        <defName>BEWH_ChapterColourApothecary</defName>
+        <label>Apothecary</label>
+        <colorAmount>3</colorAmount>
+        <primaryColour>(218,210,199)</primaryColour>
+        <secondaryColour>(178,178,173)</secondaryColour>
+        <tertiaryColour>(130,43,30)</tertiaryColour>
+    </Genes40k.ChapterColourDef>
+</Defs>

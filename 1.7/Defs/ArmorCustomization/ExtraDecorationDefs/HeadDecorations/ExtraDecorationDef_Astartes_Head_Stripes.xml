@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <!-- Stripes -->
+    <Core40k.ExtraDecorationDef>
+        <defName>BEWH_MkVIIDecoStripe</defName>        <!-- Mark VII -->
+        <label>Color stripe</label>
+        <description>...</description>
+        <iconPath>UI/Decoration/Icons/Astartes/Headgear/BEWH_Deco_Stripe_icon</iconPath>
+        <drawnTextureIconPath>Things/Decorations/Headgear/MkVII/BEWH_Deco_MkVIIStripe</drawnTextureIconPath>
+        <drawSize>(0.5, 0.5)</drawSize>
+        <sortOrder>6</sortOrder>
+
+        <defaultShowRotation>
+            <li>West</li>
+            <li>South</li>
+            <li>East</li>
+            <li>North</li>
+        </defaultShowRotation>
+        <appliesTo>
+            <li>BEWH_MkVIIPowerArmorHelmet</li>
+        </appliesTo>
+        <colourable>true</colourable>
+        <shaderType>Cutout</shaderType>
+        <drawData>
+            <dataNorth>
+                <layer>76</layer>
+            </dataNorth>
+            <dataSouth>
+                <layer>75</layer>
+            </dataSouth>
+            <dataEast>
+                <layer>71</layer>
+            </dataEast>
+            <dataWest>
+                <layer>70</layer>
+            </dataWest>
+        </drawData>
+        <availablePresets>
+            <li>BEWH_DecoPaletteGold</li>
+            <!-- <li>BEWH_DecoPaletteGreen</li> -->
+            <li>BEWH_DecoPaletteSilver</li>
+            <li>BEWH_DecoPaletteIFBlack</li>
+            <li>BEWH_DecoPaletteStripeRed</li>
+        </availablePresets>
+        <decorationType>BEWH_DecoCategory_Decals</decorationType>
+        <incompatibleDecorations>
+            <li>BEWH_MkVIILieutenantStripe</li>
+        </incompatibleDecorations>
+    </Core40k.ExtraDecorationDef>
+
+    <Core40k.ExtraDecorationDef>
+        <defName>BEWH_MkXDecoStripe</defName>        <!-- Mark X -->
+        <label>Color stripe</label>
+        <description>...</description>
+        <iconPath>UI/Decoration/Icons/Astartes/Headgear/BEWH_Deco_Stripe_icon</iconPath>
+        <drawnTextureIconPath>Things/Decorations/Headgear/MkX/BEWH_Deco_MkXStripe</drawnTextureIconPath>
+        <drawSize>(0.5, 0.5)</drawSize>
+        <sortOrder>6</sortOrder>
+
+        <defaultShowRotation>
+            <li>West</li>
+            <li>South</li>
+            <li>East</li>
+            <li>North</li>
+        </defaultShowRotation>
+        <appliesTo>
+            <li>BEWH_MkXPowerArmorHelmet</li>
+        </appliesTo>
+        <colourable>true</colourable>
+        <shaderType>Cutout</shaderType>
+        <drawData>
+            <dataNorth>
+                <layer>71</layer>
+            </dataNorth>
+            <dataSouth>
+                <layer>75</layer>
+            </dataSouth>
+            <dataEast>
+                <layer>71</layer>
+            </dataEast>
+            <dataWest>
+                <layer>70</layer>
+            </dataWest>
+        </drawData>
+        <availablePresets>
+            <li>BEWH_DecoPaletteGold</li>
+            <!-- <li>BEWH_DecoPaletteGreen</li> -->
+            <li>BEWH_DecoPaletteSilver</li>
+            <li>BEWH_DecoPaletteIFBlack</li>
+            <li>BEWH_DecoPaletteStripeRed</li>
+        </availablePresets>
+        <decorationType>BEWH_DecoCategory_Decals</decorationType>
+        <incompatibleDecorations>
+            <li>BEWH_MkXLieutenantStripe</li>
+        </incompatibleDecorations>
+    </Core40k.ExtraDecorationDef>
+
+    <Core40k.ExtraDecorationDef>
+        <defName>BEWH_MkVIILieutenantStripe</defName>        <!-- Mark VII -->
+        <label>Lieutenant stripe</label>
+        <description>...</description>
+        <iconPath>UI/Decoration/Icons/Astartes/Headgear/BEWH_Deco_LieutenantStripe_icon</iconPath>
+        <drawnTextureIconPath>Things/Decorations/Headgear/MkVII/StripeDeco/BEWH_Deco_MkVIILieutenantStripe</drawnTextureIconPath>
+        <drawSize>(0.5, 0.5)</drawSize>
+        <sortOrder>6</sortOrder>
+
+        <defaultShowRotation>
+            <li>West</li>
+            <li>South</li>
+            <li>East</li>
+            <li>North</li>
+        </defaultShowRotation>
+        <appliesTo>
+            <li>BEWH_MkVIIPowerArmorHelmet</li>
+        </appliesTo>
+        <drawData>
+            <dataNorth>
+                <layer>76</layer>
+            </dataNorth>
+            <dataSouth>
+                <layer>75</layer>
+            </dataSouth>
+            <dataEast>
+                <layer>71</layer>
+            </dataEast>
+            <dataWest>
+                <layer>70</layer>
+            </dataWest>
+        </drawData>
+        <colourable>true</colourable>
+        <colorAmount>2</colorAmount>
+        <defaultColourTwo>(168,35,32)</defaultColourTwo>
+        <decorationType>BEWH_DecoCategory_Decals</decorationType>
+    </Core40k.ExtraDecorationDef>
+
+    <Core40k.ExtraDecorationDef>
+        <defName>BEWH_MkXLieutenantStripe</defName>        <!-- Mark X -->
+        <label>Lieutenant stripe</label>
+        <description>...</description>
+        <iconPath>UI/Decoration/Icons/Astartes/Headgear/BEWH_Deco_LieutenantStripe_icon</iconPath>
+        <drawnTextureIconPath>Things/Decorations/Headgear/MkX/BEWH_Deco_MkXLieutenantStripe</drawnTextureIconPath>
+        <drawSize>(0.5, 0.5)</drawSize>
+        <sortOrder>6</sortOrder>
+
+        <defaultShowRotation>
+            <li>West</li>
+            <li>South</li>
+            <li>East</li>
+            <li>North</li>
+        </defaultShowRotation>
+        <appliesTo>
+            <li>BEWH_MkXPowerArmorHelmet</li>
+        </appliesTo>
+        <drawData>
+            <dataNorth>
+                <layer>71</layer>
+            </dataNorth>
+            <dataSouth>
+                <layer>75</layer>
+            </dataSouth>
+            <dataEast>
+                <layer>71</layer>
+            </dataEast>
+            <dataWest>
+                <layer>71</layer>
+            </dataWest>
+        </drawData>
+        <colourable>true</colourable>
+        <colorAmount>2</colorAmount>
+        <defaultColourTwo>(168,35,32)</defaultColourTwo>
+        <decorationType>BEWH_DecoCategory_Decals</decorationType>
+    </Core40k.ExtraDecorationDef>
+
+</Defs>

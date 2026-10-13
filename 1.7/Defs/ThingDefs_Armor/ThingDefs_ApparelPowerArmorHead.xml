@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <!-- ===== IMPERIUM ===== -->
+    <!-- MK 7 -->
+    <ThingDef ParentName="BEWH_PowerArmorHelmetBase">
+        <defName>BEWH_MkVIIPowerArmorHelmet</defName>
+        <label>Mk VII Power Armor Helmet</label>
+        <description>A standard-issue battle helm of the Adeptus Astartes, offering durable ceramite protection and a reinforced grille design. It provides reliable performance and is well-suited for prolonged combat operations.</description>
+        <recipeMaker>
+            <researchPrerequisite>BEWH_PowerArmorMkVII</researchPrerequisite>
+        </recipeMaker>
+        <graphicData>
+            <texPath>Things/Headgear/Imperium/PowerArmor/MkVIIPowerArmorHelmet/BEWH_MkVIIHelmet</texPath>
+        </graphicData>
+        <statBases>
+            <WorkToMake>26250</WorkToMake>
+            <MarketValue>2500</MarketValue>
+
+            <ArmorRating_Sharp>1.1</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.45</ArmorRating_Blunt>
+            <ArmorRating_Heat>1</ArmorRating_Heat>
+
+            <Insulation_Cold>6</Insulation_Cold>
+            <Insulation_Heat>4</Insulation_Heat>
+
+            <BEWH_InternalUpgradeSlots>3</BEWH_InternalUpgradeSlots>
+        </statBases>
+        <equippedStatOffsets>
+            <TerrorSource MayRequire="Ludeon.RimWorld.Ideology">8</TerrorSource>
+            <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.67</VacuumResistance>
+        </equippedStatOffsets>
+        <costList>
+            <ComponentSpacer>1</ComponentSpacer>
+            <Plasteel>50</Plasteel>
+        </costList>
+        <apparel>
+            <wornGraphicPath>Things/Headgear/Imperium/PowerArmor/MkVIIPowerArmorHelmet/BEWH_MkVIIHelmet</wornGraphicPath>
+            <tags>
+                <li>BEWH_PowerArmorHelmetMkVII</li>
+            </tags>
+        </apparel>
+        <comps>
+            <li Class="Genes40k.CompProperties_ChapterColor" />
+            <li Class="Core40k.CompProperties_Decorative">
+                <decorativeType>Head</decorativeType>
+            </li>
+        </comps>
+    </ThingDef>
+
+    <!-- MK 10-->
+    <ThingDef ParentName="BEWH_PowerArmorHelmetBase">
+        <defName>BEWH_MkXPowerArmorHelmet</defName>
+        <label>Mk X Power Armor Helmet</label>
+        <description>A standard battle helm worn by Primaris Space Marines, designed for increased protection and clarity. Its refined optics and sealed construction support long deployments in hostile environments.</description>
+        <recipeMaker>
+            <researchPrerequisite>BEWH_PowerArmorMkX</researchPrerequisite>
+        </recipeMaker>
+        <graphicData>
+            <texPath>Things/Headgear/Imperium/PowerArmor/MkXPowerArmorHelmet/BEWH_MkXHelmet</texPath>
+        </graphicData>
+        <statBases>
+            <WorkToMake>35000</WorkToMake>
+            <MarketValue>4000</MarketValue>
+
+            <ArmorRating_Sharp>1.3</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.8</ArmorRating_Blunt>
+            <ArmorRating_Heat>1.2</ArmorRating_Heat>
+
+            <Insulation_Cold>6</Insulation_Cold>
+            <Insulation_Heat>4</Insulation_Heat>
+
+            <BEWH_InternalUpgradeSlots>4</BEWH_InternalUpgradeSlots>
+        </statBases>
+        <equippedStatOffsets>
+            <TerrorSource MayRequire="Ludeon.RimWorld.Ideology">8</TerrorSource>
+            <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.67</VacuumResistance>
+        </equippedStatOffsets>
+        <costList>
+            <ComponentSpacer>2</ComponentSpacer>
+            <Plasteel>65</Plasteel>
+        </costList>
+        <apparel>
+            <wornGraphicPath>Things/Headgear/Imperium/PowerArmor/MkXPowerArmorHelmet/BEWH_MkXHelmet</wornGraphicPath>
+            <tags>
+                <li>BEWH_PowerArmorHelmetMkX</li>
+            </tags>
+        </apparel>
+        <comps>
+            <li Class="Genes40k.CompProperties_ChapterColor" />
+            <li Class="Core40k.CompProperties_Decorative">
+                <decorativeType>Head</decorativeType>
+            </li>
+        </comps>
+    </ThingDef>
+
+    <!-- MK 10 Chaplain-->
+    <ThingDef ParentName="BEWH_PowerArmorHelmetBase">
+        <defName>BEWH_MkXPowerArmorChaplainHelmet</defName>
+        <label>Mk X Chaplain Helmet</label>
+        <description>Mk X helmet modified for Chaplains, adorned with skull iconography and grim visages to inspire loyalty and fear in equal measure. \n\nIncreases the terror of nearby prisoners.</description>
+        <recipeMaker>
+            <researchPrerequisite>BEWH_PowerArmorMkX</researchPrerequisite>
+        </recipeMaker>
+        <graphicData>
+            <texPath>Things/Headgear/Imperium/PowerArmor/MkXPowerArmorHelmetChaplain/BEWH_MkXChaplainHelmet</texPath>
+        </graphicData>
+        <statBases>
+            <WorkToMake>35000</WorkToMake>
+            <MarketValue>4000</MarketValue>
+
+            <ArmorRating_Sharp>1.3</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.8</ArmorRating_Blunt>
+            <ArmorRating_Heat>1.2</ArmorRating_Heat>
+
+            <Insulation_Cold>6</Insulation_Cold>
+            <Insulation_Heat>4</Insulation_Heat>
+
+            <BEWH_InternalUpgradeSlots>4</BEWH_InternalUpgradeSlots>
+        </statBases>
+        <equippedStatOffsets>
+            <TerrorSource MayRequire="Ludeon.RimWorld.Ideology">35</TerrorSource>
+            <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.67</VacuumResistance>
+        </equippedStatOffsets>
+        <costList>
+            <ComponentSpacer>2</ComponentSpacer>
+            <Plasteel>65</Plasteel>
+        </costList>
+        <apparel>
+            <wornGraphicPath>Things/Headgear/Imperium/PowerArmor/MkXPowerArmorHelmetChaplain/BEWH_MkXChaplainHelmet</wornGraphicPath>
+            <tags>
+                <li>BEWH_PowerArmorHelmetMkXChaplain</li>
+            </tags>
+        </apparel>
+        <comps>
+            <li Class="Genes40k.CompProperties_ChapterColor" />
+            <li Class="Core40k.CompProperties_Decorative">
+                <decorativeType>Head</decorativeType>
+            </li>
+        </comps>
+    </ThingDef>
+
+    <!-- MK 1 Thunder Warrior-->
+    <ThingDef ParentName="BEWH_PowerArmorHelmetBase">
+        <defName>BEWH_MkIPowerArmorHelmet</defName>
+        <label>Mk I Power Armor Helmet</label>
+        <description>A brutal, early battle helm used by the Thunder Warriors during the Unification Wars, the Mk I offers heavy protection with crude optics and minimal environmental sealing. Built for raw durability over finesse, it reflects the uncompromising violence of its era.</description>
+        <recipeMaker>
+            <researchPrerequisite>BEWH_PowerArmorMkI</researchPrerequisite>            <!-- temp research -->
+        </recipeMaker>
+        <graphicData>
+            <texPath>Things/Headgear/Imperium/PowerArmor/MkIPowerArmor/BEWH_MkIHelmet</texPath>
+        </graphicData>
+        <statBases>
+            <WorkToMake>35000</WorkToMake>
+            <MarketValue>4000</MarketValue>
+
+            <ArmorRating_Sharp>1</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.43</ArmorRating_Blunt>
+            <ArmorRating_Heat>0.9</ArmorRating_Heat>
+
+            <Insulation_Cold>6</Insulation_Cold>
+            <Insulation_Heat>4</Insulation_Heat>
+
+            <BEWH_InternalUpgradeSlots>1</BEWH_InternalUpgradeSlots>
+        </statBases>
+        <equippedStatOffsets>
+            <TerrorSource MayRequire="Ludeon.RimWorld.Ideology">8</TerrorSource>
+        </equippedStatOffsets>
+        <costList>
+            <ComponentIndustrial>15</ComponentIndustrial>
+            <Steel>100</Steel>
+            <Plasteel>30</Plasteel>
+        </costList>
+        <apparel>
+            <wornGraphicPath>Things/Headgear/Imperium/PowerArmor/MkIPowerArmor/BEWH_MkIHelmet</wornGraphicPath>
+            <tags>
+                <li>BEWH_PowerArmorHelmetMkI</li>
+            </tags>
+        </apparel>
+        <comps>
+            <li Class="Core40k.CompProperties_MultiColor">
+                <defaultPrimaryColor>(231,148,88)</defaultPrimaryColor>
+                <defaultSecondaryColor>(253,184,110)</defaultSecondaryColor>
+            </li>
+            <li Class="Core40k.CompProperties_Decorative">
+                <decorativeType>Head</decorativeType>
+                <decorations>
+                    <li>BEWH_Deco_TW_Plume1</li>
+                    <li>BEWH_Deco_TW_Goggles</li>
+                </decorations>
+            </li>
+        </comps>
+    </ThingDef>
+
+</Defs>

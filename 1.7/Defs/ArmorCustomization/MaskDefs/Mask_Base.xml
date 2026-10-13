@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <Core40k.MaskDef Name="BEWH_MaskDef_ExtraDecoration" Abstract="true">
+        <appliesToKind>ExtraDecoration</appliesToKind>
+    </Core40k.MaskDef>
+
+    <Core40k.MaskDef Name="BEWH_MaskDef_Thing" Abstract="true">
+        <appliesToKind>Thing</appliesToKind>
+    </Core40k.MaskDef>
+
+</Defs>

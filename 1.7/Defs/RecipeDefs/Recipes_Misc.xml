@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Rubicon Surgery Kit Base -->
+    <RecipeDef Name="BEWH_RecipeRubiconSurgeryKitBase" Abstract="True">
+        <label>make rubicon surgery kit</label>
+        <description>Make a rubicon surgery kit.</description>
+        <jobString>Making rubicon surgery kit.</jobString>
+        <workAmount>7500</workAmount>
+        <displayPriority>-2</displayPriority>
+        <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+        <effectWorking>CutStone</effectWorking>
+        <soundWorking>Recipe_Machining</soundWorking>
+        <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+        <researchPrerequisites>
+            <li>BEWH_RubiconSurgery</li>
+        </researchPrerequisites>
+        <recipeUsers>
+            <li>BEWH_GeneManipulationTable</li>
+        </recipeUsers>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>MedicineUltratech</li>
+                <li>Neutroamine</li>
+                <li>Luciferium</li>
+                <li>Steel</li>
+                <li>Plasteel</li>
+                <li>ComponentSpacer</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>MedicineUltratech</li>
+                    </thingDefs>
+                </filter>
+                <count>3</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>Neutroamine</li>
+                    </thingDefs>
+                </filter>
+                <count>65</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>Luciferium</li>
+                    </thingDefs>
+                </filter>
+                <count>2</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>Steel</li>
+                    </thingDefs>
+                </filter>
+                <count>40</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>Plasteel</li>
+                    </thingDefs>
+                </filter>
+                <count>10</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>ComponentSpacer</li>
+                    </thingDefs>
+                </filter>
+                <count>2</count>
+            </li>
+        </ingredients>
+        <products>
+            <BEWH_RubiconSurgeryKit>1</BEWH_RubiconSurgeryKit>
+        </products>
+        <skillRequirements>
+            <Crafting>10</Crafting>
+            <Medicine>12</Medicine>
+        </skillRequirements>
+        <workSkill>Crafting</workSkill>
+    </RecipeDef>
+    <!-- Rubicon Surgery Kit -->
+    <RecipeDef ParentName="BEWH_RecipeRubiconSurgeryKitBase">
+        <defName>BEWH_MakeRubiconSurgeryKit</defName>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>Meat_Human</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>Meat_Human</li>
+                    </thingDefs>
+                </filter>
+                <count>75</count>
+            </li>
+        </ingredients>
+        <modExtensions>
+            <li Class="Core40k.DefModExtension_LockedByResearch">
+                <researchs>
+                    <li>BEWH_AdvancedProteinSubstitution</li>
+                </researchs>
+            </li>
+        </modExtensions>
+    </RecipeDef>
+    <!-- Rubicon Surgery Kit Refined -->
+    <RecipeDef ParentName="BEWH_RecipeRubiconSurgeryKitBase">
+        <defName>BEWH_MakeRubiconSurgeryKitRefined</defName>
+        <researchPrerequisites>
+            <li>BEWH_AdvancedProteinSubstitution</li>
+        </researchPrerequisites>
+        <fixedIngredientFilter>
+            <categories>
+                <li>MeatRaw</li>
+            </categories>
+        </fixedIngredientFilter>
+        <ingredients>
+            <li>
+                <filter>
+                    <categories>
+                        <li>MeatRaw</li>
+                    </categories>
+                </filter>
+                <count>75</count>
+            </li>
+        </ingredients>
+    </RecipeDef>
+
+
+    <!-- Raw Gestational Slurry Base -->
+    <RecipeDef Name="BEWH_RecipeRawGestationalSlurryBase" Abstract="True">
+        <label>make raw gestational slurry</label>
+        <description>Make a raw gestational slurry.</description>
+        <jobString>Making raw gestational slurry.</jobString>
+        <workAmount>1250</workAmount>
+        <displayPriority>-1</displayPriority>
+        <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+        <effectWorking>CutStone</effectWorking>
+        <soundWorking>Recipe_Drug</soundWorking>
+        <unfinishedThingDef>BEWH_UnfinishedGestationSlurry</unfinishedThingDef>
+        <researchPrerequisites>
+            <li>BEWH_PrimarchProject</li>
+        </researchPrerequisites>
+        <recipeUsers>
+            <li>BEWH_GeneManipulationTable</li>
+        </recipeUsers>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>Luciferium</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>Luciferium</li>
+                    </thingDefs>
+                </filter>
+                <count>2</count>
+            </li>
+        </ingredients>
+        <products>
+            <BEWH_RawGestationalSlurry>10</BEWH_RawGestationalSlurry>
+        </products>
+        <skillRequirements>
+            <Crafting>6</Crafting>
+        </skillRequirements>
+        <workSkill>Crafting</workSkill>
+    </RecipeDef>
+    <!-- Raw Gestational Slurry -->
+    <RecipeDef ParentName="BEWH_RecipeRawGestationalSlurryBase">
+        <defName>BEWH_MakeRawGestationalSlurry</defName>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>Meat_Human</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>Meat_Human</li>
+                    </thingDefs>
+                </filter>
+                <count>20</count>
+            </li>
+        </ingredients>
+        <modExtensions>
+            <li Class="Core40k.DefModExtension_LockedByResearch">
+                <researchs>
+                    <li>BEWH_AdvancedProteinSubstitution</li>
+                </researchs>
+            </li>
+        </modExtensions>
+    </RecipeDef>
+    <!-- Raw Gestational Slurry Refined -->
+    <RecipeDef ParentName="BEWH_RecipeRawGestationalSlurryBase">
+        <defName>BEWH_MakeRawGestationalSlurryRefined</defName>
+        <researchPrerequisites>
+            <li>BEWH_AdvancedProteinSubstitution</li>
+        </researchPrerequisites>
+        <fixedIngredientFilter>
+            <categories>
+                <li>MeatRaw</li>
+            </categories>
+        </fixedIngredientFilter>
+        <ingredients>
+            <li>
+                <filter>
+                    <categories>
+                        <li>MeatRaw</li>
+                    </categories>
+                </filter>
+                <count>20</count>
+            </li>
+        </ingredients>
+    </RecipeDef>
+
+</Defs>

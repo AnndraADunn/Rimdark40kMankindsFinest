@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <!-- Chapter-coloured armours carry their shoulder icons as framework decorations, placed by the Shoulder Icons tab. REMOVE AT SOME POINT -->
+    <ThingDef Name="BEWH_PowerArmorBase_ChapterColour" ParentName="BEWH_PowerArmorBase" Abstract="True" />
+
+    <!-- ===== IMPERIUM ===== -->
+    <!-- MK 7 -->
+    <ThingDef ParentName="BEWH_PowerArmorBase_ChapterColour">
+        <defName>BEWH_MkVIIPowerArmor</defName>
+        <tickerType>Normal</tickerType>
+        <label>Mk VII Power Armor</label>
+        <description>The MK VII "Aquila" Power Armor is an advanced battle plate worn by the Adeptus Astartes. It features dense ceramite plating, reinforced servo-musculature, and the iconic Aquila chest plate. It provides excellent protection against ballistic and energy weapons, making it ideal for prolonged engagements in hostile environments.</description>
+        <recipeMaker>
+            <researchPrerequisite>BEWH_PowerArmorMkVII</researchPrerequisite>
+        </recipeMaker>
+        <graphicData>
+            <texPath>Things/Armor/Imperium/PowerArmor/MkVIIPowerArmor/BEWH_MkVIIPowerArmor</texPath>
+        </graphicData>
+        <statBases>
+            <WorkToMake>75000</WorkToMake>
+            <MarketValue>8000</MarketValue>
+
+            <ArmorRating_Sharp>1.56</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.65</ArmorRating_Blunt>
+            <ArmorRating_Heat>1</ArmorRating_Heat>
+
+            <Insulation_Cold>36</Insulation_Cold>
+            <Insulation_Heat>20</Insulation_Heat>
+
+            <BEWH_InternalUpgradeSlots>4</BEWH_InternalUpgradeSlots>
+            <!-- Zero unless a fitted conversion field raises it; the StatDef default is 1. -->
+            <EnergyShieldEnergyMax>0</EnergyShieldEnergyMax>
+            <EnergyShieldRechargeRate>0</EnergyShieldRechargeRate>
+        </statBases>
+        <equippedStatOffsets>
+            <TerrorSource MayRequire="Ludeon.RimWorld.Ideology">17</TerrorSource>
+            <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.28</VacuumResistance>
+        </equippedStatOffsets>
+        <costList>
+            <ComponentSpacer>6</ComponentSpacer>
+            <Plasteel>150</Plasteel>
+            <Uranium>50</Uranium>
+        </costList>
+        <apparel>
+            <wornGraphicPath>Things/Armor/Imperium/PowerArmor/MkVIIPowerArmor/BEWH_MkVIIPowerArmor</wornGraphicPath>
+            <tags>
+                <li>BEWH_PowerArmorMkVII</li>
+            </tags>
+            <renderNodeProperties>
+                <!-- Backpacks -->
+                <li>
+                    <workerClass>Core40k.PawnRenderNodeWorker_AttachmentBackpack</workerClass>
+                    <nodeClass>Core40k.PawnRenderNode_FlagEdit</nodeClass>
+                    <texPath>Things/Armor/Imperium/PowerArmor/MkVIIPowerArmor/Backpacks/BEWH_MkVIIPowerArmor_Backpack</texPath>
+                    <shaderTypeDef>CutoutComplex</shaderTypeDef>
+                    <parentTagDef>Body</parentTagDef>
+                    <drawData>
+                        <dataEast>
+                            <layer>71</layer>
+                        </dataEast>
+                        <dataWest>
+                            <layer>71</layer>
+                        </dataWest>
+                        <dataNorth>
+                            <layer>99.6</layer>
+                        </dataNorth>
+                        <dataSouth>
+                            <layer>-1</layer>
+                        </dataSouth>
+                    </drawData>
+                    <texSeed>1</texSeed>
+                </li>
+                <!-- Shoulder pad -->
+                <li>
+                    <workerClass>Core40k.PawnRenderNodeWorker_AttachmentShoulderPad</workerClass>
+                    <nodeClass>Core40k.PawnRenderNode_FlagEdit</nodeClass>
+                    <texPath>Things/Armor/Imperium/PowerArmor/MkVIIPowerArmor/Shoulder/BEWH_MkVIIPowerArmor_Shoulder</texPath>
+                    <shaderTypeDef>CutoutComplex</shaderTypeDef>
+                    <parentTagDef>Body</parentTagDef>
+                    <drawData>
+                        <dataEast>
+                            <layer>72</layer>
+                        </dataEast>
+                        <dataWest>
+                            <layer>72</layer>
+                        </dataWest>
+                    </drawData>
+                    <texSeed>2</texSeed>
+                </li>
+            </renderNodeProperties>
+        </apparel>
+        <comps>
+            <li Class="Core40k.CompProperties_ConversionField" />
+            <li Class="Genes40k.CompProperties_ChapterColorWithShoulderDecoration" />
+            <li Class="Core40k.CompProperties_Decorative">
+                <drawRenderNodesOnGround>true</drawRenderNodesOnGround>
+                <decorations>
+                    <li>BEWH_Deco_ChestAquila</li>
+                </decorations>
+            </li>
+        </comps>
+        <modExtensions>
+            <li Class="Core40k.DefModExtension_ForcesBodyType">
+                <forcedBodyType>Hulk</forcedBodyType>
+                <hideBodyGraphic>true</hideBodyGraphic>
+            </li>
+            <li Class="Core40k.DefModExtension_TextureFlags">
+                <maskExpansions>
+                    <li>
+                        <identifier>1</identifier>
+                        <pathExpansionOnMask>_Backpack</pathExpansionOnMask>
+                        <maskDefsWithExpansion>
+                            <li>BEWH_MkVIIArmorHalvedMask</li>
+                            <li>BEWH_MkVIIArmorCheckeredMask</li>
+                        </maskDefsWithExpansion>
+                    </li>
+                    <li>
+                        <identifier>2</identifier>
+                        <pathExpansionOnMask>_Shoulder</pathExpansionOnMask>
+                        <maskDefsWithExpansion>
+                            <li>BEWH_MkVIIArmorPauldronsMask</li>
+                            <li>BEWH_MkVIIArmorHalvedMask</li>
+                            <li>BEWH_MkVIIArmorCheckeredMask</li>
+                        </maskDefsWithExpansion>
+                    </li>
+                </maskExpansions>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+    <!-- MK 10 -->
+    <ThingDef ParentName="BEWH_PowerArmorBase_ChapterColour">
+        <defName>BEWH_MkXPowerArmor</defName>
+        <tickerType>Normal</tickerType>
+        <label>Mk X Power Armor</label>
+        <description>The MK X "Tacticus" Power Armor is a modernized battle plate worn by Primaris Space Marines. Combining the durability of earlier marks with increased mobility, it features advanced ceramite-composite plating and enhanced servo systems. Its modular design allows for field adaptability across diverse combat roles, offering superior protection and efficiency in extended operations.</description>
+        <recipeMaker>
+            <researchPrerequisite>BEWH_PowerArmorMkX</researchPrerequisite>
+        </recipeMaker>
+        <graphicData>
+            <texPath>Things/Armor/Imperium/PowerArmor/MkXPowerArmor/BEWH_MkXPowerArmor</texPath>
+        </graphicData>
+        <statBases>
+            <WorkToMake>90000</WorkToMake>
+            <MarketValue>10000</MarketValue>
+
+            <ArmorRating_Sharp>1.79</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.74</ArmorRating_Blunt>
+            <ArmorRating_Heat>1.2</ArmorRating_Heat>
+
+            <Insulation_Cold>40</Insulation_Cold>
+            <Insulation_Heat>30</Insulation_Heat>
+
+            <BEWH_InternalUpgradeSlots>5</BEWH_InternalUpgradeSlots>
+            <!-- Zero unless a fitted conversion field raises it; the StatDef default is 1. -->
+            <EnergyShieldEnergyMax>0</EnergyShieldEnergyMax>
+            <EnergyShieldRechargeRate>0</EnergyShieldRechargeRate>
+        </statBases>
+        <equippedStatOffsets>
+            <TerrorSource MayRequire="Ludeon.RimWorld.Ideology">17</TerrorSource>
+            <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.28</VacuumResistance>
+        </equippedStatOffsets>
+        <costList>
+            <ComponentSpacer>8</ComponentSpacer>
+            <Plasteel>175</Plasteel>
+            <Uranium>60</Uranium>
+        </costList>
+        <apparel>
+            <wornGraphicPath>Things/Armor/Imperium/PowerArmor/MkXPowerArmor/BEWH_MkXPowerArmor</wornGraphicPath>
+            <tags>
+                <li>BEWH_PowerArmorMkX</li>
+            </tags>
+            <renderNodeProperties>
+                <!-- Backpacks -->
+                <li>
+                    <workerClass>Core40k.PawnRenderNodeWorker_AttachmentBackpack</workerClass>
+                    <nodeClass>Core40k.PawnRenderNode_FlagEdit</nodeClass>
+                    <texPath>Things/Armor/Imperium/PowerArmor/MkXPowerArmor/Backpacks/BEWH_MkXPowerArmor_Backpack</texPath>
+                    <shaderTypeDef>CutoutComplex</shaderTypeDef>
+                    <parentTagDef>Body</parentTagDef>
+                    <drawData>
+                        <dataEast>
+                            <layer>71</layer>
+                        </dataEast>
+                        <dataWest>
+                            <layer>71</layer>
+                        </dataWest>
+                        <dataNorth>
+                            <layer>99</layer>
+                        </dataNorth>
+                        <dataSouth>
+                            <layer>-1</layer>
+                        </dataSouth>
+                    </drawData>
+                    <texSeed>1</texSeed>
+                </li>
+                <!-- Shoulder pad -->
+                <li>
+                    <workerClass>Core40k.PawnRenderNodeWorker_AttachmentShoulderPad</workerClass>
+                    <nodeClass>Core40k.PawnRenderNode_FlagEdit</nodeClass>
+                    <texPath>Things/Armor/Imperium/PowerArmor/MkXPowerArmor/Shoulder/BEWH_MkXPowerArmor_Shoulder</texPath>
+                    <shaderTypeDef>CutoutComplex</shaderTypeDef>
+                    <parentTagDef>Body</parentTagDef>
+                    <drawData>
+                        <dataEast>
+                            <layer>72</layer>
+                        </dataEast>
+                        <dataWest>
+                            <layer>72</layer>
+                        </dataWest>
+                    </drawData>
+                    <texSeed>2</texSeed>
+                </li>
+            </renderNodeProperties>
+        </apparel>
+        <comps>
+            <li Class="Core40k.CompProperties_ConversionField" />
+            <li Class="Genes40k.CompProperties_ChapterColorWithShoulderDecoration" />
+            <li Class="Core40k.CompProperties_Decorative">
+                <drawRenderNodesOnGround>true</drawRenderNodesOnGround>
+                <decorations>
+                    <li>BEWH_Deco_ChestAquila</li>
+                </decorations>
+            </li>
+        </comps>
+        <modExtensions>
+            <li Class="Core40k.DefModExtension_ForcesBodyType">
+                <forcedBodyType>Hulk</forcedBodyType>
+                <hideBodyGraphic>true</hideBodyGraphic>
+            </li>
+            <li Class="Core40k.DefModExtension_TextureFlags">
+                <maskExpansions>
+                    <li>
+                        <identifier>1</identifier>
+                        <pathExpansionOnMask>_Backpack</pathExpansionOnMask>
+                        <maskDefsWithExpansion>
+                            <li>BEWH_MkXArmorHalvedMask</li>
+                            <li>BEWH_MkXArmorCheckeredMask</li>
+                        </maskDefsWithExpansion>
+                    </li>
+                    <li>
+                        <identifier>2</identifier>
+                        <pathExpansionOnMask>_Shoulder</pathExpansionOnMask>
+                        <maskDefsWithExpansion>
+                            <li>BEWH_MkXArmorPauldronsMask</li>
+                            <li>BEWH_MkXArmorHalvedMask</li>
+                            <li>BEWH_MkXArmorCheckeredMask</li>
+                        </maskDefsWithExpansion>
+                    </li>
+                </maskExpansions>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+    <!-- MK 10 Chaplain -->
+    <ThingDef ParentName="BEWH_PowerArmorBase_ChapterColour">
+        <defName>BEWH_MkXPowerArmorChaplain</defName>
+        <tickerType>Normal</tickerType>
+        <label>Mk X Chaplain Power Armor</label>
+        <description>This MK X Power Armor is a specialized variant of the Tacticus pattern, worn by Primaris Chaplains. Built upon the same durable and mobile frame, it is adorned with grim iconography to embody the Emperor's judgment and inspire unwavering zeal in those who follow.\n\nIncreases the terror of nearby prisoners.</description>
+        <recipeMaker>
+            <researchPrerequisite>BEWH_PowerArmorMkX</researchPrerequisite>
+        </recipeMaker>
+        <graphicData>
+            <texPath>Things/Armor/Imperium/PowerArmor/MkXPowerArmorChaplain/BEWH_ChaplainArmor</texPath>
+        </graphicData>
+        <statBases>
+            <WorkToMake>90000</WorkToMake>
+            <MarketValue>10000</MarketValue>
+
+            <ArmorRating_Sharp>1.79</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.74</ArmorRating_Blunt>
+            <ArmorRating_Heat>1.2</ArmorRating_Heat>
+
+            <Insulation_Cold>40</Insulation_Cold>
+            <Insulation_Heat>30</Insulation_Heat>
+
+            <BEWH_InternalUpgradeSlots>5</BEWH_InternalUpgradeSlots>
+            <!-- Zero unless a fitted conversion field raises it; the StatDef default is 1. -->
+            <EnergyShieldEnergyMax>0</EnergyShieldEnergyMax>
+            <EnergyShieldRechargeRate>0</EnergyShieldRechargeRate>
+        </statBases>
+        <equippedStatOffsets>
+            <TerrorSource MayRequire="Ludeon.RimWorld.Ideology">65</TerrorSource>
+            <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.28</VacuumResistance>
+        </equippedStatOffsets>
+        <costList>
+            <ComponentSpacer>8</ComponentSpacer>
+            <Plasteel>175</Plasteel>
+            <Uranium>60</Uranium>
+            <Cloth>60</Cloth>
+        </costList>
+        <apparel>
+            <wornGraphicPath>Things/Armor/Imperium/PowerArmor/MkXPowerArmorChaplain/BEWH_ChaplainArmor</wornGraphicPath>
+            <tags>
+                <li>BEWH_MkXPowerArmorChaplain</li>
+            </tags>
+            <renderNodeProperties>
+                <!-- Backpacks -->
+                <li>
+                    <workerClass>Core40k.PawnRenderNodeWorker_AttachmentBackpack</workerClass>
+                    <nodeClass>Core40k.PawnRenderNode_FlagEdit</nodeClass>
+                    <texPath>Things/Armor/Imperium/PowerArmor/MkXPowerArmorChaplain/Backpacks/BEWH_ChaplainArmor_Backpack</texPath>
+                    <shaderTypeDef>CutoutComplex</shaderTypeDef>
+                    <parentTagDef>Body</parentTagDef>
+                    <drawData>
+                        <dataEast>
+                            <layer>70</layer>
+                        </dataEast>
+                        <dataWest>
+                            <layer>70</layer>
+                        </dataWest>
+                        <dataNorth>
+                            <layer>98</layer>
+                        </dataNorth>
+                        <dataSouth>
+                            <layer>-1</layer>
+                        </dataSouth>
+                    </drawData>
+                </li>
+                <!-- Shoulder pad -->
+                <li>
+                    <workerClass>Core40k.PawnRenderNodeWorker_AttachmentShoulderPad</workerClass>
+                    <nodeClass>Core40k.PawnRenderNode_FlagEdit</nodeClass>
+                    <texPath>Things/Armor/Imperium/PowerArmor/MkXPowerArmorChaplain/Shoulder/BEWH_ChaplainArmor_Shoulder</texPath>
+                    <shaderTypeDef>CutoutComplex</shaderTypeDef>
+                    <parentTagDef>Body</parentTagDef>
+                    <drawData>
+                        <dataEast>
+                            <layer>72</layer>
+                        </dataEast>
+                        <dataWest>
+                            <layer>72</layer>
+                        </dataWest>
+                    </drawData>
+                </li>
+            </renderNodeProperties>
+        </apparel>
+        <comps>
+            <li Class="Core40k.CompProperties_ConversionField" />
+            <li Class="Genes40k.CompProperties_ChapterColorWithShoulderDecoration">
+                <defaultPrimaryColor>(61,61,61)</defaultPrimaryColor>
+                <defaultSecondaryColor>(223,164,29)</defaultSecondaryColor>
+            </li>
+            <li Class="Core40k.CompProperties_Decorative">
+                <decorativeType>Body</decorativeType>
+                <drawRenderNodesOnGround>true</drawRenderNodesOnGround>
+            </li>
+        </comps>
+        <modExtensions>
+            <li Class="Core40k.DefModExtension_ForcesBodyType">
+                <forcedBodyType>Hulk</forcedBodyType>
+                <hideBodyGraphic>true</hideBodyGraphic>
+            </li>
+            <li Class="Core40k.DefModExtension_TextureFlags" />
+        </modExtensions>
+    </ThingDef>
+
+    <!-- Living Saint Armor -->
+    <ThingDef ParentName="BEWH_PowerArmorBase">
+        <defName>BEWH_LivingSaintArmor</defName>
+        <tickerType>Normal</tickerType>
+        <label>Living Saint Armor</label>
+        <description>A sanctified warplate worn by a Living Saint, adorned with the symbols of the Ecclesiarchy. It shines with a faint golden hue and, while lacking advanced systems, offers impressive protection. Some claim it has a calming or inspiring effect on nearby allies. Despite its imposing appearance, it moves easily with the wearer, providing both resilience and mobility.</description>
+        <graphicData>
+            <texPath>Things/Armor/Imperium/PowerArmor/LivingSaint/BEWH_LSaintArmor</texPath>
+        </graphicData>
+        <recipeMaker Inherit="false" />
+        <costList>
+            <ComponentSpacer>20</ComponentSpacer>
+            <Plasteel>600</Plasteel>
+            <Uranium>200</Uranium>
+            <Cloth>100</Cloth>
+        </costList>
+        <useHitPoints>false</useHitPoints>
+        <deteriorateFromEnvironmentalEffects>false</deteriorateFromEnvironmentalEffects>
+        <statBases>
+            <WorkToMake>200000</WorkToMake>
+            <MarketValue>10000</MarketValue>
+
+            <ArmorRating_Sharp>1.89</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.84</ArmorRating_Blunt>
+            <ArmorRating_Heat>1.3</ArmorRating_Heat>
+
+            <Insulation_Cold>50</Insulation_Cold>
+            <Insulation_Heat>50</Insulation_Heat>
+            <Beauty>5</Beauty>
+            <DeteriorationRate>0</DeteriorationRate>
+            <BEWH_InternalUpgradeSlots>6</BEWH_InternalUpgradeSlots>
+            <!-- Zero unless a fitted conversion field raises it; the StatDef default is 1. -->
+            <EnergyShieldEnergyMax>0</EnergyShieldEnergyMax>
+            <EnergyShieldRechargeRate>0</EnergyShieldRechargeRate>
+        </statBases>
+        <equippedStatOffsets>
+            <TerrorSource MayRequire="Ludeon.RimWorld.Ideology">80</TerrorSource>
+        </equippedStatOffsets>
+        <apparel>
+            <bodyPartGroups>
+                <li>FullHead</li>
+            </bodyPartGroups>
+            <renderSkipFlags>
+                <li>None</li>
+            </renderSkipFlags>
+            <wornGraphicPath>Things/Armor/Imperium/PowerArmor/LivingSaint/BEWH_LSaintArmor</wornGraphicPath>
+            <tags>
+                <li>BEWH_LivingSaintArmor</li>
+            </tags>
+            <renderNodeProperties Inherit="false">
+                <!-- Backpacks -->
+                <li>
+                    <workerClass>Core40k.PawnRenderNodeWorker_AttachmentBackpack</workerClass>
+                    <nodeClass>Core40k.PawnRenderNode_FlagEdit</nodeClass>
+                    <texPath>Things/Armor/Imperium/PowerArmor/LivingSaint/Backpacks/BEWH_LSaintArmor_Backpack</texPath>
+                    <shaderTypeDef>CutoutComplex</shaderTypeDef>
+                    <parentTagDef>Body</parentTagDef>
+                    <drawData>
+                        <dataEast>
+                            <layer>71</layer>
+                        </dataEast>
+                        <dataWest>
+                            <layer>71</layer>
+                        </dataWest>
+                        <dataNorth>
+                            <layer>99.6</layer>
+                        </dataNorth>
+                        <dataSouth>
+                            <layer>-1</layer>
+                        </dataSouth>
+                    </drawData>
+                </li>
+            </renderNodeProperties>
+        </apparel>
+        <comps>
+            <li Class="Core40k.CompProperties_ConversionField" />
+            <li Class="CompProperties_Biocodable" />
+            <li Class="Core40k.CompProperties_MultiColor">
+                <defaultPrimaryColor>(0.8358, 0.619, 0.298)</defaultPrimaryColor>
+                <defaultSecondaryColor>(0.407, 0.094, 0.129)</defaultSecondaryColor>
+            </li>
+            <li Class="Core40k.CompProperties_Decorative">
+                <decorativeType>Body</decorativeType>
+                <drawRenderNodesOnGround>true</drawRenderNodesOnGround>
+                <decorations>
+                    <li>BEWH_LivingSaintWings_1</li>
+                    <li>BEWH_LivingSaintHalo_2</li>
+                </decorations>
+            </li>
+        </comps>
+        <modExtensions>
+            <li Class="Core40k.DefModExtension_ForcesBodyType">
+                <forcedBodyType>Female</forcedBodyType>
+                <hideBodyGraphic>true</hideBodyGraphic>
+            </li>
+            <li Class="Core40k.DefModExtension_TextureFlags" />
+        </modExtensions>
+    </ThingDef>
+
+    <!-- Thunder Warrior Armor -->
+    <ThingDef ParentName="BEWH_PowerArmorBase">
+        <defName>BEWH_MkIPowerArmor</defName>
+        <label>Mk I Power Armor</label>
+        <description>The Mk I "Thunder" Power Armor is a prototype battle plate worn by the Emperor's Thunder Warriors during the Unification Wars. Built for brute strength rather than finesse, it features thick plasteel plating, basic servo-motors, and minimal environmental sealing.</description>
+        <recipeMaker>
+            <researchPrerequisite>BEWH_PowerArmorMkI</researchPrerequisite>
+        </recipeMaker>
+        <graphicData>
+            <texPath>Things/Armor/Imperium/PowerArmor/MkIPowerArmor/BEWH_MkIPowerArmor</texPath>
+        </graphicData>
+        <statBases>
+            <WorkToMake>45000</WorkToMake>
+            <MarketValue>5000</MarketValue>
+
+            <ArmorRating_Sharp>1.36</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.5</ArmorRating_Blunt>
+            <ArmorRating_Heat>0.9</ArmorRating_Heat>
+
+            <Insulation_Cold>33</Insulation_Cold>
+            <Insulation_Heat>18</Insulation_Heat>
+
+            <BEWH_InternalUpgradeSlots>2</BEWH_InternalUpgradeSlots>
+        </statBases>
+        <equippedStatOffsets Inherit="false">
+            <MoveSpeed>-0.2</MoveSpeed>
+            <TerrorSource MayRequire="Ludeon.RimWorld.Ideology">17</TerrorSource>
+        </equippedStatOffsets>
+        <costList>
+            <ComponentIndustrial>20</ComponentIndustrial>
+            <Steel>200</Steel>
+            <Plasteel>100</Plasteel>
+            <Uranium>25</Uranium>
+        </costList>
+        <apparel>
+            <wornGraphicPath>Things/Armor/Imperium/PowerArmor/MkIPowerArmor/BEWH_MkIPowerArmor</wornGraphicPath>
+            <tags>
+                <li>BEWH_PowerArmorMkI</li>
+            </tags>
+            <renderNodeProperties>
+                <!-- Backpacks -->
+                <li>
+                    <workerClass>Core40k.PawnRenderNodeWorker_AttachmentBackpack</workerClass>
+                    <nodeClass>Core40k.PawnRenderNode_FlagEdit</nodeClass>
+                    <texPath>Things/Armor/Imperium/PowerArmor/MkIPowerArmor/Backpacks/BEWH_MkIPowerArmor_Backpack</texPath>
+                    <shaderTypeDef>CutoutComplex</shaderTypeDef>
+                    <parentTagDef>Body</parentTagDef>
+                    <drawData>
+                        <dataEast>
+                            <layer>71</layer>
+                        </dataEast>
+                        <dataWest>
+                            <layer>71</layer>
+                        </dataWest>
+                        <dataNorth>
+                            <layer>99.6</layer>
+                        </dataNorth>
+                        <dataSouth>
+                            <layer>-1</layer>
+                        </dataSouth>
+                    </drawData>
+                </li>
+                <!-- Shoulder pad -->
+                <li>
+                    <workerClass>Core40k.PawnRenderNodeWorker_AttachmentShoulderPad</workerClass>
+                    <nodeClass>Core40k.PawnRenderNode_FlagEdit</nodeClass>
+                    <texPath>Things/Armor/Imperium/PowerArmor/MkIPowerArmor/Shoulder/BEWH_MkIPowerArmor_Shoulder</texPath>
+                    <shaderTypeDef>CutoutComplex</shaderTypeDef>
+                    <parentTagDef>Body</parentTagDef>
+                    <drawData>
+                        <dataEast>
+                            <layer>72</layer>
+                        </dataEast>
+                        <dataWest>
+                            <layer>72</layer>
+                        </dataWest>
+                    </drawData>
+                </li>
+            </renderNodeProperties>
+        </apparel>
+        <comps>
+            <li Class="Core40k.CompProperties_MultiColor">
+                <defaultPrimaryColor>(231,148,88)</defaultPrimaryColor>
+                <defaultSecondaryColor>(253,184,110)</defaultSecondaryColor>
+            </li>
+            <li Class="Core40k.CompProperties_Decorative">
+                <decorativeType>Body</decorativeType>
+                <drawRenderNodesOnGround>true</drawRenderNodesOnGround>
+            </li>
+        </comps>
+        <modExtensions>
+            <li Class="Core40k.DefModExtension_ForcesBodyType">
+                <forcedBodyType>Hulk</forcedBodyType>
+                <hideBodyGraphic>true</hideBodyGraphic>
+            </li>
+            <li Class="Core40k.DefModExtension_TextureFlags" />
+        </modExtensions>
+    </ThingDef>
+
+
+</Defs>

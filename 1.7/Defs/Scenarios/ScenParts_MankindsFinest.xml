@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <ScenPartDef>
+        <defName>BEWH_CrashInjuries</defName>
+        <label>crash injuries</label>
+        <scenPartClass>Genes40k.ScenPart_CrashInjuries</scenPartClass>
+        <category>PlayerPawnModifier</category>
+        <canBeRandomlyAdded>false</canBeRandomlyAdded>
+        <summaryPriority>300</summaryPriority>
+        <maxUses>1</maxUses>
+    </ScenPartDef>
+
+    <ScenPartDef>
+        <defName>BEWH_StartingChapter</defName>
+        <label>starting chapter</label>
+        <scenPartClass>Genes40k.ScenPart_StartingChapter</scenPartClass>
+        <category>Rule</category>
+        <canBeRandomlyAdded>false</canBeRandomlyAdded>
+        <summaryPriority>450</summaryPriority>
+        <maxUses>1</maxUses>
+    </ScenPartDef>
+
+</Defs>

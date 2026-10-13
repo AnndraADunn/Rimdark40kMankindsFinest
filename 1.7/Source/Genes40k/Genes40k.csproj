@@ -1,0 +1,336 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>Genes40k</RootNamespace>
+    <AssemblyName>Genes40k</AssemblyName>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <OutputPath>../../Assemblies</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+    <NoWarn>$(NoWarn);MSB3277;NU1702</NoWarn>
+    <RimWorldDir>$(MSBuildProjectDirectory)\..\..\..\..\..\</RimWorldDir>
+    <WorkshopDir>$(MSBuildProjectDirectory)\..\..\..\..\..\..\..\workshop\content\294100\</WorkshopDir>
+    <FrameworkDir>$(MSBuildProjectDirectory)\..\..\..\..\Rimdark40kFramework\1.7\</FrameworkDir>
+    <VefDir>$(WorkshopDir)2023507013\1.6\Assemblies\</VefDir>
+    <VefDir Condition="Exists('$(WorkshopDir)2023507013\1.7\Assemblies\VEF.dll')">$(WorkshopDir)2023507013\1.7\Assemblies\</VefDir>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\..\..\..\..\..\workshop\content\294100\2009463077\1.7\Assemblies\0Harmony.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>$(RimWorldDir)Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Core40k">
+      <HintPath>..\..\..\..\Rimdark40kFramework\1.7\Assemblies\Core40k.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityStubs">
+      <HintPath>$(RimWorldDir)UnityStubs.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Waylith">
+      <HintPath>$(RimWorldDir)Waylith.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Waylith.UnityCompat">
+      <HintPath>$(RimWorldDir)Waylith.UnityCompat.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Brutal.Core.Numerics">
+      <HintPath>$(RimWorldDir)Brutal.Core.Numerics.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VEF">
+      <HintPath>$(VefDir)VEF.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup Condition="!Exists('$(WorkshopDir)2023507013\1.7\Assemblies\VEF.dll')">
+    <ProjectReference Include="$(FrameworkDir)Source\UnityFacades\UnityFacades.csproj" Private="false" />
+    <ProjectReference Include="$(FrameworkDir)Source\UnityFacades\UnityFacades.csproj" AdditionalProperties="FacadeName=UnityEngine.IMGUIModule" Private="false" />
+    <ProjectReference Include="$(FrameworkDir)Source\UnityFacades\UnityFacades.csproj" AdditionalProperties="FacadeName=UnityEngine.TextRenderingModule" Private="false" />
+    <ProjectReference Include="$(FrameworkDir)Source\UnityFacades\UnityFacades.csproj" AdditionalProperties="FacadeName=UnityEngine.PhysicsModule" Private="false" />
+    <ProjectReference Include="$(FrameworkDir)Source\UnityFacades\UnityFacades.csproj" AdditionalProperties="FacadeName=UnityEngine.TilemapModule" Private="false" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abilities\Ability_ChapterBanner.cs" />
+    <Compile Include="Abilities\Ability_PlaceBanner.cs" />
+    <Compile Include="Abilities\Ability_ForeswalkLong.cs" />
+    <Compile Include="Abilities\Ability_ForeswalkShort.cs" />
+    <Compile Include="Abilities\Ability_Inspire.cs" />
+    <Compile Include="Abilities\Ability_IronCircle.cs" />
+    <Compile Include="Abilities\Ability_RaiseBastion.cs" />
+    <Compile Include="Abilities\Ability_PsychicEmp.cs" />
+    <Compile Include="Abilities\Ability_SteelRain.cs" />
+    <Compile Include="Abilities\Ability_UpdateGizmo.cs" />
+    <Compile Include="ChapterApparelMultiColor\ChapterColourDef.cs" />
+    <Compile Include="ChapterApparelMultiColor\CompChapterColor.cs" />
+    <Compile Include="ChapterApparelMultiColor\CompChapterColorWithShoulderDecoration.cs" />
+    <Compile Include="ChapterApparelMultiColor\CompProperties_ChapterColor.cs" />
+    <Compile Include="ChapterApparelMultiColor\CompProperties_ChapterColorWithShoulderDecoration.cs" />
+    <Compile Include="ChapterApparelMultiColor\PawnRenderNodeWorker_LivingSaintAttachmentBody.cs" />
+    <Compile Include="ChapterApparelMultiColor\PawnRenderNodeWorker_LivingSaintAttachmentHead.cs" />
+    <Compile Include="ChapterApparelMultiColor\ShoulderIconDef.cs" />
+    <Compile Include="ChapterApparelMultiColor\ShoulderIconSettings.cs" />
+    <Compile Include="ChapterApparelMultiColor\ShoulderPadIconTab.cs" />
+    <Compile Include="Comps\CompProperties_LifespanDropItem.cs" />
+    <Compile Include="Comps\Comp_LifespanDropItem.cs" />
+    <Compile Include="Comps\GameComponent_MankindFinestUtils.cs" />
+    <Compile Include="Comps\MapComponent_PrimarchPresence.cs" />
+    <Compile Include="Comps\GameComponent_Perpetual.cs" />
+    <Compile Include="Comps\GameComponent_UnlockedMaterials.cs" />
+    <Compile Include="Comps\GameComponent_CustomChapterGenes.cs" />
+    <Compile Include="Comps\HediffCompProperties_PhaseDevelopment.cs" />
+    <Compile Include="Comps\HediffComp_PhaseDevelopment.cs" />
+    <Compile Include="Comps\LivingSaint\CompAbilityEffect_DivineGraceCost.cs" />
+    <Compile Include="Comps\LivingSaint\CompAbilityEffect_ProofOfFaith.cs" />
+    <Compile Include="Comps\LivingSaint\CompProperties_AbilityDivineGraceCost.cs" />
+    <Compile Include="Comps\LivingSaint\CompProperties_AbilityProofOfFaith.cs" />
+    <Compile Include="Comps\LivingSaint\GameComponent_LivingSaint.cs" />
+    <Compile Include="Comps\LivingSaint\HediffCompProperties_SeverityFromDivineGrace.cs" />
+    <Compile Include="Comps\LivingSaint\HediffComp_SeverityFromDivineGrace.cs" />
+    <Compile Include="Comps\Primarch\CompAbilityEffect_DenyTheWitch.cs" />
+    <Compile Include="Comps\Primarch\CompAbilityEffect_SharedBurden.cs" />
+    <Compile Include="Comps\Primarch\CompAbilityEffect_SummonMechsForCaster.cs" />
+    <Compile Include="Comps\Primarch\CompAbilityEffect_WordOfAuthority.cs" />
+    <Compile Include="Comps\Primarch\CompAbilityEffect_WordOfDivination.cs" />
+    <Compile Include="Comps\Primarch\CompProperties_AbilityDenyTheWitch.cs" />
+    <Compile Include="Comps\Primarch\CompProperties_AbilitySharedBurden.cs" />
+    <Compile Include="Comps\Primarch\CompProperties_AbilitySummonMechsForCaster.cs" />
+    <Compile Include="Comps\Primarch\CompProperties_AbilityTwinDisable.cs" />
+    <Compile Include="Comps\Primarch\CompProperties_AbilityTwinLink.cs" />
+    <Compile Include="Comps\Primarch\CompProperties_AbilityTwinTeleport.cs" />
+    <Compile Include="Comps\Primarch\CompProperties_AbilityWordOfAuthority.cs" />
+    <Compile Include="Comps\Primarch\CompProperties_AbilityWordOfDivination.cs" />
+    <Compile Include="Comps\Primarch\Comp_TwinDisable.cs" />
+    <Compile Include="Comps\Primarch\Comp_TwinLink.cs" />
+    <Compile Include="Comps\Primarch\Comp_TwinTeleport.cs" />
+    <Compile Include="Comps\Rank\CompAbilityEffect_GeneseedHarvest.cs" />
+    <Compile Include="Comps\Rank\CompAbilityEffect_OathOfService.cs" />
+    <Compile Include="Comps\Rank\CompAbilityEffect_StrengthenFaith.cs" />
+    <Compile Include="Comps\Rank\CompProperties_AbilityOathOfService.cs" />
+    <Compile Include="Comps\Rank\CompProperties_AbilityGeneseedHarvest.cs" />
+    <Compile Include="Comps\Rank\CompProperties_AbilityStrengthenFaith.cs" />
+    <Compile Include="Comps\SpaceMarine\CompAbilityEffect_Remembrance.cs" />
+    <Compile Include="Comps\SpaceMarine\CompAbilityEffect_StasisConfirmation.cs" />
+    <Compile Include="Comps\SpaceMarine\CompProperties_AbilityRemembrance.cs" />
+    <Compile Include="Comps\SpaceMarine\CompProperties_AbilityStasisConfirmation.cs" />
+    <Compile Include="Comps\ThunderWarrior\CompAbilityEffect_ResurrectingShock.cs" />
+    <Compile Include="Comps\ThunderWarrior\CompAbilityEffect_SearWounds.cs" />
+    <Compile Include="Comps\ThunderWarrior\CompProperties_AbilityResurrectingShock.cs" />
+    <Compile Include="Comps\ThunderWarrior\CompProperties_AbilitySearWounds.cs" />
+    <Compile Include="ConditionalStatAffecters\ConditionalStatAffecter_WarpShield.cs" />
+    <Compile Include="Debug\DebugActions.cs" />
+    <Compile Include="DefModExtensions\AbilityExtension_PsyfocusCost.cs" />
+    <Compile Include="DefModExtensions\DefModExtension_BaseMaterial.cs" />
+    <Compile Include="DefModExtensions\DefModExtension_OrganDecayResistance.cs" />
+    <Compile Include="DefModExtensions\DefModExtension_PlaceBanner.cs" />
+    <Compile Include="DefModExtensions\DefModExtension_SpawnAsChapter.cs" />
+    <Compile Include="DefModExtensions\DefModExtension_ThoughtXenophobiaWhitelist.cs" />
+    <Compile Include="DefModExtensions\DefModExtension_DecorativeFlag.cs" />
+    <Compile Include="DefModExtensions\DefModExtension_DropPod.cs" />
+    <Compile Include="DefModExtensions\DefModExtension_ExclusiveMech.cs" />
+    <Compile Include="DefModExtensions\DefModExtension_GeneInducedFear.cs" />
+    <Compile Include="DefModExtensions\DefModExtension_GeneseedHarvest.cs" />
+    <Compile Include="DefModExtensions\DefModExtension_GeneStorageGraphicProgression.cs" />
+    <Compile Include="DefModExtensions\DefModExtension_GeneseedVialRecipe.cs" />
+    <Compile Include="DefModExtensions\DefModExtension_LegacyArmourHitPoints.cs" />
+    <Compile Include="DefModExtensions\DefModExtension_LegionMaterialCreation.cs" />
+    <Compile Include="DefModExtensions\DefModExtension_PerpetualGene.cs" />
+    <Compile Include="DefModExtensions\DefModExtension_PrimarchVatExtras.cs" />
+    <Compile Include="DefModExtensions\DefModExtension_PrimarchVatTexture.cs" />
+    <Compile Include="GeneClasses\Gene_ImmortisGland.cs" />
+    <Compile Include="GeneClasses\Gene_Psyker.cs" />
+    <Compile Include="GeneClasses\Gene_UnstableOrgans.cs" />
+    <Compile Include="GeneClasses\Gene_WarpShield.cs" />
+    <Compile Include="GeneClasses\GeneGizmo_ResourceDivineGrace.cs" />
+    <Compile Include="GeneClasses\Gene_DivineGrace.cs" />
+    <Compile Include="GeneClasses\Gene_CustomChapter.cs" />
+    <Compile Include="GeneClasses\Gene_Furybound.cs" />
+    <Compile Include="GeneClasses\Gene_InduceFear.cs" />
+    <Compile Include="GeneClasses\Gene_Perpetual.cs" />
+    <Compile Include="GeneClasses\Gene_ProgenoidGlands.cs" />
+    <Compile Include="GeneClasses\Gene_TwinConnected.cs" />
+    <Compile Include="GeneClasses\Gene_ZealousFury.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch_BlockedPsycasting.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch_ChapterMaterialCheckboxed.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch_DeathacidifierProgenoidGlands.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch_DomitarMechExclusive.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch_ImplantGeneseedCorrectIngredient.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch_CreateSurgeryBillVialPicker.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch_LivingSaintDestroyRemoveCount.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch_MoreArtJoy.cs" />
+    <Compile Include="HarmonyPatches\ManualHarmonyPatches.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch_OffworldMarineMimicPlayerRelation.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch_PerpetualCorpseNoDestroy.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch_PerpetualNoDestroy.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch_ProgenoidGlandProgress.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch_NaturalBirthPerpetual.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch_ReactToMelee.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch_RubiconSurgeryChanceIncrease.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch_SecondProgenoidGlandProgress.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch_SerfBuffOnSpawn.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch_SerfGainTrait.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch_SerfInductOnRecruit.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch_SerfSavedByRescue.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch_SerfSavedByTend.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch_SpaceMarineChapterSpawn.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch_ZealousFuryStopMentalBreak.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch_ZealousFuryStopMentalState.cs" />
+    <Compile Include="Hediffs\Hediff_Serf.cs" />
+    <Compile Include="Hediffs\Hediff_SeverityByPain.cs" />
+    <Compile Include="Integrations\RimHUDProgenoidGlandProgress.cs" />
+    <Compile Include="MayRequire\MayRequireAlteredCarbonAttribute.cs" />
+    <Compile Include="ModSettings\ModSettingTab_Geneseed.cs" />
+    <Compile Include="ModSettings\ModSettingTab_LivingSaint.cs" />
+    <Compile Include="ModSettings\ModSettingTab_GeneMain.cs" />
+    <Compile Include="ModSettings\ModSettingTab_GeneMisc.cs" />
+    <Compile Include="ModSettings\ModSettingTab_Psychic.cs" />
+    <Compile Include="Quest\IncidentWorker_LegionHeist.cs" />
+    <Compile Include="Rank\ChapterRankDef.cs" />
+    <Compile Include="Comps\Rank\CompAbilityEffect_SharedCooldown.cs" />
+    <Compile Include="Comps\Rank\CompProperties_AbilitySharedCooldown.cs" />
+    <Compile Include="Comps\Rank\CompAbilityEffect_TeleportStrike.cs" />
+    <Compile Include="Comps\Rank\CompProperties_AbilityTeleportStrike.cs" />
+    <Compile Include="DefModExtensions\DefModExtension_CustodesRankEffects.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch_CustodesGoodwillGain.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch_CustodesIncomingDamage.cs" />
+    <Compile Include="Hediffs\HediffComp_AquilanWard.cs" />
+    <Compile Include="Hediffs\HediffComp_ConditionalSeverity.cs" />
+    <Compile Include="Hediffs\HediffComp_SolarWatch.cs" />
+    <Compile Include="Hediffs\HediffComp_Unyielding.cs" />
+    <Compile Include="Rank\CustodesRankUtility.cs" />
+    <Compile Include="RoleRequirement\RoleRequirement_MustBeSpaceMarine.cs" />
+    <Compile Include="Scenario\ScenPart_CrashInjuries.cs" />
+    <Compile Include="FloatMenu\FloatMenuOptionProvider_CarryGeneseedVial.cs" />
+    <Compile Include="GeneseedKeeperUtility.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch_KeeperKeepsGeneseedWhenDowned.cs" />
+    <Compile Include="Workers\WorkGiver_SecureGeneseed.cs" />
+    <Compile Include="Workers\WorkGiver_DepositGeneseed.cs" />
+    <Compile Include="Workers\JobDriver\JobDriver_DepositGeneseedVial.cs" />
+    <Compile Include="Scenario\ScenPart_StartingChapter.cs" />
+    <Compile Include="StockGenerator\StockGenerator_TagSangprimusMaterialNoDupe.cs" />
+    <Compile Include="ThingClasses\Building_ChapterBanner.cs" />
+    <Compile Include="ThingClasses\Building_ChapterBuildingMulti.cs" />
+    <Compile Include="ThingClasses\Building_ChapterBuildingSingle.cs" />
+    <Compile Include="ThingClasses\Building_DecorativeFlag.cs" />
+    <Compile Include="ThingClasses\Building_DropPod.cs" />
+    <Compile Include="ThingClasses\Building_GeneGestator.cs" />
+    <Compile Include="ThingClasses\Building_GeneTable.cs" />
+    <Compile Include="ThingClasses\Building_GeneticStorage.cs" />
+    <Compile Include="DefModExtensions\DefModExtension_GeneseedPurity.cs" />
+    <Compile Include="DefModExtensions\DefModExtension_ChapterGene.cs" />
+    <Compile Include="DefModExtensions\DefModExtension_CustomChapterGenerated.cs" />
+    <Compile Include="DefModExtensions\DefModExtension_GeneFromMaterial.cs" />
+    <Compile Include="DefModExtensions\DefModExtension_KeepPrerequisitePermit.cs" />
+    <Compile Include="DefModExtensions\DefModExtension_LivingSaint.cs" />
+    <Compile Include="DefModExtensions\DefModExtension_SangprimusPortum.cs" />
+    <Compile Include="DefModExtensions\DefModExtension_PhaseDevelopment.cs" />
+    <Compile Include="DefModExtensions\DefModExtension_GeneseedVial.cs" />
+    <Compile Include="DefModExtensions\DefModExtension_ChapterMaterial.cs" />
+    <Compile Include="DefModExtensions\DefModExtension_PrimarchMaterial.cs" />
+    <Compile Include="DefModExtensions\DefModExtension_PrimarchGestation.cs" />
+    <Compile Include="DefModExtensions\DefModExtension_GeneMatrixRecipe.cs" />
+    <Compile Include="DefModExtensions\DefModExtension_GeneMatrix.cs" />
+    <Compile Include="DefModExtensions\DefModExtension_GeneGestator.cs" />
+    <Compile Include="GeneClasses\Gene_EternalWatch.cs" />
+    <Compile Include="GeneClasses\Gene_LivingSaint.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch_BillPsycost.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch_EternalWatchStopMentalBreak.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch_EternalWatchStartMentalUndraft.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch_KeepPrerequisitePermit.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch_EternalWatchStopMentalState.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch_LivingSaintResurrection.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch_LivingSaintAscension.cs" />
+    <Compile Include="ThingClasses\Building_PrimarchGrowthVat.cs" />
+    <Compile Include="ThingClasses\Building_SangprimusPortum.cs" />
+    <Compile Include="ThingClasses\FlagIconDef.cs" />
+    <Compile Include="ThingClasses\GeneMaterialExtra.cs" />
+    <Compile Include="ThingClasses\GeneticMatrix.cs" />
+    <Compile Include="ThingClasses\PrimarchEmbryo.cs" />
+    <Compile Include="ThingClasses\GeneseedVial.cs" />
+    <Compile Include="Windows\Dialog_ChangeDefaultChapterColour.cs" />
+    <Compile Include="Windows\Dialog_ChangeFlagColour.cs" />
+    <Compile Include="Windows\Dialog_CraftPrimarchEmbryo.cs" />
+    <Compile Include="Windows\Dialog_CreateChapterGene.cs" />
+    <Compile Include="Windows\Dialog_CustodesCustomization.cs" />
+    <Compile Include="Windows\Dialog_CustomChapterGeneList.cs" />
+    <Compile Include="Windows\Dialog_SelectFlagIcon.cs" />
+    <Compile Include="Windows\Dialog_SelectGeneseedVial.cs" />
+    <Compile Include="Windows\Dialog_SelectChapter.cs" />
+    <Compile Include="Windows\Dialog_ViewGenesEmbryo.cs" />
+    <Compile Include="Windows\ITab_ContentsGeneticStorage.cs" />
+    <Compile Include="Windows\ITab_SangprimusPortum.cs" />
+    <Compile Include="Workers\JobDriver\JobDriver_CarryThingToBuilding.cs" />
+    <Compile Include="Workers\JobDriver\JobDriver_CarryMaterialToSangprimus.cs" />
+    <Compile Include="Workers\JobDriver\JobDriver_CarryMatrixToGeneGestator.cs" />
+    <Compile Include="Workers\JobDriver\JobDriver_CarryPrimarchEmbryoToVat.cs" />
+    <Compile Include="Workers\JobDriver\JobDriver_EmptyContainerAndFlee.cs" />
+    <Compile Include="Workers\JobDriver\JobDriver_FleeInducedFear.cs" />
+    <Compile Include="Workers\ThoughtWorkers\ThoughtWorker_Xenophobia.cs" />
+    <Compile Include="Workers\ThoughtWorkers\ThoughtWorker_HolyRadiance.cs" />
+    <Compile Include="Workers\ThoughtWorkers\ThoughtWorker_Pariah.cs" />
+    <Compile Include="Workers\ThoughtWorkers\ThoughtWorker_PrimarchPresence.cs" />
+    <Compile Include="Workers\ThoughtWorkers\ThoughtWorker_Precept_Psyker.cs" />
+    <Compile Include="Workers\ThoughtWorkers\ThoughtWorker_Precept_Psyker_Social.cs" />
+    <Compile Include="Workers\ThoughtWorkers\ThoughtWorker_Serf.cs" />
+    <Compile Include="Workers\ThoughtWorkers\ThoughtWorker_ThunderWarrior.cs" />
+    <Compile Include="Workers\ThoughtWorkers\ThoughtWorker_XXTwinDead.cs" />
+    <Compile Include="Workers\WorkerClass_ImplantLegionMaterial.cs" />
+    <Compile Include="Workers\WorkerClass_LegionMaterialCreation.cs" />
+    <Compile Include="Workers\WorkerClass_RubiconPrimaris.cs" />
+    <Compile Include="Workers\WorkGiver_CarryMaterialToSangprimus.cs" />
+    <Compile Include="Workers\WorkGiver_DoBillPsychic.cs" />
+    <Compile Include="Workers\WorkGiver_CarryPrimarchEmbryoToVat.cs" />
+    <Compile Include="Workers\WorkGiver_FillPrimarchVatWithNutrition.cs" />
+    <Compile Include="Workers\Recipe_MakePrimarchEmbryo.cs" />
+    <Compile Include="Workers\WorkerClass_PhaseDevelopment.cs" />
+    <Compile Include="Workers\WorkerClass_ImplantGeneseed.cs" />
+    <Compile Include="Workers\Bill_GeneseedImplant.cs" />
+    <Compile Include="Workers\Bill_ApplyChapter.cs" />
+    <Compile Include="Workers\Bill_PrimarchEmbryo.cs" />
+    <Compile Include="Workers\WorkGiver_CarryMatrixToGeneGestator.cs" />
+    <Compile Include="DefModExtensions\DefModExtension_Psyker.cs" />
+    <Compile Include="GeneClasses\Gene_Pariah.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch_MentalBreakdownPsyker.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch_NaturalBirthPsykerPariah.cs" />
+    <Compile Include="DefModExtensions\DefModExtension_Pariah.cs" />
+    <Compile Include="Genes40kMod.cs" />
+    <Compile Include="Genes40kModSettings.cs" />
+    <Compile Include="Workers\WorkerClass_GeneProgenoidRemovalPrimarisMarine.cs" />
+    <Compile Include="Workers\WorkerClass_GeneProgenoidRemovalSpaceMarine.cs" />
+    <Compile Include="Workers\WorkerClass_GeneProgenoidRemovalBase.cs" />
+    <Compile Include="Genes40kUtils.cs" />
+    <Compile Include="SerfUtility.cs" />
+    <Compile Include="CustomChapterGene.cs" />
+    <Compile Include="CustomGeneKind.cs" />
+    <Compile Include="CustodesDisciplineDef.cs" />
+    <Compile Include="CustodesDisciplineLevel.cs" />
+    <Compile Include="ITwinGene.cs" />
+    <Compile Include="CustomChapterGeneUtility.cs" />
+    <Compile Include="CustomChapterGeneDefBuilder.cs" />
+    <Compile Include="CustomChapterGeneTemplateDef.cs" />
+    <Compile Include="ChapterTraitDef.cs" />
+    <Compile Include="Workers\ChapterTraitWorker.cs" />
+    <Compile Include="Workers\ChapterTraitWorker_FleshChange.cs" />
+    <Compile Include="GeneseedVialKindUtility.cs" />
+    <Compile Include="ChapterChoiceUtility.cs" />
+    <Compile Include="GlobalUsings.cs" />
+    <Compile Include="Genes40kDefOf.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+</Project>

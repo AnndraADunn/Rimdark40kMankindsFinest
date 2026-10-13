@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <!-- Brims -->
+    <Core40k.ExtraDecorationDef>
+        <defName>BEWH_MkXBladeguardBrim</defName>
+        <label>Bladeguard brim</label>
+        <description>...</description>
+        <iconPath>UI/Decoration/Icons/Astartes/Headgear/BEWH_Deco_BladeguardShield_icon</iconPath>
+        <drawnTextureIconPath>Things/Decorations/Headgear/Common/BEWH_Deco_BladeguardShield</drawnTextureIconPath>
+        <drawSize>(0.5, 0.5)</drawSize>
+        <sortOrder>4</sortOrder>
+
+        <defaultShowRotation>
+            <li>West</li>
+            <li>South</li>
+            <li>East</li>
+        </defaultShowRotation>
+        <appliesTo>
+            <li>BEWH_MkXPowerArmorHelmet</li>
+            <li>BEWH_MkVIIPowerArmorHelmet</li>
+        </appliesTo>
+        <colourable>true</colourable>
+        <hasParentColourPaletteOption>true</hasParentColourPaletteOption>
+        <useParentColourAsDefault>true</useParentColourAsDefault>
+        <drawData>
+            <dataNorth>
+                <layer>76</layer>
+            </dataNorth>
+            <dataSouth>
+                <layer>76</layer>
+            </dataSouth>
+            <dataEast>
+                <layer>71</layer>
+            </dataEast>
+            <dataWest>
+                <layer>71</layer>
+            </dataWest>
+        </drawData>
+        <shaderType>Cutout</shaderType>
+        <decorationType>BEWH_DecoCategory_Brims</decorationType>
+        <pawnStatOffsets>
+            <MeleeDodgeChance>3</MeleeDodgeChance>
+        </pawnStatOffsets>
+        <pawnStatFactors>
+            <MeleeDamageFactor>1.05</MeleeDamageFactor>
+        </pawnStatFactors>
+        <cost>
+            <Plasteel>10</Plasteel>
+        </cost>
+        <workAmount>900</workAmount>
+    </Core40k.ExtraDecorationDef>
+
+    <Core40k.ExtraDecorationDef>
+        <defName>BEWH_Deco_MkVII_VictrixBrim</defName>        <!-- MkVII -->
+        <label>Victrix Guard brim</label>
+        <description>...</description>
+        <iconPath>UI/Decoration/Icons/Astartes/Headgear/BEWH_Deco_VictrixHelm_icon</iconPath>
+        <drawnTextureIconPath>Things/Decorations/Headgear/MkVII/BEWH_Deco_VictrixHelmMkVII</drawnTextureIconPath>
+        <drawSize>(0.5, 0.5)</drawSize>
+        <sortOrder>5</sortOrder>
+
+        <defaultShowRotation>
+            <li>West</li>
+            <li>South</li>
+            <li>East</li>
+        </defaultShowRotation>
+        <appliesTo>
+            <li>BEWH_MkVIIPowerArmorHelmet</li>
+        </appliesTo>
+        <colourable>true</colourable>
+        <hasParentColourPaletteOption>true</hasParentColourPaletteOption>
+        <drawData>
+            <dataNorth>
+                <layer>76</layer>
+            </dataNorth>
+            <dataSouth>
+                <layer>76</layer>
+                <offset>(0, 0, -0.04)</offset>
+            </dataSouth>
+            <dataEast>
+                <layer>71</layer>
+            </dataEast>
+            <dataWest>
+                <layer>71</layer>
+            </dataWest>
+        </drawData>
+        <availablePresets>
+            <li>BEWH_DecoPaletteGold</li>
+            <li>BEWH_DecoPaletteGreen</li>
+            <li>BEWH_DecoPaletteSilver</li>
+            <li>BEWH_DecoPaletteIFBlack</li>
+        </availablePresets>
+        <shaderType>Cutout</shaderType>
+        <defaultColour>(240,176,29)</defaultColour>
+        <decorationType>BEWH_DecoCategory_Brims</decorationType>
+        <pawnStatOffsets>
+            <ArmorRating_Sharp>0.03</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.03</ArmorRating_Blunt>
+        </pawnStatOffsets>
+        <givesHediffs>
+            <li>BEWH_VictrixAura</li>
+        </givesHediffs>
+        <customEffectDescriptions>
+            <li>Colonists within 4 cells gain +5% sharp and blunt armour</li>
+        </customEffectDescriptions>
+        <cost>
+            <Plasteel>10</Plasteel>
+        </cost>
+        <workAmount>900</workAmount>
+    </Core40k.ExtraDecorationDef>
+
+    <Core40k.ExtraDecorationDef>
+        <defName>BEWH_Deco_MkX_VictrixBrim</defName>        <!-- MkX -->
+        <label>Victrix Guard brim</label>
+        <description>...</description>
+        <iconPath>UI/Decoration/Icons/Astartes/Headgear/BEWH_Deco_VictrixHelm_icon</iconPath>
+        <drawnTextureIconPath>Things/Decorations/Headgear/MkX/BEWH_Deco_VictrixHelmMkX</drawnTextureIconPath>
+        <drawSize>(0.5, 0.5)</drawSize>
+        <sortOrder>5</sortOrder>
+
+        <defaultShowRotation>
+            <li>West</li>
+            <li>South</li>
+            <li>East</li>
+        </defaultShowRotation>
+        <appliesTo>
+            <li>BEWH_MkXPowerArmorHelmet</li>
+        </appliesTo>
+        <colourable>true</colourable>
+        <hasParentColourPaletteOption>true</hasParentColourPaletteOption>
+        <drawData>
+            <dataNorth>
+                <layer>76</layer>
+            </dataNorth>
+            <dataSouth>
+                <layer>76.2</layer>
+                <offset>(0, 0, -0.04)</offset>
+            </dataSouth>
+            <dataEast>
+                <layer>71</layer>
+            </dataEast>
+            <dataWest>
+                <layer>71</layer>
+            </dataWest>
+        </drawData>
+        <availablePresets>
+            <li>BEWH_DecoPaletteGold</li>
+            <li>BEWH_DecoPaletteGreen</li>
+            <li>BEWH_DecoPaletteSilver</li>
+            <li>BEWH_DecoPaletteIFBlack</li>
+        </availablePresets>
+        <shaderType>Cutout</shaderType>
+        <defaultColour>(240,176,29)</defaultColour>
+        <decorationType>BEWH_DecoCategory_Brims</decorationType>
+        <pawnStatOffsets>
+            <ArmorRating_Sharp>0.03</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.03</ArmorRating_Blunt>
+        </pawnStatOffsets>
+        <givesHediffs>
+            <li>BEWH_VictrixAura</li>
+        </givesHediffs>
+        <customEffectDescriptions>
+            <li>Colonists within 4 cells gain +5% sharp and blunt armour</li>
+        </customEffectDescriptions>
+        <cost>
+            <Plasteel>10</Plasteel>
+        </cost>
+        <workAmount>900</workAmount>
+    </Core40k.ExtraDecorationDef>
+
+</Defs>

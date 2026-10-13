@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <JobDef>
+        <defName>BEWH_DepositGeneseedVial</defName>
+        <driverClass>Genes40k.JobDriver_DepositGeneseedVial</driverClass>
+        <reportString>securing TargetA.</reportString>
+        <suspendable>false</suspendable>
+    </JobDef>
+
+    <JobDef>
+        <defName>BEWH_CarryMatrixToGeneGestator</defName>
+        <driverClass>Genes40k.JobDriver_CarryMatrixToGeneGestator</driverClass>
+        <reportString>filling TargetA with TargetB.</reportString>
+        <suspendable>false</suspendable>
+        <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    </JobDef>
+
+    <JobDef>
+        <defName>BEWH_CarryPrimarchEmbryoToVat</defName>
+        <driverClass>Genes40k.JobDriver_CarryPrimarchEmbryoToVat</driverClass>
+        <reportString>filling TargetA with TargetB.</reportString>
+        <suspendable>false</suspendable>
+        <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    </JobDef>
+
+    <JobDef>
+        <defName>BEWH_CarryMaterialToSangprimus</defName>
+        <driverClass>Genes40k.JobDriver_CarryMaterialToSangprimus</driverClass>
+        <reportString>filling TargetA with TargetB.</reportString>
+        <suspendable>false</suspendable>
+        <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    </JobDef>
+
+    <JobDef>
+        <defName>BEWH_InducedFearJob</defName>
+        <driverClass>Genes40k.JobDriver_FleeInducedFear</driverClass>
+        <reportString>fleeing.</reportString>
+        <checkOverrideOnDamage>OnlyIfInstigatorNotJobTarget</checkOverrideOnDamage>
+        <isIdle>true</isIdle>
+    </JobDef>
+
+</Defs>

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<!-- Ascendance Vial Related -->
+	<!-- Firstborn Phase Base -->
+	<HediffDef Name="BEWH_FirstbornPhaseHediffBase" Abstract="True">
+		<hediffClass>HediffWithComps</hediffClass>
+		<description>Undergoing a grueling process to become a firstborn. The phase advances on its own, but far faster while an apothecary keeps the patient tended.</description>
+		<everCurableByItem>false</everCurableByItem>
+		<makesAlert>false</makesAlert>
+		<tendable>true</tendable>
+		<initialSeverity>0.01</initialSeverity>
+		<maxSeverity>1</maxSeverity>
+		<isBad>false</isBad>
+		<stages>
+			<li>
+				<label>In progress</label>
+			</li>
+			<li>
+				<minSeverity>1</minSeverity>
+				<label>Completed</label>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>0.05</severityPerDay>
+			</li>
+			<li Class="HediffCompProperties_TendDuration">
+				<severityPerDayTended>0.33</severityPerDayTended>
+				<showTendQuality>true</showTendQuality>
+			</li>
+		</comps>
+	</HediffDef>
+	<!-- Firstborn Phase 1 -->
+	<HediffDef ParentName="BEWH_FirstbornPhaseHediffBase">
+		<defName>BEWH_FirstbornPhaseOne</defName>
+		<label>firstborn development phase 1</label>
+		<comps>
+			<li Class="Genes40k.HediffCompProperties_PhaseDevelopment">
+				<nextPhase>BEWH_FirstbornPhaseTwo</nextPhase>
+				<addsGenes>
+					<li>BEWH_CatalepseanNode</li>
+					<li>BEWH_Preomnor</li>
+					<li>BEWH_Omophagea</li>
+					<li>BEWH_MultiLung</li>
+					<li>BEWH_Occulobe</li>
+					<li>BEWH_LymansEar</li>
+				</addsGenes>
+				<letterLabel>Firstborn Phase Completed</letterLabel>
+				<letterText>The first phase of the firstborn development has been completed and the second phase has begun.</letterText>
+				<letterDef>PositiveEvent</letterDef>
+			</li>
+		</comps>
+	</HediffDef>
+	<!-- Firstborn Phase 2 -->
+	<HediffDef ParentName="BEWH_FirstbornPhaseHediffBase">
+		<defName>BEWH_FirstbornPhaseTwo</defName>
+		<label>firstborn development phase 2</label>
+		<comps>
+			<li Class="Genes40k.HediffCompProperties_PhaseDevelopment">
+				<nextPhase>BEWH_FirstbornPhaseThree</nextPhase>
+				<addsGenes>
+					<li>BEWH_SusAnMembrane</li>
+					<li>BEWH_Melanochrome</li>
+					<li>BEWH_OoliticKidney</li>
+					<li>BEWH_Neuroglottis</li>
+					<li>BEWH_Mucranoid</li>
+					<li>BEWH_BetchersGland</li>
+					<li>BEWH_ProgenoidGlands</li>
+				</addsGenes>
+				<letterLabel>Firstborn Phase Completed</letterLabel>
+				<letterText>The second phase of the firstborn development has been completed and the third phase has begun.</letterText>
+				<letterDef>PositiveEvent</letterDef>
+			</li>
+		</comps>
+	</HediffDef>
+	<!-- Firstborn Phase 3 -->
+	<HediffDef ParentName="BEWH_FirstbornPhaseHediffBase">
+		<defName>BEWH_FirstbornPhaseThree</defName>
+		<label>firstborn development phase 3</label>
+		<comps>
+			<li Class="Genes40k.HediffCompProperties_PhaseDevelopment">
+				<addsGenes>
+					<li>BEWH_BlackCarapace</li>
+				</addsGenes>
+				<letterLabel>Firstborn Development Completed</letterLabel>
+				<letterText>The final phase of the firstborn development has been completed. The black carapace has set and the firstborn is whole.</letterText>
+				<letterDef>PositiveEvent</letterDef>
+			</li>
+		</comps>
+	</HediffDef>
+
+
+	<!-- Primaris Phase Base -->
+	<HediffDef Name="BEWH_PrimarisPhaseHediffBase" Abstract="True">
+		<hediffClass>HediffWithComps</hediffClass>
+		<description>Undergoing a grueling process to become a primaris. The phase advances on its own, but far faster while an apothecary keeps the patient tended.</description>
+		<everCurableByItem>false</everCurableByItem>
+		<makesAlert>false</makesAlert>
+		<tendable>true</tendable>
+		<initialSeverity>0.04</initialSeverity>
+		<maxSeverity>1</maxSeverity>
+		<isBad>false</isBad>
+		<stages>
+			<li>
+				<label>In progress</label>
+			</li>
+			<li>
+				<minSeverity>1</minSeverity>
+				<label>Completed</label>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>0.04</severityPerDay>
+			</li>
+			<li Class="HediffCompProperties_TendDuration">
+				<severityPerDayTended>0.24</severityPerDayTended>
+				<showTendQuality>true</showTendQuality>
+			</li>
+		</comps>
+	</HediffDef>
+	<!-- Primaris Phase 1 -->
+	<HediffDef ParentName="BEWH_PrimarisPhaseHediffBase">
+		<defName>BEWH_PrimarisPhaseOne</defName>
+		<label>primaris development phase 1</label>
+		<comps>
+			<li Class="Genes40k.HediffCompProperties_PhaseDevelopment">
+				<nextPhase>BEWH_PrimarisPhaseTwo</nextPhase>
+				<addsGenes>
+					<li>BEWH_CatalepseanNode</li>
+					<li>BEWH_Preomnor</li>
+					<li>BEWH_Omophagea</li>
+					<li>BEWH_MultiLung</li>
+					<li>BEWH_Occulobe</li>
+					<li>BEWH_LymansEar</li>
+					<li>BEWH_Magnificat</li>
+				</addsGenes>
+				<letterLabel>Primaris Phase Completed</letterLabel>
+				<letterText>The first phase of the primaris development has been completed and the second phase has begun.</letterText>
+				<letterDef>PositiveEvent</letterDef>
+			</li>
+		</comps>
+	</HediffDef>
+	<!-- Primaris Phase 2 -->
+	<HediffDef ParentName="BEWH_PrimarisPhaseHediffBase">
+		<defName>BEWH_PrimarisPhaseTwo</defName>
+		<label>primaris development phase 2</label>
+		<comps>
+			<li Class="Genes40k.HediffCompProperties_PhaseDevelopment">
+				<nextPhase>BEWH_PrimarisPhaseThree</nextPhase>
+				<addsGenes>
+					<li>BEWH_SusAnMembrane</li>
+					<li>BEWH_Melanochrome</li>
+					<li>BEWH_OoliticKidney</li>
+					<li>BEWH_Neuroglottis</li>
+					<li>BEWH_Mucranoid</li>
+					<li>BEWH_BetchersGland</li>
+					<li>BEWH_ProgenoidGlands</li>
+				</addsGenes>
+				<letterLabel>Primaris Phase Completed</letterLabel>
+				<letterText>The second phase of the primaris development has been completed and the third phase has begun.</letterText>
+				<letterDef>PositiveEvent</letterDef>
+			</li>
+		</comps>
+	</HediffDef>
+	<!-- Primaris Phase 3 -->
+	<HediffDef ParentName="BEWH_PrimarisPhaseHediffBase">
+		<defName>BEWH_PrimarisPhaseThree</defName>
+		<label>primaris development phase 3</label>
+		<comps>
+			<li Class="Genes40k.HediffCompProperties_PhaseDevelopment">
+				<addsGenes>
+					<li>BEWH_BlackCarapace</li>
+					<li>BEWH_BelisarianFurnace</li>
+				</addsGenes>
+				<letterLabel>Primaris Development Completed</letterLabel>
+				<letterText>The final phase of the primaris development has been completed. The black carapace has set and the primaris is whole.</letterText>
+				<letterDef>PositiveEvent</letterDef>
+			</li>
+		</comps>
+	</HediffDef>
+
+</Defs>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <!-- Misc -->
+    <Core40k.ExtraDecorationDef>
+        <defName>BEWH_Deco_ClawMarks_1</defName>
+        <label>Claw marks</label>
+        <description>...</description>
+        <iconPath>UI/Decoration/Icons/Astartes/Armor/BEWH_Deco_ClawMarks1_icon</iconPath>
+        <drawnTextureIconPath>Things/Decorations/Armor/Common/BEWH_Deco_ClawMarks1</drawnTextureIconPath>
+        <sortOrder>8</sortOrder>
+        <defaultShowRotation>
+            <li>North</li>
+            <li>South</li>
+            <li>East</li>
+        </defaultShowRotation>
+        <appliesTo>
+            <li>BEWH_MkVIIPowerArmor</li>
+            <li>BEWH_MkXPowerArmor</li>
+        </appliesTo>
+        <drawData>
+            <dataNorth>
+                <layer>80</layer>
+            </dataNorth>
+            <dataSouth>
+                <layer>80</layer>
+            </dataSouth>
+            <dataEast>
+                <layer>79</layer>
+            </dataEast>
+            <dataWest>
+                <layer>77</layer>
+                <flip>true</flip>
+            </dataWest>
+        </drawData>
+        <flipable>true</flipable>
+        <decorationType>BEWH_DecoCategory_Shoulder</decorationType>
+        <pawnStatOffsets>
+            <TerrorSource MayRequire="Ludeon.RimWorld.Ideology">4</TerrorSource>
+        </pawnStatOffsets>
+        <cost>
+            <Steel>5</Steel>
+        </cost>
+        <workAmount>500</workAmount>
+    </Core40k.ExtraDecorationDef>
+
+    <Core40k.ExtraDecorationDef>
+        <defName>BEWH_Deco_Rondel1</defName>
+        <label>Rondel 1</label>
+        <description>...</description>
+        <iconPath>UI/Decoration/Icons/Astartes/Armor/BEWH_Deco_Shield1_icon</iconPath>
+        <drawnTextureIconPath>Things/Decorations/Armor/Common/Rondel/BEWH_Deco_Shield1</drawnTextureIconPath>
+        <sortOrder>1.4</sortOrder>
+        <defaultShowRotation>
+            <li>North</li>
+            <li>South</li>
+            <li>West</li>
+        </defaultShowRotation>
+        <appliesTo>
+            <li>BEWH_MkVIIPowerArmor</li>
+            <li>BEWH_MkXPowerArmor</li>
+        </appliesTo>
+        <drawData>
+            <dataNorth>
+                <layer>76</layer>
+            </dataNorth>
+            <dataSouth>
+                <layer>86</layer>
+            </dataSouth>
+            <dataEast>
+                <layer>84</layer>
+                <flip>true</flip>
+            </dataEast>
+            <dataWest>
+                <layer>84</layer>
+            </dataWest>
+        </drawData>
+        <availablePresets />
+        <colourable>true</colourable>
+        <colorAmount>2</colorAmount>
+        <useParentColourAsDefault>true</useParentColourAsDefault>
+        <flipable>true</flipable>
+        <decorationType>BEWH_DecoCategory_Shoulder</decorationType>
+        <pawnStatOffsets>
+            <ArmorRating_Sharp>0.02</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.02</ArmorRating_Blunt>
+        </pawnStatOffsets>
+        <incompatibleDecorations>
+            <li>BEWH_Deco_Rondel2</li>
+        </incompatibleDecorations>
+        <cost>
+            <Plasteel>10</Plasteel>
+            <ComponentIndustrial>2</ComponentIndustrial>
+        </cost>
+        <workAmount>500</workAmount>
+    </Core40k.ExtraDecorationDef>
+
+    <Core40k.ExtraDecorationDef>
+        <defName>BEWH_Deco_Rondel2</defName>
+        <label>Rondel 2</label>
+        <description>...</description>
+        <iconPath>UI/Decoration/Icons/Astartes/Armor/BEWH_Deco_Shield2_icon</iconPath>
+        <drawnTextureIconPath>Things/Decorations/Armor/Common/Rondel/BEWH_Deco_Shield2</drawnTextureIconPath>
+        <sortOrder>1.5</sortOrder>
+        <defaultShowRotation>
+            <li>North</li>
+            <li>South</li>
+            <li>West</li>
+        </defaultShowRotation>
+        <appliesTo>
+            <li>BEWH_MkVIIPowerArmor</li>
+            <li>BEWH_MkXPowerArmor</li>
+        </appliesTo>
+        <drawData>
+            <dataNorth>
+                <layer>76</layer>
+            </dataNorth>
+            <dataSouth>
+                <layer>86</layer>
+            </dataSouth>
+            <dataEast>
+                <layer>84</layer>
+                <flip>true</flip>
+            </dataEast>
+            <dataWest>
+                <layer>84</layer>
+            </dataWest>
+        </drawData>
+        <availablePresets />
+        <colourable>true</colourable>
+        <colorAmount>2</colorAmount>
+        <useParentColourAsDefault>true</useParentColourAsDefault>
+        <flipable>true</flipable>
+        <decorationType>BEWH_DecoCategory_Shoulder</decorationType>
+        <pawnStatOffsets>
+            <ArmorRating_Sharp>0.02</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.02</ArmorRating_Blunt>
+        </pawnStatOffsets>
+        <incompatibleDecorations>
+            <li>BEWH_Deco_Rondel1</li>
+        </incompatibleDecorations>
+        <cost>
+            <Plasteel>10</Plasteel>
+            <ComponentIndustrial>2</ComponentIndustrial>
+        </cost>
+        <workAmount>500</workAmount>
+    </Core40k.ExtraDecorationDef>
+
+</Defs>

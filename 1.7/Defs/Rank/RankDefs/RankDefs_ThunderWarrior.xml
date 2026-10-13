@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <!-- ====Thunder Warrior==== -->
+    <!-- =Base= -->
+    <!-- Initiate -->
+    <Core40k.RankDef>
+        <defName>BEWH_ThunderWarriorRankInitiate</defName>
+        <label>Initiate</label>
+        <description>Initiates are freshly forged recruits of the Thunder Warriors, they often serve in the support roles while prepearing themselves for the brutal challanges of the eternal war.</description>
+        <rankIconPath>UI/Ranks/ThunderWarriors/BEWH_Initiate</rankIconPath>
+        <defaultFirstRank>True</defaultFirstRank>
+
+        <statOffsets>
+            <RangedCooldownFactor>-0.01</RangedCooldownFactor>
+            <MeleeCooldownFactor>-0.01</MeleeCooldownFactor>
+        </statOffsets>
+
+        <requiredSkills>
+            <Shooting>5</Shooting>
+            <Melee>5</Melee>
+        </requiredSkills>
+        <requiredGenesAll>
+            <li>BEWH_ProtoOssmodula</li>
+            <li>BEWH_Musculeator</li>
+            <li>BEWH_Mentanifex</li>
+            <li>BEWH_Vigoranis</li>
+            <li>BEWH_Hyperanatomica</li>
+            <li>BEWH_Furybound</li>
+        </requiredGenesAll>
+
+        <rankTier>0</rankTier>
+    </Core40k.RankDef>
+    <!-- Linebreaker -->
+    <Core40k.RankDef>
+        <defName>BEWH_ThunderWarriorRankLinebreaker</defName>
+        <label>Linebreaker</label>
+        <description>Linebreakers are experienced Thunder Warriors who form the primary assault unit. They charge into enemy lines with unparalleled strength and ferocity.</description>
+        <rankIconPath>UI/Ranks/ThunderWarriors/BEWH_Linebreaker</rankIconPath>
+
+        <statOffsets>
+            <RangedCooldownFactor>-0.02</RangedCooldownFactor>
+            <MeleeCooldownFactor>-0.02</MeleeCooldownFactor>
+        </statOffsets>
+
+        <requiredSkills>
+            <Shooting>7</Shooting>
+            <Melee>7</Melee>
+        </requiredSkills>
+
+        <rankTier>2</rankTier>
+
+        <customEffectDescriptions>
+            <li>10% chance to not get organ decay</li>
+        </customEffectDescriptions>
+
+        <modExtensions>
+            <li Class="Genes40k.DefModExtension_OrganDecayResistance">
+                <organDecayResistance>10</organDecayResistance>                <!-- 100 means immune, its a flat chance to not apply organ decay on organd ecay tick -->
+            </li>
+        </modExtensions>
+    </Core40k.RankDef>
+    <!-- Storm-Captain -->
+    <Core40k.RankDef>
+        <defName>BEWH_ThunderWarriorRankStormCaptain</defName>
+        <label>Storm-Captain</label>
+        <description>Storm Captains are veteran Thunder Warriors who lead assault formations. They command with strength and brutal efficiency.</description>
+        <rankIconPath>UI/Ranks/ThunderWarriors/BEWH_Stormcaptain</rankIconPath>
+
+        <statOffsets>
+            <RangedCooldownFactor>-0.02</RangedCooldownFactor>
+            <MeleeCooldownFactor>-0.02</MeleeCooldownFactor>
+            <CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">-0.35</CertaintyLossFactor>
+        </statOffsets>
+
+        <requiredSkills>
+            <Shooting>9</Shooting>
+            <Melee>9</Melee>
+        </requiredSkills>
+
+        <rankTier>5</rankTier>
+
+        <customEffectDescriptions>
+            <li>20% chance to not get organ decay</li>
+        </customEffectDescriptions>
+
+        <modExtensions>
+            <li Class="Genes40k.DefModExtension_OrganDecayResistance">
+                <organDecayResistance>20</organDecayResistance>                <!-- 100 means immune, its a flat chance to not apply organ decay on organd ecay tick -->
+            </li>
+        </modExtensions>
+    </Core40k.RankDef>
+    <!-- Thunderlord -->
+    <Core40k.RankDef>
+        <defName>BEWH_ThunderWarriorRankThunderlord</defName>
+        <label>Thunderlord</label>
+        <description>Thunderlords are firce commanders who lead entire units, having earned their authority through unmatched skills and numerous victories.</description>
+        <rankIconPath>UI/Ranks/ThunderWarriors/BEWH_Thunderlord</rankIconPath>
+
+        <statOffsets>
+            <SocialImpact>0.1</SocialImpact>
+            <ShootingAccuracyPawn>0.02</ShootingAccuracyPawn>
+            <MeleeHitChance>2</MeleeHitChance>
+            <MeleeDodgeChance>2</MeleeDodgeChance>
+        </statOffsets>
+
+        <requiredSkills>
+            <Shooting>12</Shooting>
+            <Melee>12</Melee>
+            <Social>5</Social>
+            <Intellectual>6</Intellectual>
+        </requiredSkills>
+
+        <rankTier>7</rankTier>
+
+        <customEffectDescriptions>
+            <li>30% chance to not get organ decay</li>
+        </customEffectDescriptions>
+
+        <modExtensions>
+            <li Class="Genes40k.DefModExtension_OrganDecayResistance">
+                <organDecayResistance>30</organDecayResistance>                <!-- 100 means immune, its a flat chance to not apply organ decay on organd ecay tick -->
+            </li>
+        </modExtensions>
+    </Core40k.RankDef>
+    <!-- Primarch -->
+    <Core40k.RankDef>
+        <defName>BEWH_ThunderWarriorRankPrimarch</defName>
+        <label>Primarch</label>
+        <description>The Primarch is the highest rank figure that commands the entire legion of Thunder Warriors. Despite the title, Thunder Warrior Primarchs are no different from their subordinates mentally physically. Instead, they are simply exceptional warriors and superb tactitians. \n\nSome evinedces say that Primarchs could withstand incredible damage through their sheer willpower alone.</description>
+        <rankIconPath>UI/Ranks/ThunderWarriors/BEWH_Primarch</rankIconPath>
+
+        <statOffsets>
+            <ShootingAccuracyPawn>0.03</ShootingAccuracyPawn>
+            <MeleeHitChance>3</MeleeHitChance>
+            <SocialImpact>0.25</SocialImpact>
+            <CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">-1</CertaintyLossFactor>
+        </statOffsets>
+
+        <givesAbilities>
+            <li>BEWH_PrimarchImmortality</li>
+        </givesAbilities>
+
+        <requiredSkills>
+            <Social>8</Social>
+            <Intellectual>9</Intellectual>
+        </requiredSkills>
+
+        <rankTier>9</rankTier>
+
+        <customEffectDescriptions>
+            <li>40% chance to not get organ decay</li>
+        </customEffectDescriptions>
+
+        <modExtensions>
+            <li Class="Genes40k.DefModExtension_OrganDecayResistance">
+                <organDecayResistance>40</organDecayResistance>                <!-- 100 means immune, its a flat chance to not apply organ decay on organ decay tick -->
+            </li>
+        </modExtensions>
+    </Core40k.RankDef>
+
+    <!-- Vitalseer (Medic Specialist) -->
+    <Core40k.RankDef>
+        <defName>BEWH_ThunderWarriorRankMedic</defName>
+        <label>Vitalseer</label>
+        <description>Vitalseers are Thunder Warrior battlefield medics who use brutal yet highly effective methods to heal their fallen brothers, even reviving them with powerfull electric charges.</description>
+        <rankIconPath>UI/Ranks/ThunderWarriors/BEWH_Vitalseer</rankIconPath>
+
+        <requiredSkills>
+            <Medicine>8</Medicine>
+        </requiredSkills>
+
+        <statOffsets>
+            <MedicalTendQuality>0.1</MedicalTendQuality>
+            <MedicalSurgerySuccessChance>0.15</MedicalSurgerySuccessChance>
+        </statOffsets>
+
+        <givesAbilities>
+            <li>BEWH_SearWounds</li>
+        </givesAbilities>
+
+        <rankTier>4</rankTier>
+        <specialistRank>true</specialistRank>
+    </Core40k.RankDef>
+    <!-- Veteran Vitalseer (Medic Specialist) -->
+    <Core40k.RankDef>
+        <defName>BEWH_ThunderWarriorRankMedicUpgrade</defName>
+        <label>Veteran Vitalseer</label>
+        <description>Veteran Vitalseers are experienced Thunder Warrior battlefield medics, exceptionally effective at keeping their brothers alive, even in the most brutal conditions.</description>
+        <rankIconPath>UI/Ranks/ThunderWarriors/BEWH_VitalseerVeteran</rankIconPath>
+
+        <requiredSkills>
+            <Medicine>13</Medicine>
+        </requiredSkills>
+
+        <statOffsets>
+            <MedicalTendQuality>0.25</MedicalTendQuality>
+            <MedicalOperationSpeed>0.1</MedicalOperationSpeed>
+        </statOffsets>
+
+        <givesAbilities>
+            <li>BEWH_ResurrectingShock</li>
+        </givesAbilities>
+
+        <rankTier>6</rankTier>
+        <specialistRank>true</specialistRank>
+    </Core40k.RankDef>
+
+    <!-- Shockzerker (Melee Specialist) -->
+    <Core40k.RankDef>
+        <defName>BEWH_ThunderWarriorRankBeserker</defName>
+        <label>Beserker</label>
+        <description>Berserkers are highly skilled melee specialists who thrive in the heat of battle. They channel pain into furry, growing deadlier with each injury they sustain.</description>
+        <rankIconPath>UI/Ranks/ThunderWarriors/BEWH_Shockzerker</rankIconPath>
+
+        <requiredSkills>
+            <Melee>8</Melee>
+        </requiredSkills>
+
+        <statOffsets>
+            <MeleeDamageFactor>0.05</MeleeDamageFactor>
+            <MoveSpeed>0.1</MoveSpeed>
+        </statOffsets>
+
+        <givesHediffs>
+            <BEWH_BerserkerPainBoost>
+                <initialSeverity>0.01</initialSeverity>
+            </BEWH_BerserkerPainBoost>
+        </givesHediffs>
+
+        <rankTier>4</rankTier>
+        <specialistRank>true</specialistRank>
+    </Core40k.RankDef>
+    <!-- Veteran Shockzerker (Melee Specialist) -->
+    <Core40k.RankDef>
+        <defName>BEWH_ThunderWarriorRankBeserkerUpgrade</defName>
+        <label>Veteran Beserker</label>
+        <description>Veteran Berserkers are exceptionally skilled melee specialists who mastered the art of close combat, making them extrely dangerous opponents. Very few would dare face a Veteran Berserker in melee.</description>
+        <rankIconPath>UI/Ranks/ThunderWarriors/BEWH_ShockzerkerVeteran</rankIconPath>
+
+        <requiredSkills>
+            <Melee>10</Melee>
+        </requiredSkills>
+
+        <statOffsets>
+            <MeleeDamageFactor>0.05</MeleeDamageFactor>
+            <MoveSpeed>0.3</MoveSpeed>
+            <MeleeCooldownFactor>-0.05</MeleeCooldownFactor>
+        </statOffsets>
+
+        <rankTier>6</rankTier>
+        <specialistRank>true</specialistRank>
+    </Core40k.RankDef>
+
+    <!-- Stormtrooper (Ranged Specialist) -->
+    <Core40k.RankDef>
+        <defName>BEWH_ThunderWarriorRankRanged</defName>
+        <label>Stormtrooper</label>
+        <description>Stormtroopers are ranged specialists who unleash relentless firepower upon the enemy. They prioritize damage output over precision, making them trigger-hungry but extremely dangerous.</description>
+        <rankIconPath>UI/Ranks/ThunderWarriors/BEWH_Stormtrooper</rankIconPath>
+
+        <requiredSkills>
+            <Shooting>8</Shooting>
+        </requiredSkills>
+
+        <givesAbilities>
+            <li>BEWH_RangedThunderBoost</li>
+        </givesAbilities>
+
+        <statOffsets>
+            <ShootingAccuracyPawn>-0.03</ShootingAccuracyPawn>
+        </statOffsets>
+
+        <rankTier>4</rankTier>
+        <specialistRank>true</specialistRank>
+    </Core40k.RankDef>
+    <!-- Veteran Stormtrooper (Ranged Specialist) -->
+    <Core40k.RankDef>
+        <defName>BEWH_ThunderWarriorRankRangedUpgrade</defName>
+        <label>Veteran Stormtrooper</label>
+        <description>Veteran Stormtroopers are highly skilled ranged specialists who fire with deadly efficiency. Their experience allows them to maintain overwhelming firepower even in the chaos of battle.</description>
+        <rankIconPath>UI/Ranks/ThunderWarriors/BEWH_StormtrooperVeteran</rankIconPath>
+
+        <requiredSkills>
+            <Shooting>10</Shooting>
+        </requiredSkills>
+
+        <statOffsets>
+            <ShootingAccuracyPawn>-0.07</ShootingAccuracyPawn>
+            <RangedCooldownFactor>-0.05</RangedCooldownFactor>
+        </statOffsets>
+
+        <rankTier>6</rankTier>
+        <specialistRank>true</specialistRank>
+    </Core40k.RankDef>
+
+</Defs>

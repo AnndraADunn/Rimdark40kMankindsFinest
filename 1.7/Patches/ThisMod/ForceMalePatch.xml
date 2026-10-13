@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+    <!-- ===== Thunder Warrior ===== -->
+    <Operation Class="VEF.PatchOperationToggableSequence">
+        <enabled>False</enabled>
+        <mods>
+            <li>RimDark 40k - Mankinds Finest</li>
+        </mods>
+        <label>Force Thunder Warriors to be male:</label>
+        <operations>
+            <li Class="PatchOperationAddModExtension">
+                <xpath>Defs/GeneDef[defName = "BEWH_ProtoOssmodula"]</xpath>
+                <value>
+                    <li Class="VEF.Genes.GeneExtension">
+                        <forceMale>true</forceMale>
+                    </li>
+                </value>
+            </li>
+        </operations>
+    </Operation>
+
+    <!-- ===== Space Marine ===== -->
+    <Operation Class="VEF.PatchOperationToggableSequence">
+        <enabled>False</enabled>
+        <mods>
+            <li>RimDark 40k - Mankinds Finest</li>
+        </mods>
+        <label>Force Space Marines to be male:</label>
+        <operations>
+            <li Class="PatchOperationAddModExtension">
+                <xpath>Defs/GeneDef[defName = "BEWH_Ossmodula"]</xpath>
+                <value>
+                    <li Class="VEF.Genes.GeneExtension">
+                        <forceMale>true</forceMale>
+                    </li>
+                </value>
+            </li>
+        </operations>
+    </Operation>
+
+    <!-- ===== Custodes ===== -->
+    <Operation Class="VEF.PatchOperationToggableSequence">
+        <enabled>False</enabled>
+        <mods>
+            <li>RimDark 40k - Mankinds Finest</li>
+        </mods>
+        <label>Force Custodes to be male:</label>
+        <operations>
+            <li Class="PatchOperationAddModExtension">
+                <xpath>Defs/GeneDef[defName = "BEWH_AtlasMorphogen"]</xpath>
+                <value>
+                    <li Class="VEF.Genes.GeneExtension">
+                        <forceMale>true</forceMale>
+                    </li>
+                </value>
+            </li>
+        </operations>
+    </Operation>
+
+</Patch>

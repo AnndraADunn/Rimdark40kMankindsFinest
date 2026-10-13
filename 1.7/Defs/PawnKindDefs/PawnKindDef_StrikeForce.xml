@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!-- Lost Strike Force scenario: Firstborn marines for the player's starting squad -->
+    <PawnKindDef ParentName="BEWH_ImperiumFirstbornMarine" Name="BEWH_StrikeForceMarineBase" Abstract="True">
+        <defaultFactionDef>PlayerColony</defaultFactionDef>
+        <gearHealthRange Inherit="False">0.35~0.7</gearHealthRange>
+        <techHediffsRequired Inherit="False" />
+        <inventoryOptions Inherit="False">
+            <skipChance>1</skipChance>
+        </inventoryOptions>
+    </PawnKindDef>
+
+    <!-- Sergeant -->
+    <PawnKindDef ParentName="BEWH_StrikeForceMarineBase">
+        <defName>BEWH_StrikeForceSergeant</defName>
+        <label>strike force sergeant</label>
+        <skills Inherit="False">
+            <li>
+                <skill>Shooting</skill>
+                <range>12~15</range>
+            </li>
+            <li>
+                <skill>Melee</skill>
+                <range>12~15</range>
+            </li>
+        </skills>
+        <weaponTags Inherit="False">
+            <li>BEWH_AstartesPowerSword</li>
+        </weaponTags>
+        <inventoryOptions Inherit="False">
+            <thingDef>BEWH_AstartesBolter</thingDef>
+            <countRange>1~1</countRange>
+        </inventoryOptions>
+        <modExtensions>
+            <li Class="Core40k.DefModExtension_PawnKindRanks">
+                <ranks>
+                    <li>
+                        <rank>BEWH_AstartesRankSergeant</rank>
+                    </li>
+                </ranks>
+            </li>
+            <li Class="Core40k.DefModExtension_PawnKindCustomization">
+                <extraDecorations>
+                    <li>
+                        <key>BEWH_MkVIIPowerArmor</key>
+                        <value>
+                            <li>BEWH_DecoPSeal_1</li>
+                            <li>BEWH_DecoPSeal_5</li>
+                            <li>BEWH_Deco_Grenade_2</li>
+                            <li>BEWH_Deco_HonourCords_1</li>
+                        </value>
+                    </li>
+                    <li>
+                        <key>BEWH_MkVIIPowerArmorHelmet</key>
+                        <value>
+                            <li>BEWH_DecoSkull</li>
+                        </value>
+                    </li>
+                </extraDecorations>
+            </li>
+        </modExtensions>
+    </PawnKindDef>
+
+    <!-- Apothecary -->
+    <PawnKindDef ParentName="BEWH_StrikeForceMarineBase">
+        <defName>BEWH_StrikeForceApothecary</defName>
+        <label>strike force apothecary</label>
+        <skills Inherit="False">
+            <li>
+                <skill>Shooting</skill>
+                <range>8~12</range>
+            </li>
+            <li>
+                <skill>Melee</skill>
+                <range>8~12</range>
+            </li>
+            <li>
+                <skill>Medicine</skill>
+                <range>14~16</range>
+            </li>
+        </skills>
+        <weaponTags Inherit="False">
+            <li>BEWH_Narthecium</li>
+        </weaponTags>
+        <inventoryOptions Inherit="False">
+            <subOptionsTakeAll>
+                <li>
+                    <thingDef>BEWH_GeneseedVialFirstborn</thingDef>
+                </li>
+                <li>
+                    <thingDef>BEWH_GeneseedVialFirstborn</thingDef>
+                </li>
+            </subOptionsTakeAll>
+        </inventoryOptions>
+        <modExtensions>
+            <li Class="Core40k.DefModExtension_PawnKindRanks">
+                <ranks>
+                    <li>
+                        <rank>BEWH_AstartesRankApothecary</rank>
+                    </li>
+                </ranks>
+            </li>
+            <li Class="Core40k.DefModExtension_PawnKindCustomization">
+                <extraDecorationPreset>
+                    <li>
+                        <key>BEWH_MkVIIPowerArmor</key>
+                        <value>BEWH_ApothecaryBodyMkVII</value>
+                    </li>
+                    <li>
+                        <key>BEWH_MkVIIPowerArmorHelmet</key>
+                        <value>BEWH_ApothecaryHeadMkVII</value>
+                    </li>
+                </extraDecorationPreset>
+            </li>
+        </modExtensions>
+    </PawnKindDef>
+
+    <!-- Techmarine -->
+    <PawnKindDef ParentName="BEWH_StrikeForceMarineBase">
+        <defName>BEWH_StrikeForceTechmarine</defName>
+        <label>strike force techmarine</label>
+        <skills Inherit="False">
+            <li>
+                <skill>Shooting</skill>
+                <range>9~13</range>
+            </li>
+            <li>
+                <skill>Melee</skill>
+                <range>8~12</range>
+            </li>
+            <li>
+                <skill>Crafting</skill>
+                <range>12~15</range>
+            </li>
+            <li>
+                <skill>Construction</skill>
+                <range>8~12</range>
+            </li>
+        </skills>
+        <weaponTags Inherit="False">
+            <li>BEWH_AstartesRanged</li>
+        </weaponTags>
+        <techHediffsRequired>
+            <li>BionicArm</li>
+        </techHediffsRequired>
+        <modExtensions>
+            <li Class="Core40k.DefModExtension_PawnKindRanks">
+                <ranks>
+                    <li>
+                        <rank>BEWH_AstartesRankTechmarine</rank>
+                    </li>
+                </ranks>
+            </li>
+            <li Class="Core40k.DefModExtension_PawnKindCustomization">
+                <extraDecorations>
+                    <li>
+                        <key>BEWH_MkVIIPowerArmor</key>
+                        <value>
+                            <li>BEWH_Upgrade_ToolHarness</li>
+                        </value>
+                    </li>
+                    <li>
+                        <key>BEWH_MkVIIPowerArmorHelmet</key>
+                        <value>
+                            <li>BEWH_Upgrade_AutoSenses</li>
+                        </value>
+                    </li>
+                </extraDecorations>
+            </li>
+        </modExtensions>
+    </PawnKindDef>
+
+    <!-- Battle-Brother -->
+    <PawnKindDef ParentName="BEWH_StrikeForceMarineBase">
+        <defName>BEWH_StrikeForceBattleBrother</defName>
+        <label>strike force battle-brother</label>
+        <modExtensions>
+            <li Class="Core40k.DefModExtension_PawnKindRanks">
+                <ranks>
+                    <li>
+                        <rank>BEWH_AstartesRankBattleBrother</rank>
+                    </li>
+                </ranks>
+            </li>
+        </modExtensions>
+    </PawnKindDef>
+
+</Defs>

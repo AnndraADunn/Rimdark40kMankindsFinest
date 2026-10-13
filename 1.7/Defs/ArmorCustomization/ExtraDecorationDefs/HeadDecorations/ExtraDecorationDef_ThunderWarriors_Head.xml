@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <Core40k.ExtraDecorationDef>
+        <defName>BEWH_Deco_TW_Plume1</defName>
+        <label>Plume 1</label>
+        <description>...</description>
+        <iconPath>UI/Decoration/Icons/ThunderWarriors/Headgear/BEWH_Deco_MkIHelmetTail_icon</iconPath>
+        <drawnTextureIconPath>Things/Decorations/Headgear/MkI/BEWH_Deco_MkIHelmetTail</drawnTextureIconPath>
+        <drawSize>(0.5, 0.5)</drawSize>
+        <sortOrder>0.1</sortOrder>
+        
+        <defaultShowRotation>
+            <li>West</li>
+            <li>South</li>
+            <li>North</li>
+            <li>East</li>
+        </defaultShowRotation>
+        <appliesTo>
+            <li>BEWH_MkIPowerArmorHelmet</li>
+        </appliesTo>
+        <drawData>
+            <dataSouth>
+                <layer>65</layer>
+                <offset>(-0.15, 0, 0.29)</offset>
+            </dataSouth>
+            <dataNorth>
+                <layer>88</layer>
+                <offset>(0.15, 0, 0.29)</offset>
+            </dataNorth>
+            <dataEast>
+                <layer>65</layer>
+                <offset>(-0.165, 0, 0.3)</offset>
+            </dataEast>
+            <dataWest>
+                <layer>80</layer>
+                <offset>(0.165, 0, 0.3)</offset>
+            </dataWest>
+        </drawData>
+        <colourable>true</colourable>
+        <availablePresets>
+            <li>BEWH_DecoPaletteFabricBeige</li>
+            <li>BEWH_DecoPaletteFabricRed</li>
+            <li>BEWH_DecoPaletteApothecaryRed</li>
+            <li>BEWH_DecoPaletteIFBlack</li>
+        </availablePresets>
+        <shaderType>Cutout</shaderType>
+        <defaultColour>(162, 54, 39)</defaultColour>
+        <incompatibleDecorations>
+            <li>BEWH_Deco_TW_Plume2</li>
+            <li>BEWH_Deco_TW_Plume3</li>
+        </incompatibleDecorations>
+    </Core40k.ExtraDecorationDef>
+
+<Core40k.ExtraDecorationDef>
+        <defName>BEWH_Deco_TW_Plume2</defName>
+        <label>Plume 2</label>
+        <description>...</description>
+        <iconPath>UI/Decoration/Icons/ThunderWarriors/Headgear/BEWH_Deco_MkIHelmetTail2_icon</iconPath>
+        <drawnTextureIconPath>Things/Decorations/Headgear/MkI/BEWH_Deco_MkIHelmetTail2</drawnTextureIconPath>
+        <drawSize>(0.5, 0.5)</drawSize>
+        <sortOrder>0.2</sortOrder>
+        
+        <defaultShowRotation>
+            <li>West</li>
+            <li>South</li>
+            <li>North</li>
+            <li>East</li>
+        </defaultShowRotation>
+        <appliesTo>
+            <li>BEWH_MkIPowerArmorHelmet</li>
+        </appliesTo>
+        <drawData>
+            <dataSouth>
+                <layer>65</layer>
+                <offset>(0, 0, 0.26)</offset>
+            </dataSouth>
+            <dataNorth>
+                <layer>88</layer>
+                <offset>(0, 0, 0.26)</offset>
+            </dataNorth>
+            <dataEast>
+                <layer>80</layer>
+                <offset>(-0.165, 0, 0.3)</offset>
+            </dataEast>
+            <dataWest>
+                <layer>80</layer>
+                <offset>(0.165, 0, 0.3)</offset>
+            </dataWest>
+        </drawData>
+        <colourable>true</colourable>
+        <availablePresets>
+            <li>BEWH_DecoPaletteFabricBeige</li>
+            <li>BEWH_DecoPaletteFabricRed</li>
+            <li>BEWH_DecoPaletteApothecaryRed</li>
+            <li>BEWH_DecoPaletteIFBlack</li>
+        </availablePresets>
+        <shaderType>Cutout</shaderType>
+        <defaultColour>(162, 54, 39)</defaultColour>
+        <incompatibleDecorations>
+            <li>BEWH_Deco_TW_Plume3</li>
+        </incompatibleDecorations>
+    </Core40k.ExtraDecorationDef>
+
+<Core40k.ExtraDecorationDef>
+        <defName>BEWH_Deco_TW_Plume3</defName>
+        <label>Plume 3</label>
+        <description>...</description>
+        <iconPath>UI/Decoration/Icons/ThunderWarriors/Headgear/BEWH_Deco_MkIHelmetTail3_icon</iconPath>
+        <drawnTextureIconPath>Things/Decorations/Headgear/MkI/BEWH_Deco_MkIHelmetTail3</drawnTextureIconPath>
+        <drawSize>(0.5, 0.5)</drawSize>
+        <sortOrder>0.3</sortOrder>
+        
+        <defaultShowRotation>
+            <li>West</li>
+            <li>South</li>
+            <li>North</li>
+            <li>East</li>
+        </defaultShowRotation>
+        <appliesTo>
+            <li>BEWH_MkIPowerArmorHelmet</li>
+        </appliesTo>
+        <drawData>
+            <dataSouth>
+                <layer>65</layer>
+                <offset>(0.15, 0, 0.39)</offset>
+            </dataSouth>
+            <dataNorth>
+                <layer>88</layer>
+                <offset>(-0.15, 0, 0.39)</offset>
+            </dataNorth>
+            <dataEast>
+                <layer>65</layer>
+                <offset>(-0.19, 0, 0.39)</offset>
+            </dataEast>
+            <dataWest>
+                <layer>80</layer>
+                <offset>(0.19, 0, 0.39)</offset>
+            </dataWest>
+        </drawData>
+        <colourable>true</colourable>
+        <availablePresets>
+            <li>BEWH_DecoPaletteFabricBeige</li>
+            <li>BEWH_DecoPaletteFabricRed</li>
+            <li>BEWH_DecoPaletteApothecaryRed</li>
+            <li>BEWH_DecoPaletteIFBlack</li>
+        </availablePresets>
+        <shaderType>Cutout</shaderType>
+        <defaultColour>(162, 54, 39)</defaultColour>
+    </Core40k.ExtraDecorationDef>
+
+    <Core40k.ExtraDecorationDef>
+        <defName>BEWH_Deco_TW_Goggles</defName>
+        <label>Ballistic goggles</label>
+        <description>...</description>
+        <iconPath>UI/Decoration/Icons/ThunderWarriors/Headgear/BEWH_Deco_MkIGlasses_icon</iconPath>
+        <drawnTextureIconPath>Things/Decorations/Headgear/MkI/BEWH_Deco_MkIGlasses</drawnTextureIconPath>
+        <drawSize>(0.5, 0.5)</drawSize>
+        <sortOrder>0</sortOrder>
+        
+        <defaultShowRotation>
+            <li>West</li>
+            <li>South</li>
+            <li>East</li>
+        </defaultShowRotation>
+        <appliesTo>
+            <li>BEWH_MkIPowerArmorHelmet</li>
+        </appliesTo>
+        <drawData>
+            <dataSouth>
+                <layer>88</layer>
+            </dataSouth>
+            <dataEast>
+                <layer>65</layer>
+            </dataEast>
+            <dataWest>
+                <layer>80</layer>
+            </dataWest>
+        </drawData>
+        <colourable>true</colourable>
+        <availablePresets>
+            <li>BEWH_DecoPaletteGlassGreen</li>
+            <li>BEWH_DecoPaletteGlassBlue</li>
+            <li>BEWH_DecoPaletteGlassRed</li>
+        </availablePresets>
+        <shaderType>Cutout</shaderType>
+        <defaultColour>(129, 205, 63)</defaultColour>
+    </Core40k.ExtraDecorationDef>
+
+    <Core40k.ExtraDecorationDef>
+        <defName>BEWH_Deco_TW_GasMask</defName>
+        <label>Gas mask</label>
+        <description>...</description>
+        <iconPath>UI/Decoration/Icons/ThunderWarriors/Headgear/BEWH_Deco_MkIMask_icon</iconPath>
+        <drawnTextureIconPath>Things/Decorations/Headgear/MkI/BEWH_Deco_MkIMask</drawnTextureIconPath>
+        <drawSize>(0.5, 0.5)</drawSize>
+        <sortOrder>0</sortOrder>
+        
+        <defaultShowRotation>
+            <li>West</li>
+            <li>South</li>
+            <li>East</li>
+        </defaultShowRotation>
+        <appliesTo>
+            <li>BEWH_MkIPowerArmorHelmet</li>
+        </appliesTo>
+        <drawData>
+            <dataSouth>
+                <layer>88</layer>
+            </dataSouth>
+            <dataEast>
+                <layer>55</layer>
+            </dataEast>
+            <dataWest>
+                <layer>55</layer>
+            </dataWest>
+        </drawData>
+        <shaderType>Cutout</shaderType>
+        <pawnStatOffsets>
+            <ToxicResistance>0.5</ToxicResistance>
+            <ToxicEnvironmentResistance>0.5</ToxicEnvironmentResistance>
+        </pawnStatOffsets>
+        <cost>
+            <Plasteel>5</Plasteel>
+            <ComponentIndustrial>1</ComponentIndustrial>
+        </cost>
+        <workAmount>500</workAmount>
+    </Core40k.ExtraDecorationDef>
+
+</Defs>

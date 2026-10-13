@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <!--
+    <Core40k.MaskDef ParentName="BEWH_MaskDef_ExtraDecoration">
+        <defName>BEWH_RondelBtTest</defName>
+        <label>bt test</label>
+        <description>???</description>
+        <maskPath>Things/Decorations/Armor/Common/Rondel/BEWH_Deco_Shield1_BT_mask</maskPath>
+        <appliesTo>
+            <li>BEWH_Deco_Rondel1</li>
+        </appliesTo>
+        <colorAmount>3</colorAmount>
+        <sortOrder>2</sortOrder>
+    </Core40k.MaskDef> -->
+
+</Defs>
