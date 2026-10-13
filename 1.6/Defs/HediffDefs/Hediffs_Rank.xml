@@ -131,4 +131,141 @@
 		</comps>
 	</HediffDef>
 
+	<!--= Custodes =-->
+	<HediffDef Name="BEWH_CustodesRankHediffBase" Abstract="True">
+		<hediffClass>HediffWithComps</hediffClass>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<everCurableByItem>false</everCurableByItem>
+		<isBad>false</isBad>
+		<initialSeverity>0.5</initialSeverity>
+		<maxSeverity>1</maxSeverity>
+	</HediffDef>
+
+	<!-- Custodian Warden: Unyielding -->
+	<HediffDef ParentName="BEWH_CustodesRankHediffBase">
+		<defName>BEWH_CustodesUnyielding</defName>
+		<label>unyielding</label>
+		<description>Once this Warden has set his feet, he does not give ground. While standing still he takes less damage.</description>
+		<stages>
+			<li>
+				<minSeverity>0</minSeverity>
+			</li>
+			<li>
+				<minSeverity>1</minSeverity>
+				<label>braced</label>
+				<statFactors>
+					<IncomingDamageFactor>0.85</IncomingDamageFactor>
+				</statFactors>
+			</li>
+		</stages>
+		<comps>
+			<li Class="Genes40k.HediffCompProperties_Unyielding">
+				<checkIntervalTicks>30</checkIntervalTicks>
+				<ticksStillToActivate>120</ticksStillToActivate>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<!-- Solar Watch -->
+	<HediffDef ParentName="BEWH_CustodesRankHediffBase">
+		<defName>BEWH_CustodesSolarWatch</defName>
+		<label>Solar Watch</label>
+		<description>A guardian of the Throneworld fights best on the ground he has sworn to defend, and is never quite at ease away from it.</description>
+		<stages>
+			<li>
+				<minSeverity>0</minSeverity>
+				<label>far from home</label>
+				<statOffsets>
+					<MeleeHitChance>-2</MeleeHitChance>
+					<ShootingAccuracyPawn>-2</ShootingAccuracyPawn>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>1</minSeverity>
+				<label>home ground</label>
+				<statOffsets>
+					<MeleeHitChance>4</MeleeHitChance>
+					<ShootingAccuracyPawn>4</ShootingAccuracyPawn>
+					<MentalBreakThreshold>-0.05</MentalBreakThreshold>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="Genes40k.HediffCompProperties_SolarWatch">
+				<checkIntervalTicks>250</checkIntervalTicks>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<!-- Aquilan Shield: ward -->
+	<HediffDef ParentName="BEWH_CustodesRankHediffBase">
+		<defName>BEWH_CustodesAquilanWard</defName>
+		<label>Aquilan ward</label>
+		<description>A bodyguard of the Aquilan Shield is at his most vigilant beside one of the Imperium's great: a titled noble or the colony's spiritual leader.</description>
+		<stages>
+			<li>
+				<minSeverity>0</minSeverity>
+			</li>
+			<li>
+				<minSeverity>1</minSeverity>
+				<label>warding</label>
+				<statOffsets>
+					<MeleeDodgeChance>4</MeleeDodgeChance>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="Genes40k.HediffCompProperties_AquilanWard">
+				<checkIntervalTicks>250</checkIntervalTicks>
+				<radius>5</radius>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<!-- Aquilan Shield: interposed -->
+	<HediffDef ParentName="BEWH_StatAlteringHediffDef">
+		<defName>BEWH_CustodesInterposed</defName>
+		<label>interposed</label>
+		<description>A Custodian of the Aquilan Shield stands guard over this person and takes half of every blow meant for them.</description>
+		<comps>
+			<li Class="HediffCompProperties_Link">
+				<showName>true</showName>
+				<maxDistance>15</maxDistance>
+				<requireLinkOnOtherPawn>false</requireLinkOnOtherPawn>
+			</li>
+		</comps>
+		<modExtensions>
+			<li Class="Genes40k.DefModExtension_RedirectDamageToLink">
+				<redirectedFraction>0.5</redirectedFraction>
+			</li>
+		</modExtensions>
+	</HediffDef>
+
+	<!-- Dread Host: mark for excision -->
+	<HediffDef ParentName="BEWH_StatAlteringHediffDef">
+		<defName>BEWH_DreadHostMark</defName>
+		<label>marked for excision</label>
+		<description>The Dread Host has marked this creature for death. Every Custodian of the Dread Host strikes it far harder.</description>
+		<isBad>true</isBad>
+	</HediffDef>
+
+	<!-- Vexilus Praetor: Vexilla Defensor -->
+	<HediffDef ParentName="BEWH_StatAlteringHediffDef">
+		<defName>BEWH_VexillaDefensorBuff</defName>
+		<label>Vexilla Defensor</label>
+		<description>The field of a Vexilla Defensor turns aside shots and blasts aimed at those who stand beneath it.</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<MentalBreakThreshold>-0.05</MentalBreakThreshold>
+				</statOffsets>
+			</li>
+		</stages>
+		<modExtensions>
+			<li Class="Genes40k.DefModExtension_IncomingRangedDamageFactor">
+				<factor>0.8</factor>
+			</li>
+		</modExtensions>
+	</HediffDef>
+
 </Defs>

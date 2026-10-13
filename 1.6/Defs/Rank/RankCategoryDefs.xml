@@ -295,48 +295,95 @@
         </ranks>
     </Core40k.RankCategoryDef>
 
-    <!--<Core40k.RankCategoryDef>
+    <!-- Custodes -->
+    <Core40k.RankCategoryDef>
         <defName>BEWH_CustodesRankCategory</defName>
         <label>custodes</label>
         <description>Ranks of the Custodes.</description>
         <unlockedByGene>BEWH_AtlasMorphogen</unlockedByGene>
         <ranks>
+            <!-- Main line -->
             <li>
                 <rankDef>BEWH_CustodesRankCustodianGuard</rankDef>
-                <displayPosition>(2, 0)</displayPosition>
+                <displayPosition>(5, 0)</displayPosition>
             </li>
             <li>
                 <rankDef>BEWH_CustodesRankShieldCaptain</rankDef>
-                <displayPosition>(6, 0)</displayPosition>
+                <displayPosition>(9, 0)</displayPosition>
                 <rankRequirements>
                     <BEWH_CustodesRankCustodianGuard>15</BEWH_CustodesRankCustodianGuard>
                 </rankRequirements>
             </li>
             <li>
                 <rankDef>BEWH_CustodesRankCaptainCommander</rankDef>
-                <displayPosition>(10, 0)</displayPosition>
+                <displayPosition>(13, 0)</displayPosition>
                 <rankRequirements>
                     <BEWH_CustodesRankShieldCaptain>20</BEWH_CustodesRankShieldCaptain>
                 </rankRequirements>
             </li>
             <li>
                 <rankDef>BEWH_CustodesRankCaptainGeneral</rankDef>
-                <displayPosition>(14, 0)</displayPosition>
+                <displayPosition>(15, 0)</displayPosition>
                 <rankRequirements>
                     <BEWH_CustodesRankCaptainCommander>30</BEWH_CustodesRankCaptainCommander>
                 </rankRequirements>
             </li>
-
+            <!-- Battlefield roles -->
+            <li>
+                <rankDef>BEWH_CustodesRankSagittarum</rankDef>
+                <displayPosition>(4, -2)</displayPosition>
+                <rankRequirements>
+                    <BEWH_CustodesRankCustodianGuard>7</BEWH_CustodesRankCustodianGuard>
+                </rankRequirements>
+            </li>
+            <li>
+                <rankDef>BEWH_CustodesRankVenatari</rankDef>
+                <displayPosition>(5, -2)</displayPosition>
+                <rankRequirements>
+                    <BEWH_CustodesRankCustodianGuard>7</BEWH_CustodesRankCustodianGuard>
+                </rankRequirements>
+            </li>
+            <li>
+                <rankDef>BEWH_CustodesRankWarden</rankDef>
+                <displayPosition>(6, -2)</displayPosition>
+                <rankRequirements>
+                    <BEWH_CustodesRankCustodianGuard>7</BEWH_CustodesRankCustodianGuard>
+                </rankRequirements>
+            </li>
+            <li>
+                <rankDef>BEWH_CustodesRankAllarus</rankDef>
+                <displayPosition>(5, -3)</displayPosition>
+                <rankRequirementsOneAmong>
+                    <BEWH_CustodesRankSagittarum>20</BEWH_CustodesRankSagittarum>
+                    <BEWH_CustodesRankVenatari>20</BEWH_CustodesRankVenatari>
+                    <BEWH_CustodesRankWarden>20</BEWH_CustodesRankWarden>
+                </rankRequirementsOneAmong>
+            </li>
+            <!-- Honour -->
             <li>
                 <rankDef>BEWH_CustodesRankVexilusPraetor</rankDef>
-                <displayPosition>(2, -3)</displayPosition>
+                <displayPosition>(5, 3)</displayPosition>
                 <rankRequirements>
                     <BEWH_CustodesRankCustodianGuard>30</BEWH_CustodesRankCustodianGuard>
                 </rankRequirements>
             </li>
-
+            <!-- Shield Hosts -->
             <li>
-                <rankDef>BEWH_CustodesRankEmissaryImperatus</rankDef>
+                <rankDef>BEWH_CustodesRankDreadHost</rankDef>
+                <displayPosition>(1.5, -2)</displayPosition>
+                <rankRequirements>
+                    <BEWH_CustodesRankCustodianGuard>30</BEWH_CustodesRankCustodianGuard>
+                </rankRequirements>
+            </li>
+            <li>
+                <rankDef>BEWH_CustodesRankShadowkeepers</rankDef>
+                <displayPosition>(0.75, -1)</displayPosition>
+                <rankRequirements>
+                    <BEWH_CustodesRankCustodianGuard>30</BEWH_CustodesRankCustodianGuard>
+                </rankRequirements>
+            </li>
+            <li>
+                <rankDef>BEWH_CustodesRankSolarWatch</rankDef>
                 <displayPosition>(0, 0)</displayPosition>
                 <rankRequirements>
                     <BEWH_CustodesRankCustodianGuard>30</BEWH_CustodesRankCustodianGuard>
@@ -344,34 +391,19 @@
             </li>
             <li>
                 <rankDef>BEWH_CustodesRankAquilanShield</rankDef>
-                <displayPosition>(0, 1)</displayPosition>
+                <displayPosition>(0.75, 1)</displayPosition>
                 <rankRequirements>
                     <BEWH_CustodesRankCustodianGuard>30</BEWH_CustodesRankCustodianGuard>
                 </rankRequirements>
             </li>
             <li>
-                <rankDef>BEWH_CustodesRankSolarWatch</rankDef>
-                <displayPosition>(0, 2)</displayPosition>
-                <rankRequirements>
-                    <BEWH_CustodesRankCustodianGuard>30</BEWH_CustodesRankCustodianGuard>
-                </rankRequirements>
-            </li>
-            <li>
-                <rankDef>BEWH_CustodesRankDreadHost</rankDef>
-                <displayPosition>(0, -1)</displayPosition>
-                <rankRequirements>
-                    <BEWH_CustodesRankCustodianGuard>30</BEWH_CustodesRankCustodianGuard>
-                </rankRequirements>
-            </li>
-            <li>
-                <rankDef>BEWH_CustodesRankShadowkeepers</rankDef>
-                <displayPosition>(0, -2)</displayPosition>
+                <rankDef>BEWH_CustodesRankEmissaryImperatus</rankDef>
+                <displayPosition>(1.5, 2)</displayPosition>
                 <rankRequirements>
                     <BEWH_CustodesRankCustodianGuard>30</BEWH_CustodesRankCustodianGuard>
                 </rankRequirements>
             </li>
         </ranks>
-    </Core40k.RankCategoryDef>-->
-    <!-- Custodes -->
+    </Core40k.RankCategoryDef>
 
 </Defs>

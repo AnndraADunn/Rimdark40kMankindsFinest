@@ -39,7 +39,7 @@
         </comps>
     </AbilityDef>
 
-    <!--<AbilityDef ParentName="BEWH_StripRank">
+    <AbilityDef ParentName="BEWH_StripRank">
         <defName>BEWH_StripRanksCustodes</defName>
         <label>Strip ranks</label>
         <description>Target an underperforming or insubordinate ally, demoting and stripping them of rank, effectively resetting their place in the hierarchy.\nWorks on custodes ranks.</description>
@@ -49,7 +49,7 @@
                 <ownRankAsTier>true</ownRankAsTier>
             </li>
         </comps>
-    </AbilityDef>-->
+    </AbilityDef>
 
 
     <!-- Chaplain: Oath of Service -->
@@ -343,5 +343,178 @@
             </li>
         </modExtensions>
     </VEF.Abilities.AbilityDef>
+
+    <!-- Custodes: Interpose (Aquilan Shield) -->
+    <AbilityDef>
+        <defName>BEWH_CustodesInterpose</defName>
+        <label>Interpose</label>
+        <description>Stand guard over an ally. For 30 seconds, half of all violent damage they take is borne by this Custodian instead, as long as he stays on his feet and within 15 cells of them.</description>
+        <iconPath>UI/Abilities/BEWH_AbilityCustodesInterpose</iconPath>
+        <cooldownTicksRange>60000</cooldownTicksRange>
+        <jobDef>CastAbilityOnThing</jobDef>
+        <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+        <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+        <targetRequired>true</targetRequired>
+        <hostile>false</hostile>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <range>6.9</range>
+            <warmupTime>0.25</warmupTime>
+            <requireLineOfSight>true</requireLineOfSight>
+            <targetParams>
+                <canTargetSelf>false</canTargetSelf>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetAnimals>false</canTargetAnimals>
+                <canTargetMechs>false</canTargetMechs>
+                <neverTargetHostileFaction>true</neverTargetHostileFaction>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <hediffDef>BEWH_CustodesInterposed</hediffDef>
+                <replaceExisting>true</replaceExisting>
+                <durationSecondsOverride>30~30</durationSecondsOverride>
+            </li>
+        </comps>
+    </AbilityDef>
+
+    <!-- Custodes: Mark for Excision (Dread Host) -->
+    <AbilityDef>
+        <defName>BEWH_CustodesMarkForExcision</defName>
+        <label>Mark for excision</label>
+        <description>Mark an enemy for death. For 60 seconds, every Custodian of the Dread Host deals far more damage to it.\nThe mark is shared: using it puts every Dread Host's mark on cooldown.</description>
+        <iconPath>UI/Abilities/BEWH_AbilityCustodesMarkForExcision</iconPath>
+        <cooldownTicksRange>15000</cooldownTicksRange>
+        <jobDef>CastAbilityOnThing</jobDef>
+        <targetRequired>true</targetRequired>
+        <hostile>true</hostile>
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <range>29.9</range>
+            <warmupTime>0.5</warmupTime>
+            <requireLineOfSight>true</requireLineOfSight>
+            <targetParams>
+                <canTargetSelf>false</canTargetSelf>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetLocations>false</canTargetLocations>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <hediffDef>BEWH_DreadHostMark</hediffDef>
+                <replaceExisting>true</replaceExisting>
+                <durationSecondsOverride>60~60</durationSecondsOverride>
+            </li>
+            <li Class="Genes40k.CompProperties_AbilitySharedCooldown" />
+        </comps>
+    </AbilityDef>
+
+    <!-- Custodes: Venatari Leap -->
+    <AbilityDef>
+        <defName>BEWH_CustodesVenatariLeap</defName>
+        <label>Venatari leap</label>
+        <description>Ignite the jump pack and leap to a nearby location.</description>
+        <iconPath>UI/Abilities/BEWH_AbilityCustodesVenatariLeap</iconPath>
+        <cooldownTicksRange>1800</cooldownTicksRange>
+        <hostile>false</hostile>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <verbProperties>
+            <verbClass>Verb_CastAbilityJump</verbClass>
+            <label>leap</label>
+            <violent>false</violent>
+            <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+            <warmupTime>0.5</warmupTime>
+            <range>14.9</range>
+            <requireLineOfSight>true</requireLineOfSight>
+            <soundCast>Longjump_Jump</soundCast>
+            <soundLanding>Longjump_Land</soundLanding>
+            <targetParams>
+                <canTargetLocations>true</canTargetLocations>
+                <canTargetPawns>false</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+            </targetParams>
+        </verbProperties>
+        <jobDef>CastJump</jobDef>
+    </AbilityDef>
+
+    <!-- Custodes: Vexilla Defensor (Vexilus Praetor) -->
+    <VEF.Abilities.AbilityDef>
+        <defName>BEWH_CustodesVexillaDefensor</defName>
+        <label>Raise Vexilla Defensor</label>
+        <description>Plant a Vexilla Defensor. Its field generators turn aside shots and blasts, reducing ranged and explosive damage taken by allies within 12 cells by 20%. Allarus Custodians can teleport to it while it stands.</description>
+        <iconPath>UI/Abilities/BEWH_AbilityCustodesVexillaDefensor</iconPath>
+        <abilityClass>Genes40k.Ability_PlaceBanner</abilityClass>
+        <needsTicking>true</needsTicking>
+        <requireLineOfSight>true</requireLineOfSight>
+        <cooldownTime>60000</cooldownTime>
+        <range>1.9</range>
+        <castTime>30</castTime>
+        <targetMode>Location</targetMode>
+        <warmupSound>BEWH_SFX_BannerWarmUp</warmupSound>
+        <castSound>BEWH_SFX_BannerCast</castSound>
+        <modExtensions>
+            <li Class="Genes40k.DefModExtension_PlaceBanner">
+                <bannerType>BEWH_CustodesVexillaDefensorBanner</bannerType>
+            </li>
+        </modExtensions>
+    </VEF.Abilities.AbilityDef>
+
+    <!-- Custodes: Allarus teleport (shared cooldown) -->
+    <AbilityGroupDef>
+        <defName>BEWH_CustodesAllarusTeleportGroup</defName>
+        <cooldownTicks>120000</cooldownTicks>
+    </AbilityGroupDef>
+
+    <AbilityDef>
+        <defName>BEWH_CustodesAllarusTeleport</defName>
+        <label>Teleport strike</label>
+        <description>Teleport to a location within range. Enemies right beside the landing point are briefly stunned.\nShares its cooldown with Teleport to Vexilla.</description>
+        <iconPath>UI/Abilities/BEWH_AbilityCustodesTeleportStrike</iconPath>
+        <groupDef>BEWH_CustodesAllarusTeleportGroup</groupDef>
+        <targetRequired>true</targetRequired>
+        <hostile>false</hostile>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <range>24.9</range>
+            <warmupTime>1</warmupTime>
+            <requireLineOfSight>false</requireLineOfSight>
+            <targetParams>
+                <canTargetLocations>true</canTargetLocations>
+                <canTargetPawns>false</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetSelf>false</canTargetSelf>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="Genes40k.CompProperties_AbilityTeleportStrike">
+                <stunRadius>1.9</stunRadius>
+                <stunTicks>90</stunTicks>
+            </li>
+        </comps>
+    </AbilityDef>
+
+    <AbilityDef ParentName="BEWH_SelfTargetAbilities">
+        <defName>BEWH_CustodesAllarusTeleportToVexilla</defName>
+        <label>Teleport to Vexilla</label>
+        <description>Teleport beside the nearest Vexilla Defensor on this map, however far away it stands. Enemies right beside the landing point are briefly stunned.\nShares its cooldown with Teleport strike.</description>
+        <iconPath>UI/Abilities/BEWH_AbilityCustodesTeleportToVexilla</iconPath>
+        <groupDef>BEWH_CustodesAllarusTeleportGroup</groupDef>
+        <verbProperties>
+            <warmupTime>1</warmupTime>
+        </verbProperties>
+        <comps>
+            <li Class="Genes40k.CompProperties_AbilityTeleportStrike">
+                <beaconDef>BEWH_CustodesVexillaDefensorBanner</beaconDef>
+                <stunRadius>1.9</stunRadius>
+                <stunTicks>90</stunTicks>
+            </li>
+        </comps>
+    </AbilityDef>
 
 </Defs>

@@ -70,6 +70,35 @@
     </comps>
   </ThingDef>
 
+  <!-- Vexilla Defensor from ability -->
+  <ThingDef ParentName="BEWH_BannerStandard">
+    <defName>BEWH_CustodesVexillaDefensorBanner</defName>
+    <label>Vexilla Defensor</label>
+    <description>A sacred standard of the Adeptus Custodes, its haft fitted with field generators. Shots and blasts aimed at those who stand beneath it are turned aside.</description>
+    <graphicData>
+      <texPath>Things/Building/ChapterBanner/BEWH_ThingChapterBanner</texPath>
+      <maskPath>Things/Building/ChapterBanner/BEWH_ThingChapterBannerm</maskPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <color>(212, 167, 64)</color>
+      <colorTwo>(140, 20, 20)</colorTwo>
+      <drawSize>(2.5,2.75)</drawSize>
+      <drawOffset>(0, 0, 0.75)</drawOffset>
+      <shadowData>
+        <volume>(0.3, 0.3 ,0.3)</volume>
+        <offset>(0, 0, -0.2)</offset>
+      </shadowData>
+    </graphicData>
+    <size>(1,1)</size>
+    <comps>
+      <li Class="Core40k.CompProperties_Aura">
+        <givesHediff>BEWH_VexillaDefensorBuff</givesHediff>
+        <durationOutsideRange>750</durationOutsideRange>
+        <range>12</range>
+      </li>
+    </comps>
+  </ThingDef>
+
   <!-- Decorative Banner -->
   <ThingDef ParentName="BuildingBase">
     <defName>BEWH_DecorativeChapterBannerImperium</defName>

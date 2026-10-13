@@ -485,6 +485,10 @@
   <!-- Ideology -->
   <BEWH.MankindsFinest.Ideology.MustBeSpaceMarine>Must be a Space Marine</BEWH.MankindsFinest.Ideology.MustBeSpaceMarine>
 
+  <!-- Custodes ranks -->
+  <BEWH.MankindsFinest.Custodes.CannotTeleportThere>Cannot teleport there.</BEWH.MankindsFinest.Custodes.CannotTeleportThere>
+  <BEWH.MankindsFinest.Custodes.NoBeaconOnMap>No {0} stands on this map.</BEWH.MankindsFinest.Custodes.NoBeaconOnMap>
+
   <!-- Other -->
   <BEWH.MankindsFinest.Other.AlreadyUnlocked>This material is already unlocked and present in the Sangprimus Archive for usage in gestators.</BEWH.MankindsFinest.Other.AlreadyUnlocked>
 

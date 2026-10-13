@@ -111,6 +111,7 @@ public static class Genes40kDefOf
     public static HediffDef BEWH_PsychicConnectionSevered;
     public static HediffDef BEWH_PsychicCrafting;
     public static HediffDef BEWH_DeniedWitch;
+    public static HediffDef BEWH_DreadHostMark;
 
     public static HediffDef BEWH_PariahEffecter;
     public static HediffDef BEWH_PariahEffecterEnemies;
