@@ -19,7 +19,12 @@ public class ChapterTraitWorker_FleshChange : ChapterTraitWorker
     public float minSeverity = 0.01f;
     public float maxSeverity = 1f;
 
-    public override void Tick(Gene_CustomChapter gene, Pawn pawn)
+    public override void PostAdd(Gene_CustomChapter gene, Pawn pawn)
+    {
+        EnsureHediff(gene, pawn);
+    }
+
+    public override void PostRemove(Gene_CustomChapter gene, Pawn pawn)
     {
         if (hediff == null || pawn?.health == null)
         {
@@ -28,6 +33,16 @@ public class ChapterTraitWorker_FleshChange : ChapterTraitWorker
 
         var mutation = pawn.health.hediffSet.GetFirstHediffOfDef(hediff);
 
+        if (mutation != null)
+        {
+            pawn.health.RemoveHediff(mutation);
+        }
+    }
+
+    public override void Tick(Gene_CustomChapter gene, Pawn pawn)
+    {
+        var mutation = EnsureHediff(gene, pawn);
+
         if (mutation == null)
         {
             return;
@@ -35,6 +50,26 @@ public class ChapterTraitWorker_FleshChange : ChapterTraitWorker
 
         var delta = Stirring(pawn) ? severityRise : -severityFall;
         mutation.Severity = Mathf.Clamp(mutation.Severity + delta, minSeverity, maxSeverity);
+    }
+
+    /// <summary>
+    /// Returns the pawn's flesh change, adding it first when the trait's gene is active but the hediff is missing.
+    /// </summary>
+    private Hediff EnsureHediff(Gene_CustomChapter gene, Pawn pawn)
+    {
+        if (hediff == null || pawn?.health?.hediffSet == null || pawn.Dead)
+        {
+            return null;
+        }
+
+        var mutation = pawn.health.hediffSet.GetFirstHediffOfDef(hediff);
+
+        if (mutation != null || gene is not { Active: true })
+        {
+            return mutation;
+        }
+
+        return pawn.health.AddHediff(hediff);
     }
 
     private bool Stirring(Pawn pawn)

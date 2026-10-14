@@ -343,6 +343,10 @@
         <requiredAnyMaterial>
             <li>BEWH_ChapterMaterialXV</li>
         </requiredAnyMaterial>
+        <requiredAnyTrait>
+            <li>BEWH_ChapterTrait_PsychicInheritance</li>
+            <li>BEWH_ChapterTrait_CrimsonLegacy</li>
+        </requiredAnyTrait>
         <customEffectDescriptions>
             <li>Gives the flesh change, which worsens while the marine carries psychic heat and settles again when he does not.</li>
         </customEffectDescriptions>

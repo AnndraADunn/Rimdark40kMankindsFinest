@@ -176,6 +176,38 @@ public static class CustomChapterGeneUtility
         return true;
     }
 
+    /// <summary>
+    /// Whether one of the trait's required companion traits is part of the selection, with the requirement as text when none is.
+    /// </summary>
+    public static bool TraitCompanionsMet(ChapterTraitDef trait, ICollection<ChapterTraitDef> selection, out string missingReason)
+    {
+        missingReason = null;
+
+        if (trait == null || trait.requiredAnyTrait.NullOrEmpty())
+        {
+            return true;
+        }
+
+        if (selection != null && trait.requiredAnyTrait.Any(selection.Contains))
+        {
+            return true;
+        }
+
+        missingReason = CompanionDescription(trait);
+        return false;
+    }
+
+    public static string CompanionDescription(ChapterTraitDef trait)
+    {
+        if (trait == null || trait.requiredAnyTrait.NullOrEmpty())
+        {
+            return null;
+        }
+
+        var names = trait.requiredAnyTrait.Where(other => other != null).Select(other => other.LabelCap.Resolve()).ToCommaListOr();
+        return "BEWH.MankindsFinest.CustomChapter.RequiresTrait".Translate(names);
+    }
+
     public static string RequirementDescription(ChapterTraitDef trait)
     {
         if (trait == null)

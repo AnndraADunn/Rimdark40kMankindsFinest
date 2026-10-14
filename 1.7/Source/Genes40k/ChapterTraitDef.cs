@@ -23,6 +23,7 @@ public class ChapterTraitDef : Def
     public int stabilityOffset;
     public List<ThingDef> requiredAnyMaterial;
     public ResearchProjectDef requiredResearch;
+    public List<ChapterTraitDef> requiredAnyTrait;
     public List<string> exclusionTags;
 
     public List<StatModifier> statOffsets;
@@ -174,6 +175,16 @@ public class ChapterTraitDef : Def
         if (vefAbilityGrant != null && vefAbilityGrant.abilityDefs.NullOrEmpty())
         {
             yield return "vefAbilityGrant lists no abilityDefs";
+        }
+
+        if (requiredAnyTrait != null && requiredAnyTrait.Any(other => other == this))
+        {
+            yield return "requiredAnyTrait lists the trait itself";
+        }
+
+        if (requiredAnyTrait != null && requiredAnyTrait.Any(other => other != null && !other.AppliesTo(kind) && !AppliesTo(other.kind)))
+        {
+            yield return "requiredAnyTrait lists a trait of another kind, so it can never be picked alongside this one";
         }
 
         if (worker != null)

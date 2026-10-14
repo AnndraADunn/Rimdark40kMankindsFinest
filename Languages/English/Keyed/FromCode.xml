@@ -356,6 +356,8 @@
   <BEWH.MankindsFinest.CustomChapter.GroupLocked>Locked traits</BEWH.MankindsFinest.CustomChapter.GroupLocked>
   <BEWH.MankindsFinest.CustomChapter.RequiresMaterial>Requires legion material in the Sangprimus Portum: {0}</BEWH.MankindsFinest.CustomChapter.RequiresMaterial>
   <BEWH.MankindsFinest.CustomChapter.RequiresResearch>Requires research: {0}</BEWH.MankindsFinest.CustomChapter.RequiresResearch>
+  <BEWH.MankindsFinest.CustomChapter.RequiresTrait>Requires trait: {0}</BEWH.MankindsFinest.CustomChapter.RequiresTrait>
+  <BEWH.MankindsFinest.CustomChapter.TraitRemovedWithCompanion>{0} was removed because it needs {1}.</BEWH.MankindsFinest.CustomChapter.TraitRemovedWithCompanion>
   <BEWH.MankindsFinest.CustomChapter.StabilityTip>Gene-seed stability: {0}</BEWH.MankindsFinest.CustomChapter.StabilityTip>
   <BEWH.MankindsFinest.CustomChapter.Stability>Gene-seed stability</BEWH.MankindsFinest.CustomChapter.Stability>
   <BEWH.MankindsFinest.CustomChapter.StabilityRange>must be between {0} and {1}</BEWH.MankindsFinest.CustomChapter.StabilityRange>

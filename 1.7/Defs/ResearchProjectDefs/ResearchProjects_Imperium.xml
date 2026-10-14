@@ -21,7 +21,7 @@
   <ResearchProjectDef ParentName="BEWH_ImperiumResearchBase">
     <defName>BEWH_StasisResurrection</defName>
     <label>Stasis Resurrection</label>
-    <description>Unlocks the medical surgery required to bring back pawns from self-induced stasis.</description>
+    <description>Unlocks the medical surgery required to bring back pawns from self-induced stasis, and the Sus-an auto-injector armour upgrade.</description>
     <prerequisites>
       <li>MedicineProduction</li>
       <li>BEWH_GeneseedPurification</li>

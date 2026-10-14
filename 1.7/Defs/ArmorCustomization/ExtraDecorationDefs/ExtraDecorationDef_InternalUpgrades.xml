@@ -92,6 +92,14 @@
         <defName>BEWH_Upgrade_SusAnInjector</defName>
         <label>Sus-an auto-injector</label>
         <description>Wired to the suit's medicae sensors. If the wearer falls or bleeds out, it puts them into Sus-an stasis rather than letting them die waiting for an Apothecary.</description>
+        <appliesTo Inherit="False">
+            <li>BEWH_MkVIIPowerArmor</li>
+            <li>BEWH_MkXPowerArmor</li>
+            <li>BEWH_MkXPowerArmorChaplain</li>
+        </appliesTo>
+        <mustHaveResearch>
+            <li>BEWH_StasisResurrection</li>
+        </mustHaveResearch>
         <sortOrder>4</sortOrder>
         <slotCost>2</slotCost>
         <givesHediffs>

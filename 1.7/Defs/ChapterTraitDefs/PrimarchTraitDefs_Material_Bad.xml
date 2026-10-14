@@ -141,8 +141,11 @@
         <requiredAnyMaterial>
             <li>BEWH_PrimarchMaterialXV</li>
         </requiredAnyMaterial>
+        <requiredAnyTrait>
+            <li>BEWH_PrimarchTrait_CrimsonInheritance</li>
+        </requiredAnyTrait>
         <customEffectDescriptions>
-            <li>Psychic use slowly advances the flesh-change.</li>
+            <li>Gives the flesh change, which worsens while the primarch carries psychic heat and settles again when he does not.</li>
         </customEffectDescriptions>
         <worker Class="Genes40k.ChapterTraitWorker_FleshChange">
             <tickInterval>600</tickInterval>

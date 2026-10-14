@@ -181,7 +181,7 @@ public class Dialog_CreateChapterGene : Window
             if (toRemove != null && !readOnly)
             {
                 SoundDefOf.Tick_Low.PlayOneShotOnCamera();
-                selected.Remove(toRemove);
+                RemoveTrait(toRemove);
             }
         }
 
@@ -281,6 +281,7 @@ public class Dialog_CreateChapterGene : Window
         var isSelected = !selectedSection && selected.Contains(trait);
         var unlocked = CustomChapterGeneUtility.TraitUnlocked(trait, out var lockedReason);
         var conflict = selectedSection || isSelected ? null : selected.FirstOrDefault(other => other.ConflictsWith(trait));
+        var companionsMet = selectedSection || isSelected || CustomChapterGeneUtility.TraitCompanionsMet(trait, selected, out _);
 
         Widgets.DrawOptionBackground(rect, isSelected);
 
@@ -300,9 +301,9 @@ public class Dialog_CreateChapterGene : Window
         Text.Anchor = TextAnchor.UpperLeft;
 
         var geneRect = new Rect(stabilityRect.xMax, rect.y + 4f, GeneCreationDialogBase.GeneSize.x, GeneCreationDialogBase.GeneSize.y);
-        GeneUIUtility.DrawGeneDef(trait.AsGeneDef(), geneRect, GeneType.Xenogene, () => CardTooltip(trait, unlocked, lockedReason, conflict, stability), false, false);
+        GeneUIUtility.DrawGeneDef(trait.AsGeneDef(), geneRect, GeneType.Xenogene, () => CardTooltip(trait, unlocked, lockedReason, conflict, companionsMet, stability), false, false);
 
-        if (!unlocked || conflict != null)
+        if (!unlocked || conflict != null || !companionsMet)
         {
             Widgets.DrawBoxSolid(geneRect, LockedOverlayColor);
         }
@@ -315,7 +316,7 @@ public class Dialog_CreateChapterGene : Window
         return Widgets.ButtonInvisible(rect);
     }
 
-    private string CardTooltip(ChapterTraitDef trait, bool unlocked, string lockedReason, ChapterTraitDef conflict, int stability)
+    private string CardTooltip(ChapterTraitDef trait, bool unlocked, string lockedReason, ChapterTraitDef conflict, bool companionsMet, int stability)
     {
         var text = (CustomChapterGeneUtility.BudgetLabel(Tuning) + ": " + stability.ToStringWithSign()).Colorize(ColoredText.TipSectionTitleColor);
         var requirement = CustomChapterGeneUtility.RequirementDescription(trait);
@@ -323,6 +324,13 @@ public class Dialog_CreateChapterGene : Window
         if (!requirement.NullOrEmpty())
         {
             text += "\n" + (unlocked ? requirement.Colorize(ColoredText.SubtleGrayColor) : lockedReason.Colorize(ColorLibrary.RedReadable));
+        }
+
+        var companion = CustomChapterGeneUtility.CompanionDescription(trait);
+
+        if (!companion.NullOrEmpty())
+        {
+            text += "\n" + companion.Colorize(companionsMet ? ColoredText.SubtleGrayColor : ColorLibrary.RedReadable);
         }
 
         if (readOnly)
@@ -345,13 +353,19 @@ public class Dialog_CreateChapterGene : Window
         if (selected.Contains(trait))
         {
             SoundDefOf.Tick_Low.PlayOneShotOnCamera();
-            selected.Remove(trait);
+            RemoveTrait(trait);
             return;
         }
 
         if (!CustomChapterGeneUtility.TraitUnlocked(trait, out var lockedReason))
         {
             Messages.Message(lockedReason, MessageTypeDefOf.RejectInput, false);
+            return;
+        }
+
+        if (!CustomChapterGeneUtility.TraitCompanionsMet(trait, selected, out var missingReason))
+        {
+            Messages.Message(trait.LabelCap + ": " + missingReason, MessageTypeDefOf.RejectInput, false);
             return;
         }
 
@@ -371,6 +385,23 @@ public class Dialog_CreateChapterGene : Window
 
         SoundDefOf.Tick_High.PlayOneShotOnCamera();
         selected.Add(trait);
+    }
+
+    /// <summary>
+    /// Removes the trait, then any selected trait that only stayed valid because of it.
+    /// </summary>
+    private void RemoveTrait(ChapterTraitDef trait)
+    {
+        selected.Remove(trait);
+
+        ChapterTraitDef orphan;
+
+        while ((orphan = selected.FirstOrDefault(other => !CustomChapterGeneUtility.TraitCompanionsMet(other, selected, out _))) != null)
+        {
+            selected.Remove(orphan);
+            var names = orphan.requiredAnyTrait.Where(other => other != null).Select(other => other.LabelCap.Resolve()).ToCommaListOr();
+            Messages.Message("BEWH.MankindsFinest.CustomChapter.TraitRemovedWithCompanion".Translate(orphan.LabelCap, names), MessageTypeDefOf.RejectInput, false);
+        }
     }
 
     private void DrawFooter(Rect rect)
@@ -536,6 +567,12 @@ public class Dialog_CreateChapterGene : Window
             if (!CustomChapterGeneUtility.TraitUnlocked(trait, out var lockedReason))
             {
                 Messages.Message(trait.LabelCap + ": " + lockedReason, MessageTypeDefOf.RejectInput, false);
+                return false;
+            }
+
+            if (!CustomChapterGeneUtility.TraitCompanionsMet(trait, selected, out var missingReason))
+            {
+                Messages.Message(trait.LabelCap + ": " + missingReason, MessageTypeDefOf.RejectInput, false);
                 return false;
             }
 
