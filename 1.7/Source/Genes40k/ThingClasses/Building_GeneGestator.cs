@@ -87,7 +87,11 @@ public class Building_GeneGestator : Building
             progressBar = null;
         }
 
-        TryDropContainedMatrix();
+        if (mode != DestroyMode.WillReplace)
+        {
+            TryDropContainedMatrix();
+            Reset();
+        }
         
         base.DeSpawn(mode);
     }
@@ -97,6 +101,12 @@ public class Building_GeneGestator : Building
         base.Tick();
         if (!doWork)
         {
+            return;
+        }
+
+        if (containedMatrix == null)
+        {
+            Reset();
             return;
         }
             
@@ -553,7 +563,7 @@ public class Building_GeneGestator : Building
                 activateSound = SoundDefOf.Designate_Cancel,
                 action = delegate
                 {
-                    progressInt = totalTime - 250;
+                    progressInt = TotalTimeAdjusted - 250;
                 }
             };
             yield return command_Action1;

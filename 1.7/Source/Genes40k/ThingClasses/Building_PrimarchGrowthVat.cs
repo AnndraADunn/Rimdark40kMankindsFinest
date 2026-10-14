@@ -159,6 +159,12 @@ public class Building_PrimarchGrowthVat : Building, IStoreSettingsParent, IThing
             {
                 selectedEmbryo = null;
             }
+
+            if (Working && containedEmbryo == null)
+            {
+                startTick = -1;
+                embryoStarvation = 0f;
+            }
         }
 
         ThingDef thingDef = null;
@@ -930,7 +936,13 @@ public class Building_PrimarchGrowthVat : Building, IStoreSettingsParent, IThing
 
     public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
     {
-        EjectContentsOnRemoval();
+        if (mode != DestroyMode.WillReplace)
+        {
+            EjectContentsOnRemoval();
+            startTick = -1;
+            embryoStarvation = 0f;
+        }
+        sustainerWorking = null;
         base.DeSpawn(mode);
     }
 
