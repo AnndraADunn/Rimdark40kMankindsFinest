@@ -24,7 +24,7 @@
   <!-- Base Melee -->
   <ThingDef ParentName="BEWH_MeleeWeaponUltratech" Name="BEWH_AstartesMeleeBase" Abstract="true">
     <techLevel>Spacer</techLevel>
-    <relicChance>0</relicChance>
+    <relicChance>1</relicChance>
     <smeltable>false</smeltable>
     <burnableByRecipe>true</burnableByRecipe>
     <tradeability>Sellable</tradeability>

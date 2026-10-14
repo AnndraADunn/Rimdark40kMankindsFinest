@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThoughtDef[defName="EnvironmentDark"]/nullifyingGenes</xpath>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/ThoughtDef[defName="EnvironmentDark"]</xpath>
+            <value>
+                <nullifyingGenes />
+            </value>
+        </nomatch>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThoughtDef[defName="EnvironmentDark"]/nullifyingGenes</xpath>
+        <value>
+            <li>BEWH_PrimarchSpecificGeneVIII</li>
+            <li>BEWH_ChapterVIIINightLords</li>
+        </value>
+    </Operation>
+
+</Patch>

@@ -26,6 +26,15 @@ public static class CustomChapterGeneDefBuilder
 
     private static List<GeneDef> cachedDisableableGenes;
 
+    private static List<ThoughtDef> cachedNullifiableThoughts;
+
+    private static List<ThoughtDef> NullifiableThoughts => cachedNullifiableThoughts ??= DefDatabase<ChapterTraitDef>.AllDefsListForReading
+        .Where(trait => !trait.nullifiesThoughts.NullOrEmpty())
+        .SelectMany(trait => trait.nullifiesThoughts)
+        .Where(thought => thought != null)
+        .Distinct()
+        .ToList();
+
     private static List<GeneDef> DisableableGenes => cachedDisableableGenes ??= DefDatabase<GeneDef>.AllDefsListForReading
         .Where(geneDef => geneDef.GetModExtension<DefModExtension_GeneDisabledBy>()?.geneDisabledBy != null)
         .ToList();
@@ -257,6 +266,7 @@ public static class CustomChapterGeneDefBuilder
         }
 
         SyncDisabledGenes(geneDef, traits);
+        SyncNullifiedThoughts(geneDef, traits);
     }
 
     private static List<string> MergeExclusionTags(CustomChapterGeneTemplateDef template, List<ChapterTraitDef> traits)
@@ -333,6 +343,31 @@ public static class CustomChapterGeneDefBuilder
             else if (!wanted && present)
             {
                 disabledBy.Remove(geneDef);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Adds the generated def to the nullifyingGenes of every thought its traits nullify, and removes it from thoughts
+    /// no longer nullified after an edit.
+    /// </summary>
+    private static void SyncNullifiedThoughts(GeneDef geneDef, List<ChapterTraitDef> traits)
+    {
+        var nullified = traits.Where(trait => !trait.nullifiesThoughts.NullOrEmpty()).SelectMany(trait => trait.nullifiesThoughts).ToList();
+
+        foreach (var thought in NullifiableThoughts)
+        {
+            var wanted = nullified.Contains(thought);
+            var present = thought.nullifyingGenes != null && thought.nullifyingGenes.Contains(geneDef);
+
+            if (wanted && !present)
+            {
+                thought.nullifyingGenes ??= [];
+                thought.nullifyingGenes.Add(geneDef);
+            }
+            else if (!wanted && present)
+            {
+                thought.nullifyingGenes.Remove(geneDef);
             }
         }
     }

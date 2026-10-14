@@ -50,6 +50,7 @@ public class ChapterTraitDef : Def
     public bool twinLinked;
 
     public List<GeneDef> disablesGenes;
+    public List<ThoughtDef> nullifiesThoughts;
     public DefModExtension_GeneInducedFear inducedFear;
 
     public Color? skinColorOverride;

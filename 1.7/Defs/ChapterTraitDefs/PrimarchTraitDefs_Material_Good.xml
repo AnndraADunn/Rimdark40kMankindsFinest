@@ -126,7 +126,7 @@
     <Genes40k.ChapterTraitDef>
         <defName>BEWH_PrimarchTrait_TerrorOfTheDark</defName>
         <label>Terror of the Dark</label>
-        <description>Nostramo's gift. In darkness this lineage is faster and far more precise.</description>
+        <description>Nostramo's gift. In darkness this lineage is faster and far more precise, and never minds the dark.</description>
         <iconPath>UI/GeneTraits/Chapter/BEWH_ChapterTrait_VIIINightLords_Good</iconPath>
         <displayOrder>1308</displayOrder>
         <kind>Primarch</kind>
@@ -145,6 +145,9 @@
                 </statFactors>
             </li>
         </conditionalStatAffecters>
+        <nullifiesThoughts>
+            <li>EnvironmentDark</li>
+        </nullifiesThoughts>
     </Genes40k.ChapterTraitDef>
 
     <Genes40k.ChapterTraitDef>
