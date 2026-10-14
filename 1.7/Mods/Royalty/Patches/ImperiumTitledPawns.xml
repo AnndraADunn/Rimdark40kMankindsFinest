@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/PawnKindDef[defName="BEWH_ImperiumTraderPawn"]</xpath>
+        <value>
+            <royalTitleChance>0.5</royalTitleChance>
+            <titleSelectOne>
+                <li>BEWH_NPCTitleRogueTrader</li>
+            </titleSelectOne>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/PawnKindDef[defName="BEWH_ImperiumGuardmanPawn"]</xpath>
+        <value>
+            <royalTitleChance>0.05</royalTitleChance>
+            <titleSelectOne>
+                <li>BEWH_NPCTitleCommissar</li>
+            </titleSelectOne>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/FactionDef[defName="BEWH_ImperiumFaction"]/pawnGroupMakers/li[kindDef="Combat" and options/BEWH_ImperiumGuardmanPawn]/options</xpath>
+        <value>
+            <BEWH_ImperiumOfficerPawn>2</BEWH_ImperiumOfficerPawn>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/FactionDef[defName="BEWH_ImperiumFaction"]/pawnGroupMakers/li[kindDef="Settlement"]/options</xpath>
+        <value>
+            <BEWH_ImperiumOfficerPawn>3</BEWH_ImperiumOfficerPawn>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/FactionDef[defName="BEWH_ImperiumFaction"]/pawnGroupMakers/li[kindDef="Peaceful"]/options</xpath>
+        <value>
+            <BEWH_ImperiumOfficerPawn>2</BEWH_ImperiumOfficerPawn>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/FactionDef[defName="BEWH_ImperiumFaction"]/pawnGroupMakers/li[kindDef="Trader"]/guards</xpath>
+        <value>
+            <BEWH_ImperiumOfficerPawn>2</BEWH_ImperiumOfficerPawn>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/QuestScriptDef[defName="Util_ChooseRandomQuestLodgerKind"]//*[@Class="QuestNode_GetRandomPawnKindForFaction"]/choices</xpath>
+        <value>
+            <li>
+                <factionDef>BEWH_ImperiumFaction</factionDef>
+                <pawnKinds>
+                    <li>BEWH_ImperiumGuardmanPawn</li>
+                    <li>BEWH_ImperiumLaborerPawn</li>
+                </pawnKinds>
+            </li>
+        </value>
+    </Operation>
+
+</Patch>

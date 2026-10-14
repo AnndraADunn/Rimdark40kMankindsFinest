@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!-- Imperial officer / dignitary, always titled -->
+    <PawnKindDef ParentName="BEWH_ImperiumHumanPawnBase">
+        <defName>BEWH_ImperiumOfficerPawn</defName>
+        <label>Imperial officer</label>
+        <combatPower>60</combatPower>
+        <isFighter>true</isFighter>
+        <itemQuality>Good</itemQuality>
+        <minGenerationAge>28</minGenerationAge>
+        <maxGenerationAge>60</maxGenerationAge>
+        <requiredWorkTags>
+            <li>Social</li>
+        </requiredWorkTags>
+        <weaponTags>
+            <li>IndustrialGunAdvanced</li>
+        </weaponTags>
+        <weaponMoney>800~1600</weaponMoney>
+        <apparelAllowHeadgearChance>1</apparelAllowHeadgearChance>
+        <apparelRequired Inherit="False">
+            <li>Apparel_CollarShirt</li>
+            <li>Apparel_Pants</li>
+            <li>Apparel_Duster</li>
+            <li>Apparel_Beret</li>
+        </apparelRequired>
+        <skills>
+            <li>
+                <skill>Social</skill>
+                <range>8~14</range>
+            </li>
+            <li>
+                <skill>Shooting</skill>
+                <range>5~10</range>
+            </li>
+        </skills>
+        <royalTitleChance>1</royalTitleChance>
+        <titleSelectOne>
+            <li>BEWH_NPCTitleCommissar</li>
+            <li>BEWH_NPCTitleCastellan</li>
+            <li>BEWH_NPCTitleRogueTrader</li>
+            <li>BEWH_NPCTitleGovernor</li>
+        </titleSelectOne>
+    </PawnKindDef>
+
+</Defs>

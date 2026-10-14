@@ -146,6 +146,63 @@
     </RoyalTitleDef>
 
 
+    <!-- Imperium titles - NPC only, mid tier -->
+    <RoyalTitleDef Abstract="True" Name="BEWH_ImperiumTitleBaseNPCMid" ParentName="BEWH_ImperiumTitleBase">
+        <minExpectation>High</minExpectation>
+        <requiredMinimumApparelQuality>Normal</requiredMinimumApparelQuality>
+        <suppressIdleAlert>true</suppressIdleAlert>
+    </RoyalTitleDef>
+
+    <!--===== Commissar =====-->
+    <RoyalTitleDef ParentName="BEWH_ImperiumTitleBaseNPCMid">
+        <defName>BEWH_NPCTitleCommissar</defName>
+        <label>Commissar</label>
+        <description>Commissars are political officers of the Officio Prefectus, attached to Imperial Guard regiments to uphold discipline, morale and loyalty to the Emperor, by any means necessary.</description>
+        <seniority>650</seniority>
+        <commonality>1</commonality>
+        <recruitmentResistanceOffset>40</recruitmentResistanceOffset>
+        <replaceOnRecruited>BEWH_Title4</replaceOnRecruited>
+    </RoyalTitleDef>
+
+    <!--===== Castellan =====-->
+    <RoyalTitleDef ParentName="BEWH_ImperiumTitleBaseNPCMid">
+        <defName>BEWH_NPCTitleCastellan</defName>
+        <label>Castellan</label>
+        <description>A Castellan commands the defence forces of an Imperial world or fortress, answering for its walls, its garrisons and its armouries.</description>
+        <seniority>700</seniority>
+        <commonality>0.6</commonality>
+        <minExpectation>Noble</minExpectation>
+        <recruitmentResistanceOffset>50</recruitmentResistanceOffset>
+        <replaceOnRecruited>BEWH_Title5</replaceOnRecruited>
+    </RoyalTitleDef>
+
+    <!--===== Rogue Trader =====-->
+    <RoyalTitleDef ParentName="BEWH_ImperiumTitleBaseNPCMid">
+        <defName>BEWH_NPCTitleRogueTrader</defName>
+        <label>Rogue Trader</label>
+        <description>Rogue Traders hold a Warrant of Trade, granting them the right to travel beyond the Imperium's borders to explore, trade and conquer in the Emperor's name.</description>
+        <seniority>750</seniority>
+        <commonality>0.4</commonality>
+        <minExpectation>Noble</minExpectation>
+        <requiredMinimumApparelQuality>Good</requiredMinimumApparelQuality>
+        <recruitmentResistanceOffset>60</recruitmentResistanceOffset>
+        <replaceOnRecruited>BEWH_Title5</replaceOnRecruited>
+    </RoyalTitleDef>
+
+    <!--===== Planetary Governor =====-->
+    <RoyalTitleDef ParentName="BEWH_ImperiumTitleBaseNPCMid">
+        <defName>BEWH_NPCTitleGovernor</defName>
+        <label>Planetary Governor</label>
+        <description>A Planetary Governor rules an Imperial world on behalf of the Adeptus Terra, answerable for its tithes, its defence and its loyalty.</description>
+        <seniority>800</seniority>
+        <commonality>0.3</commonality>
+        <minExpectation>Noble</minExpectation>
+        <requiredMinimumApparelQuality>Good</requiredMinimumApparelQuality>
+        <recruitmentResistanceOffset>80</recruitmentResistanceOffset>
+        <replaceOnRecruited>BEWH_Title6</replaceOnRecruited>
+    </RoyalTitleDef>
+
+
     <!-- Empire titles - NPC only -->
     <RoyalTitleDef Abstract="True" Name="BEWH_ImperiumTitleBaseNPC" ParentName="BEWH_ImperiumTitleBase">
         <minExpectation>Royal</minExpectation>
@@ -171,6 +228,7 @@
         <seniority>2000</seniority>
         <commonality>0.15</commonality>
         <recruitmentResistanceOffset>125</recruitmentResistanceOffset>
+        <replaceOnRecruited>BEWH_Title7</replaceOnRecruited>
     </RoyalTitleDef>
 
     <!--===== Warmaster =====-->
@@ -181,6 +239,7 @@
         <seniority>2200</seniority>
         <commonality>0.1</commonality>
         <recruitmentResistanceOffset>150</recruitmentResistanceOffset>
+        <replaceOnRecruited>BEWH_Title7</replaceOnRecruited>
     </RoyalTitleDef>
 
     <!--===== Lord Commander =====-->
@@ -191,7 +250,7 @@
         <seniority>2400</seniority>
         <commonality>0.05</commonality>
         <recruitmentResistanceOffset>200</recruitmentResistanceOffset>
-        <replaceOnRecruited>Consul</replaceOnRecruited>
+        <replaceOnRecruited>BEWH_Title7</replaceOnRecruited>
     </RoyalTitleDef>
 
     <!-- Emperor should never appear in the game in any way, it's just here for completeness on UI

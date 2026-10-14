@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <QuestScriptDef>
+    <defName>BEWH_ImperiumPurgeHeretics</defName>
+    <rootSelectionWeight>0.5</rootSelectionWeight>
+    <rootMinPoints>350</rootMinPoints>
+    <canGiveRoyalFavor>true</canGiveRoyalFavor>
+    <expireDaysRange>4~8</expireDaysRange>
+    <successHistoryEvent MayRequire="Ludeon.RimWorld.Ideology">Raided_BanditCamp</successHistoryEvent>
+    <everAcceptableInSpace>true</everAcceptableInSpace>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->Purge the [heretic] [camp]</li>
+        <li>questName->The [heretic] [camp]</li>
+        <li>questName->[asker_nameDef]'s Purge</li>
+        <li>questName->Cleansing the [camp]</li>
+        <li>camp->Camp</li>
+        <li>camp->Outpost</li>
+        <li>camp->Lair</li>
+        <li>camp->Encampment</li>
+        <li>camp->Stronghold</li>
+        <li>heretic->Heretic</li>
+        <li>heretic->Traitor</li>
+        <li>heretic->Renegade</li>
+        <li>heretic->Xenos</li>
+        <li>heretic->Apostate</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription(asker_factionLeader==True,priority=1)->[asker_nameFull], [asker_faction_leaderTitle] of [asker_faction_name], has issued a decree. [siteFaction_pawnsPlural] have raised a camp nearby and are preying on Imperial supply lines. The camp is controlled by [siteFaction_name].
+\n[asker_nameDef] demands that the camp be purged, which means eliminating all enemies and turrets. [asker_label] says that [sitePart0_description].
+\nThose who serve the Imperium well will earn its [asker_faction_royalFavorLabel].</li>
+        <li>questDescription->[asker_nameFull], [asker_royalTitleInCurrentFaction] of [asker_faction_name], has sent word. [siteFaction_pawnsPlural] have raised a camp nearby and are preying on Imperial supply lines. The camp is controlled by [siteFaction_name].
+\n[asker_nameDef] asks that the camp be purged in the Emperor's name, which means eliminating all enemies and turrets. [asker_label] says that [sitePart0_description].
+\nThose who serve the Imperium well will earn its [asker_faction_royalFavorLabel].</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_SubScript">
+          <def>Util_RandomizePointsChallengeRating</def>
+          <parms>
+            <pointsFactorTwoStar>1.5</pointsFactorTwoStar>
+            <pointsFactorThreeStar>2</pointsFactorThreeStar>
+          </parms>
+        </li>
+        
+        <li Class="QuestNode_SubScript">
+          <def>Util_AdjustPointsForDistantFight</def>
+        </li>
+        
+        <li Class="QuestNode_GetMap">
+          <canBeSpace>true</canBeSpace>
+        </li>
+
+        <li Class="Genes40k.QuestNode_GetAskerOfFaction">
+          <storeAs>asker</storeAs>
+          <factionDef>BEWH_ImperiumFaction</factionDef>
+          <titledPawnKind>BEWH_ImperiumOfficerPawn</titledPawnKind>
+          <seniorityRange>650~850</seniorityRange>
+          <allowLeader>true</allowLeader>
+          <titledChance>0.5</titledChance>
+        </li>
+
+        <li Class="QuestNode_GetSiteTile">
+          <storeAs>siteTile</storeAs>
+          <preferCloserTiles>true</preferCloserTiles>
+          <selectLandmarkChance>0.5</selectLandmarkChance>
+          <allowedLandmarks>
+            <li MayRequire="Ludeon.RimWorld.Odyssey">Oasis</li>
+            <li MayRequire="Ludeon.RimWorld.Odyssey">Lake</li>
+            <li MayRequire="Ludeon.RimWorld.Odyssey">LakeWithIsland</li>
+            <li MayRequire="Ludeon.RimWorld.Odyssey">LakeWithIslands</li>
+            <li MayRequire="Ludeon.RimWorld.Odyssey">Pond</li>
+            <li MayRequire="Ludeon.RimWorld.Odyssey">DryLake</li>
+            <li MayRequire="Ludeon.RimWorld.Odyssey">ToxicLake</li>
+            <li MayRequire="Ludeon.RimWorld.Odyssey">Wetland</li>
+            <li MayRequire="Ludeon.RimWorld.Odyssey">HotSprings</li>
+            <li MayRequire="Ludeon.RimWorld.Odyssey">Archipelago</li>
+            <li MayRequire="Ludeon.RimWorld.Odyssey">CoastalIsland</li>
+            <li MayRequire="Ludeon.RimWorld.Odyssey">Peninsula</li>
+            <li MayRequire="Ludeon.RimWorld.Odyssey">Bay</li>
+            <li MayRequire="Ludeon.RimWorld.Odyssey">Valley</li>
+            <li MayRequire="Ludeon.RimWorld.Odyssey">Cavern</li>
+            <li MayRequire="Ludeon.RimWorld.Odyssey">Chasm</li>
+            <li MayRequire="Ludeon.RimWorld.Odyssey">Cliffs</li>
+            <li MayRequire="Ludeon.RimWorld.Odyssey">Hollow</li>
+            <li MayRequire="Ludeon.RimWorld.Odyssey">TerraformingScar</li>
+            <li MayRequire="Ludeon.RimWorld.Odyssey">LavaLake</li>
+            <li MayRequire="Ludeon.RimWorld.Odyssey">Dunes</li>
+            <li MayRequire="Ludeon.RimWorld.Odyssey">AncientHeatVent</li>
+          </allowedLandmarks>
+        </li>
+
+        <li Class="QuestNode_GetSitePartDefsByTagsAndFaction">
+          <storeAs>sitePartDefs</storeAs>
+          <storeFactionAs>siteFaction</storeFactionAs>
+          <sitePartsTags>
+            <li><tag>BanditCamp</tag></li>
+          </sitePartsTags>
+          <mustBeHostileToFactionOf>$asker</mustBeHostileToFactionOf>
+        </li>
+
+        <li Class="QuestNode_GetDefaultSitePartsParams">
+          <tile>$siteTile</tile>
+          <faction>$siteFaction</faction>
+          <sitePartDefs>$sitePartDefs</sitePartDefs>
+          <storeSitePartsParamsAs>sitePartsParams</storeSitePartsParamsAs>
+        </li>
+        
+        <li Class="QuestNode_GetSiteThreatPoints">
+          <storeAs>sitePoints</storeAs>
+          <sitePartsParams>$sitePartsParams</sitePartsParams>
+        </li>
+        <li Class="QuestNode_SubScript">
+          <def>Util_GetDefaultRewardValueFromPoints</def>
+          <parms>
+            <!-- Use the actual threat points generated (some site parts define a minimum threshold) -->
+            <points>$sitePoints</points>
+          </parms>
+        </li>
+
+        <!-- Inflate reward value. Since we're basing the reward value on the threat points generated, we need to do this
+             even though the threat points was deflated from the input points already. -->
+        <li Class="QuestNode_Multiply">
+            <value1>$rewardValue</value1>
+            <value2>1.75</value2>
+            <storeAs>rewardValue</storeAs>
+        </li>
+
+        <li Class="QuestNode_SubScript">
+          <def>Util_GenerateSite</def>
+        </li>
+        
+        <li Class="QuestNode_SpawnWorldObjects">
+          <worldObjects>$site</worldObjects>
+        </li>
+
+        <li Class="QuestNode_WorldObjectTimeout">
+          <worldObject>$site</worldObject>
+          <isQuestTimeout>true</isQuestTimeout>
+          <delayTicks>$(randInt(12,28)*60000)</delayTicks>
+          <inSignalDisable>site.MapGenerated</inSignalDisable>
+          <destroyOnCleanup>true</destroyOnCleanup>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_Letter">
+                <label TKey="LetterLabelQuestExpired">Quest expired: [resolvedQuestName]</label>
+                <text TKey="LetterTextQuestExpired">The camp has packed up and moved on. The quest [resolvedQuestName] has expired.</text>
+              </li>
+              <li Class="QuestNode_End">
+                <outcome>Fail</outcome>
+              </li>
+            </nodes>
+          </node>
+        </li>
+
+        <!-- If we enter and leave, the map is destroyed. Fail the quest. -->
+        <li Class="QuestNode_Signal">
+          <inSignal>site.Destroyed</inSignal>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_Letter">
+                <label TKey="LetterLabelQuestFailed">Quest failed: [resolvedQuestName]</label>
+                <text TKey="LetterTextQuestFailed">After being discovered, the camp has dispersed. The quest [resolvedQuestName] has ended.</text>
+              </li>
+              <li Class="QuestNode_End">
+                <outcome>Fail</outcome>
+              </li>
+            </nodes>
+          </node>
+        </li>
+
+        <li Class="QuestNode_Signal">
+          <inSignal>site.AllEnemiesDefeated</inSignal>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_Notify_PlayerRaidedSomeone">
+                <getRaidersFromMapParent>$site</getRaidersFromMapParent>
+              </li>
+              <li Class="QuestNode_GiveRewards">
+                <parms>
+                  <allowGoodwill>true</allowGoodwill>
+                  <allowRoyalFavor>true</allowRoyalFavor>
+                  <chosenPawnSignal>ChosenPawnForReward</chosenPawnSignal>
+                </parms>
+                <addCampLootReward>true</addCampLootReward>
+                <customLetterLabel TKey="LetterLabelPaymentArrived">Payment arrived</customLetterLabel>
+                <customLetterText TKey="LetterTextPaymentArrived">You have purged the camp!\n\nThe payment from [asker_faction_name] has arrived.</customLetterText>
+                <nodeIfChosenPawnSignalUsed Class="QuestNode_Letter">
+                  <letterDef>ChoosePawn</letterDef>
+                  <label TKey="LetterLabelFavorReceiver">[asker_faction_royalFavorLabel]</label>
+                  <text TKey="LetterTextFavorReceiver">These colonists participated in the victory for the quest [resolvedQuestName]. [asker_definite] wants to know who should receive the [royalFavorReward_amount] [asker_faction_royalFavorLabel] for this service.</text>
+                  <useColonistsOnMap>$site</useColonistsOnMap>
+                  <chosenPawnSignal>ChosenPawnForReward</chosenPawnSignal>
+                </nodeIfChosenPawnSignalUsed>
+              </li>
+            </nodes>
+          </node>
+        </li>
+        <li Class="QuestNode_End">
+          <inSignal>site.AllEnemiesDefeated</inSignal>
+          <outcome>Success</outcome>
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+
+  <QuestScriptDef>
+    <defName>BEWH_ImperiumHospitality_Dignitary</defName>
+    <rootSelectionWeight>0.6</rootSelectionWeight>
+    <rootMinPoints>0</rootMinPoints>
+    <rootMinProgressScore>3</rootMinProgressScore>
+    <expireDaysRange>4~8</expireDaysRange>
+    <canGiveRoyalFavor>true</canGiveRoyalFavor>
+    <questDescriptionAndNameRules>
+      <rulesStrings>
+        <li>lodgersLabel->guest</li>
+        <li>lodgersLabelPlural->[asker_faction_pawnsPlural]</li>
+      </rulesStrings>
+    </questDescriptionAndNameRules>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->shelter for [lodgerIndef]</li>
+        <li>questName->hosting [lodgerIndef]</li>
+        <li>questName->the [asker_royalTitleInCurrentFaction]'s refuge</li>
+        <li>questName(generateThreats==true,priority=1)->protecting [lodgerIndef]</li>
+        <li>questName(generateThreats==true,priority=1)->safeguarding [lodgerIndef]</li>
+        <li>questName(generateThreats==true,priority=1)->[lodgerIndef] under threat</li>
+        <li>lodgerIndef(lodgersCount==1,p=3)->a [asker_royalTitleInCurrentFaction]</li>
+        <li>lodgerIndef(lodgersCount==1)->[asker_label]</li>
+        <li>lodgerIndef(lodgersCount==1)->an Imperial dignitary</li>
+        <li>lodgerIndef(lodgersCount>=2)->Imperial dignitaries</li>
+        <li>lodgerIndef(lodgersCount>=2)->a [asker_royalTitleInCurrentFaction]'s retinue</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <include>
+        <li>QuestHospitalityCommon</li>
+      </include>
+      <rulesStrings>
+
+        <!-- General use -->
+        <li>lodgersDef(lodgersCount==1)->[lodgers0_nameDef]</li>
+        <li>lodgersDef(lodgersCount>=2)->the [lodgersLabelPlural]</li>
+        <li>joinerEnding(priority=1)-></li> <!-- disable joinerEnding since it's just noise, but I don't want to delete it everywhere yet in case we bring it back -->
+        <li>joinerEnding->You'll be able to direct [lodgersDef] the same way you direct your own colonists.[specialNeedsExplanation]</li>
+        <li>specialNeedsExplanation(asker_royalInCurrentFaction==True,priority=1)-> You'll need to satisfy any special royal needs the [lodgersLabelPlural] may have.</li>
+        <li>specialNeedsExplanation-></li>
+        <li>theirHisHer(lodgersCount==1)->[lodgers0_possessive]</li>
+        <li>theirHisHer(lodgersCount>=2)->their</li>
+        <li>lodgersPronoun(lodgersCount==1)->[lodgers0_pronoun]</li>
+        <li>lodgersPronoun(lodgersCount>=2)->they</li>
+        <li>lodgersWasWere(lodgersCount==1)->was</li>
+        <li>lodgersWasWere(lodgersCount>=2)->were</li>
+        <li>appreciateAppreciates(lodgersCount==1)->appreciates</li>
+        <li>appreciateAppreciates(lodgersCount>=2)->appreciate</li>
+
+        <!-- Goodwill for mood -->
+        <li>goodwillForMood(goodwillRewardForMood==true,priority=1)->\n\n[lodgersLabelSingOrPluralDef] [appreciateAppreciates] quality accommodation. You will gain goodwill with [asker_faction_name] if you keep [theirHisHer] average mood above 50%.</li>
+        <li>goodwillForMood-></li>
+
+        <li>questDescription(lodgersCount==1)->[asker_nameFull], [asker_royalTitleInCurrentFaction] of [asker_faction_name], has fallen foul of rivals within the Administratum and wants to stay at [map_definite] for [shuttleDelayTicks_duration] until it is safe to return. [threatsInfo5][allLodgerInfo][goodwillForMood][commonDescEnding]\n\nThe Imperium rewards those who shelter its servants with [asker_faction_royalFavorLabel].\n\n[joinerEnding]</li>
+        <li>threatsInfo5(generateThreats==true,threatType==Raids,enemyFaction!=Mechanoid)->\n\n[asker_nameDef]'s enemies have hired [enemyFaction_name] to hunt [asker_objective]. [enemyGroupsParagraph]</li>
+        <li>threatsInfo5(generateThreats==true,threatType==Raids,enemyFaction==Mechanoid)->\n\n[asker_nameDef]'s enemies provoked mechanoids into hunting [asker_objective]. [enemyGroupsParagraph]</li>
+        <li>threatsInfo5(generateThreats==true,threatType==MechClusters)->\n\n[asker_nameDef]'s enemies have somehow provoked mechanoids into hunting [asker_objective]. [enemyGroupsParagraph]</li>
+        <li>threatsInfo5(generateThreats==false)-></li>
+
+        <li>questDescription(lodgersCount>=2)->[asker_nameFull], [asker_royalTitleInCurrentFaction] of [asker_faction_name], is travelling through the region with [lodgersCountMinusOne] [allyAllies] and wants to stay at [map_definite] for [shuttleDelayTicks_duration] until an Imperial shuttle can collect them. [threatsInfo6][allLodgerInfo][goodwillForMood][commonDescEnding]\n\nThe Imperium rewards those who shelter its servants with [asker_faction_royalFavorLabel].\n\n[joinerEnding]</li>
+        <li>threatsInfo6(generateThreats==true,threatType==Raids,enemyFaction!=Mechanoid)->\n\n[asker_nameDef] and [asker_possessive] [allyAllies] carry sensitive Imperial orders, and [enemyFaction_name] will try to seize them.\n\n[enemyGroupsParagraph]</li>
+        <li>threatsInfo6(generateThreats==true,threatType==Raids,enemyFaction==Mechanoid)->\n\n[asker_nameDef] and [asker_possessive] [allyAllies] have drawn the attention of [enemyFaction_name].\n\n[enemyGroupsParagraph]</li>
+        <li>threatsInfo6(generateThreats==true,threatType==MechClusters)->\n\n[asker_nameDef] and [asker_possessive] [allyAllies] have somehow provoked mechanoids into hunting them.\n\n[enemyGroupsParagraph]</li>
+        <li>threatsInfo6(generateThreats==false)-></li>
+        <li>allyAllies(lodgersCountMinusOne==1)->aide</li>
+        <li>allyAllies(lodgersCountMinusOne>=2)->aides</li>
+
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_SubScript">
+          <def>Util_RandomizePointsChallengeRating</def>
+          <parms>
+            <pointsFactorTwoStar>1</pointsFactorTwoStar>
+            <pointsFactorThreeStar>1</pointsFactorThreeStar>
+            <selectionWeightOneStar>0.5</selectionWeightOneStar>
+            <selectionWeightTwoStar>0.3</selectionWeightTwoStar>
+            <selectionWeightThreeStar>0.2</selectionWeightThreeStar>
+            <peacefulChallengeRating>1</peacefulChallengeRating>
+            <minPointsTwoStar>250</minPointsTwoStar>
+            <minPointsThreeStar>350</minPointsThreeStar>
+          </parms>
+        </li>
+
+        <li Class="QuestNode_GetMap">
+          <canBeSpace>true</canBeSpace>
+        </li>
+
+        <li Class="Genes40k.QuestNode_GetAskerOfFaction">
+          <storeAs>asker</storeAs>
+          <factionDef>BEWH_ImperiumFaction</factionDef>
+          <titledPawnKind>BEWH_ImperiumOfficerPawn</titledPawnKind>
+          <seniorityRange>650~850</seniorityRange>
+          <allowLeader>false</allowLeader>
+          <titledChance>1</titledChance>
+        </li>
+
+        <!-- Decide random lodger conditions -->
+        <li Class="QuestNode_SubScript">
+          <def>Util_DecideRandomLodgerConditions</def>
+          <parms>
+            <noConditionsWeight>1</noConditionsWeight>
+            <noWorkWeight>4</noWorkWeight>
+            <paralysisWeight>1</paralysisWeight>
+            <bloodRotWeight>1</bloodRotWeight>
+            <bloodRotAndParalysisWeight>0</bloodRotAndParalysisWeight>
+            <moodThresholdWeight>1</moodThresholdWeight>
+          </parms>
+        </li>
+
+        <!-- If 1 star quest with no lodger conditions, increase number of lodgers with points -->
+        <li Class="QuestNode_Less">
+          <value1>$challengeRating</value1>
+          <value2>2</value2>
+          <node Class="QuestNode_IsTrue">
+            <value>$lodgersHaveNoConditions</value>
+            <node Class="QuestNode_SubScript">
+              <def>Hospitality_Util_DecideLodgerCountFromPoints</def>
+              <parms>
+                <pointsCurve>
+                  <points>
+                    <li>(0,  1)</li>
+                    <li>(3000, 10)</li>
+                    <li>(4000, 15)</li>
+                  </points>
+                </pointsCurve>
+              </parms>
+            </node>
+          </node>
+        </li>  
+
+        <li Class="QuestNode_IsSet">
+          <name>lodgersCount</name>
+          <elseNode Class="QuestNode_SubScript">
+            <def>Hospitality_Util_DecideRandomLodgerCount</def>
+          </elseNode>
+        </li>
+
+        <!-- Set lodgers pawn kind -->
+        <li Class="QuestNode_SubScript">
+          <def>Util_ChooseRandomQuestLodgerKind</def>
+          <parms>
+            <factionOf>$asker</factionOf>
+          </parms>
+        </li>
+
+        <!-- Get asker's faction (if any) for proper faction name generation -->
+        <li Class="QuestNode_IsNull">
+          <value>$asker</value>
+          <elseNode Class="QuestNode_GetFactionOf">
+            <thing>$asker</thing>
+            <storeAs>askerFaction</storeAs>
+          </elseNode>
+        </li>
+
+        <!-- Generate lodgers -->
+        <li Class="QuestNode_Set">
+          <name>lodgersCountToGenerate</name>
+          <value>$lodgersCount</value>
+        </li>
+        <li Class="QuestNode_Set"> <!-- for text use -->
+          <name>lodgersCountMinusOne</name>
+          <value>$($lodgersCount-1)</value>
+        </li>
+        <li Class="QuestNode_HasRoyalTitleInCurrentFaction">
+          <pawn>$asker</pawn>
+          <node Class="QuestNode_IsFreeWorldPawn">
+            <pawn>$asker</pawn>
+            <node Class="QuestNode_Sequence">
+              <nodes>
+                <!-- lodgers include asker -->
+                <li Class="QuestNode_AddToList">
+                  <name>lodgers</name>
+                  <value>$asker</value>
+                </li>
+                <li Class="QuestNode_Set">
+                  <name>lodgersCountToGenerate</name>
+                  <value>$($lodgersCountToGenerate - 1)</value>
+                </li>
+
+                <!-- Biocode asker's weapons (we took his reference manually, so we need to biocode his weapons manually) -->
+                <li Class="QuestNode_BiocodeWeapons">
+                  <pawns>$asker</pawns>
+                </li>
+              </nodes>
+            </node>
+          </node>
+        </li>
+
+        <li Class="QuestNode_ChildrenAllowed">
+          <node Class="QuestNode_RandomNode">
+            <nodes>
+              <li Class="QuestNode_Set">
+                <selectionWeight>0.8</selectionWeight>
+                <name>childCount</name>
+                <value>0</value>
+              </li>
+              <li MayRequire="Ludeon.RimWorld.Biotech" Class="QuestNode_Set">
+                <selectionWeight>0.2</selectionWeight>
+                <name>childCount</name>
+                <value>$(randInt(0, $lodgersCountToGenerate / 2))</value>
+              </li>
+            </nodes>
+          </node>
+          <elseNode Class="QuestNode_Set">
+            <name>childCount</name>
+            <value>0</value>
+          </elseNode>
+        </li>
+
+        <li Class="QuestNode_LoopCount">
+          <loopCount>$($lodgersCountToGenerate - $childCount)</loopCount>
+          <node Class="QuestNode_GeneratePawn">
+            <kindDef>$lodgersPawnKind</kindDef>
+            <faction>$askerFaction</faction>
+            <addToList>lodgers</addToList>
+            <allowAddictions>false</allowAddictions>
+            <biocodeWeaponChance>1</biocodeWeaponChance>
+            <biocodeApparelChance>1</biocodeApparelChance>
+            <allowPregnant>false</allowPregnant>
+            <isChild>false</isChild>
+            <giveDependentDrugs>true</giveDependentDrugs>
+          </node>
+        </li>
+
+        <li Class="QuestNode_LoopCount">
+          <loopCount>$childCount</loopCount>
+          <node Class="QuestNode_GeneratePawn">
+            <kindDef>$lodgersPawnKind</kindDef>
+            <faction>$askerFaction</faction>
+            <addToList>lodgers</addToList>
+            <allowAddictions>false</allowAddictions>
+            <biocodeWeaponChance>1</biocodeWeaponChance>
+            <biocodeApparelChance>1</biocodeApparelChance>
+            <allowPregnant>false</allowPregnant>
+            <isChild>true</isChild>
+          </node>
+        </li>
+
+        <!-- Can only accept this quest if can satisfy all colonist and lodger bedroom requirements -->
+        <li Class="QuestNode_RequirementsToAcceptBedroom">
+          <pawns>$lodgers</pawns>
+        </li>
+
+        <!-- Assign home faction to lodger(s) -->
+        <li Class="QuestNode_ExtraFaction">
+          <factionOf>$asker</factionOf>
+          <pawns>$lodgers</pawns>
+          <factionType>HomeFaction</factionType>
+          <inSignalsRemovePawn>
+            <li>lodgers.RanWild</li>
+            <li>lodgers.BecameMutant</li>
+          </inSignalsRemovePawn>
+        </li>
+
+        <!-- Lock their apparel -->
+        <li Class="QuestNode_SetAllApparelLocked">
+          <pawns>$lodgers</pawns>
+        </li>
+
+        <!-- Allow asker to issue decrees -->
+        <li Class="QuestNode_AllowDecreesForLodger">
+          <lodger>$asker</lodger>
+        </li>
+
+        <!-- Apply lodger conditions -->
+        <li Class="QuestNode_SubScript">
+          <def>Util_ApplyLodgerConditions</def>
+        </li>
+
+        <!-- Apply goodwill for mood if lodgers are not paralyzed and asker is part of lodgers -->        
+        <li Class="QuestNode_IsTrue">
+          <value>$lodgersAreParalyzed</value>
+          <elseNode Class="QuestNode_IsTrue">
+            <value>$lodgersHaveBloodRotAndParalysis</value>
+            <elseNode Class="QuestNode_SubScript">
+              <def>Util_MaybeApplyGoodwillForMood</def>
+            </elseNode>
+          </elseNode>
+        </li>
+        
+        <!-- Execute main worker script -->
+        <li Class="QuestNode_SubScript">
+          <def>Hospitality_Util_Worker</def>
+        </li>
+
+      </nodes>
+    </root>
+  </QuestScriptDef>
+
+  <QuestScriptDef>
+    <defName>BEWH_ImperiumTitheRequest</defName>
+    <rootSelectionWeight>0.5</rootSelectionWeight>
+    <canGiveRoyalFavor>true</canGiveRoyalFavor>
+    <rootMinProgressScore>8</rootMinProgressScore>
+    <defaultChallengeRating>1</defaultChallengeRating>
+    <expireDaysRange>4~8</expireDaysRange>
+    <everAcceptableInSpace>true</everAcceptableInSpace>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->Tithe for [settlement_label]</li>
+        <li>questName->The Imperial [tithe]</li>
+        <li>questName->Supplies for [settlement_label]</li>
+        <li>questName->[asker_faction_name]'s [tithe]</li>
+        <li>tithe->Tithe</li>
+        <li>tithe->Levy</li>
+        <li>tithe->Requisition</li>
+        <li>tithe->Due</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->The Imperial outpost [settlement_label] has issued a requisition to loyal settlements in the region. They require:
+\n  [requestedThingCount]x [requestedThing_label] [qualityInfo](worth [requestedThingMarketValue_money])
+\nIf you want to answer the tithe, send a caravan with the requested items. The Imperium remembers those who give freely, and will reward you with goods or [asker_faction_royalFavorLabel].[travelTime]</li>
+        <li>qualityInfo(requestedThingHasQuality==True,priority=1)->of normal+ quality </li>
+        <li>qualityInfo-></li>
+        <li>travelTime(canCaravan==True,priority=1)-> The estimated travel time is [estimatedTravelTime_duration].</li>
+        <li>travelTime-></li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_GetMap">
+          <canBeSpace>true</canBeSpace>
+        </li>
+        <li Class="Genes40k.QuestNode_GetNearbySettlementOfFaction">
+          <factionDef>BEWH_ImperiumFaction</factionDef>
+          <allowActiveTradeRequest>false</allowActiveTradeRequest>
+          <maxTileDistance>48</maxTileDistance>
+          <storeAs>settlement</storeAs>
+          <storeFactionLeaderAs>asker</storeFactionLeaderAs>
+          <storeCanCaravanAs>canCaravan</storeCanCaravanAs>
+        </li>
+        <li Class="QuestNode_GetFactionOf">
+          <thing>$asker</thing>
+          <storeAs>faction</storeAs>
+        </li>
+        <li Class="QuestNode_Letter">
+          <inSignal>faction.BecameHostileToPlayer</inSignal>
+          <label TKey="LetterLabelQuestFailed">Quest failed: [resolvedQuestName]</label>
+          <text TKey="LetterTextQuestFailed">[faction_name] became hostile to you.</text>
+        </li>
+        <li Class="QuestNode_End">
+          <inSignal>faction.BecameHostileToPlayer</inSignal>
+          <outcome>Fail</outcome>
+        </li>
+        <li Class="QuestNode_TradeRequest_RandomOfferDuration">
+          <settlement>$settlement</settlement>
+          <storeAs>timeout</storeAs>
+          <storeEstimatedTravelTimeAs>estimatedTravelTime</storeEstimatedTravelTimeAs>
+        </li>
+        <li Class="QuestNode_TradeRequest_GetRequestedThing">
+          <storeThingAs>requestedThing</storeThingAs>
+          <storeThingCountAs>requestedThingCount</storeThingCountAs>
+          <storeMarketValueAs>requestedThingMarketValue</storeMarketValueAs>
+          <storeHasQualityAs>requestedThingHasQuality</storeHasQualityAs>
+          <dontRequest>
+            <li>Leather_Patch</li>
+            <li MayRequire="Ludeon.RimWorld.Odyssey">Gravcore</li>
+          </dontRequest>
+        </li>
+        <li Class="QuestNode_TradeRequest_Initiate">
+          <settlement>$settlement</settlement>
+          <requestedThingDef>$requestedThing</requestedThingDef>
+          <requestedThingCount>$requestedThingCount</requestedThingCount>
+          <duration>$timeout</duration>
+        </li>
+
+        <!-- Rewards -->
+        <li Class="QuestNode_GetMapWealth">
+          <map>$map</map>
+          <storeAs>mapWealth</storeAs>
+        </li>
+        <li Class="QuestNode_EvaluateSimpleCurve">
+          <value>$mapWealth</value>
+          <storeAs>wealthRewardValueFactor</storeAs>
+          <curve>
+            <points>
+              <li>0, 1.15</li>
+              <li>50000, 1</li>
+              <li>300000, 0.85</li>
+            </points>
+          </curve>
+        </li>
+        <li Class="QuestNode_Set">
+          <name>rewardValue</name>
+          <value>$($requestedThingMarketValue * $wealthRewardValueFactor * randFloat(1.5, 2.1))</value>
+        </li>
+
+        <li Class="QuestNode_Equal">
+          <value1>$requestedThing</value1>
+          <value2>Leather_Human</value2>
+          <node Class="QuestNode_Multiply">
+            <value1>$rewardValue</value1>
+            <value2>1.7</value2>
+            <storeAs>rewardValue</storeAs>
+          </node>
+        </li>
+
+        <li Class="QuestNode_GiveRewards">
+          <inSignal>settlement.TradeRequestFulfilled</inSignal>
+          <parms>
+            <allowGoodwill>true</allowGoodwill>
+            <allowRoyalFavor>true</allowRoyalFavor>
+            <chosenPawnSignal>ChosenPawnForReward</chosenPawnSignal>
+            <giveToCaravan>true</giveToCaravan>
+            <disallowedThingDefs>
+              <li>$requestedThing</li>
+            </disallowedThingDefs>
+          </parms>
+          <useDifficultyFactor>false</useDifficultyFactor> <!-- we only care about requested total market value -->
+          <nodeIfChosenPawnSignalUsed Class="QuestNode_Letter">
+            <letterDef>ChoosePawn</letterDef>
+            <label TKey="LetterLabelFavorReceiver">[asker_faction_royalFavorLabel]</label>
+            <text TKey="LetterTextFavorReceiver">Who should be credited with [asker_faction_royalFavorLabel] for answering the tithe?</text>
+            <chosenPawnSignal>ChosenPawnForReward</chosenPawnSignal>
+            <useColonistsFromCaravanArg>true</useColonistsFromCaravanArg>
+          </nodeIfChosenPawnSignalUsed>
+        </li>
+
+        <!-- End conditions -->
+        <li Class="QuestNode_Delay">
+          <delayTicks>$timeout</delayTicks>
+          <isQuestTimeout>true</isQuestTimeout>
+          <outSignalComplete>TradeRequestTimeout</outSignalComplete>
+        </li>
+
+        <li Class="QuestNode_End">
+          <inSignal>settlement.TradeRequestFulfilled</inSignal>
+          <outcome>Success</outcome>
+          <sendStandardLetter>true</sendStandardLetter>
+        </li>
+
+        <li Class="QuestNode_End">
+          <inSignal>TradeRequestTimeout</inSignal>
+            <outcome>Fail</outcome>
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+
+</Defs>

@@ -193,6 +193,8 @@
     <Compile Include="ModSettings\ModSettingTab_GeneMisc.cs" />
     <Compile Include="ModSettings\ModSettingTab_Psychic.cs" />
     <Compile Include="Quest\IncidentWorker_LegionHeist.cs" />
+    <Compile Include="Quest\QuestNode_GetAskerOfFaction.cs" />
+    <Compile Include="Quest\QuestNode_GetNearbySettlementOfFaction.cs" />
     <Compile Include="Rank\ChapterRankDef.cs" />
     <Compile Include="Comps\Rank\CompAbilityEffect_SharedCooldown.cs" />
     <Compile Include="Comps\Rank\CompProperties_AbilitySharedCooldown.cs" />
