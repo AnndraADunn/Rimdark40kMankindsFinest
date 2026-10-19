@@ -36,8 +36,9 @@ public class GameComponent_Perpetual : GameComponent
 
             foreach (var trackedPawn in perpetuals.Keys)
             {
-                if (trackedPawn.Destroyed || trackedPawn.Discarded)
+                if (trackedPawn.Discarded)
                 {
+                    Log.Warning("[Mankind's Finest] Perpetual " + trackedPawn.LabelShortCap + " was discarded and cannot resurrect.");
                     unrecoverable ??= new List<Pawn>();
                     unrecoverable.Add(trackedPawn);
                     continue;
@@ -158,7 +159,7 @@ public class GameComponent_Perpetual : GameComponent
 
         if (!legacyFormatLoaded)
         {
-            Scribe_Collections.Look(ref perpetuals, "perpetuals", LookMode.Reference, LookMode.Value, ref perpetualsKeysWorkingList, ref perpetualsValuesWorkingList);
+            Scribe_Collections.Look(ref perpetuals, "perpetuals", LookMode.Reference, LookMode.Value, ref perpetualsKeysWorkingList, ref perpetualsValuesWorkingList, saveDestroyedKeys: true);
         }
 
         Scribe_Values.Look(ref currentTick, "currentTick");

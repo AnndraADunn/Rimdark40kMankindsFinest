@@ -130,7 +130,7 @@ public class GameComponent_LivingSaint : GameComponent
     public override void ExposeData()
     {
         base.ExposeData();
-        Scribe_Collections.Look(ref livingSaints, "livingSaints", LookMode.Reference);
+        Scribe_Collections.Look(ref livingSaints, "livingSaints", true, LookMode.Reference);
 
         if (Scribe.mode != LoadSaveMode.PostLoadInit)
         {
