@@ -38,7 +38,7 @@
     <title>space marine</title>
     <defName>BEWH_SpaceMarine</defName>
     <titleShort>marine</titleShort>
-    <baseDesc>[PAWN_nameDef] underwent extensive testing as a Neophyte to a Space Marine chapter, and subsequently went through the lengthy process of surgery, genetic modification, and indoctrination to become a full-fledged Astartes. [PAWN_pronoun] is now a transhuman monster, one of the Angels of Death, entirely made for war.</baseDesc>
+    <baseDesc>[PAWN_nameDef] underwent extensive training as a Neophyte in a Space Marine Chapter, and subsequently went through the lengthy process of surgery, genetic modification, and indoctrination to become a full-fledged Astartes. [PAWN_pronoun] is now a genetically enhanced superhuman, one of the Emperor’s Angels of Death, made entirely for war.</baseDesc>
     <spawnCategories>
       <li>BEWH_AstartesBackstories</li>
     </spawnCategories>
@@ -69,7 +69,7 @@
     <title>space marine</title>
     <defName>BEWH_SpaceMarineVariant</defName>
     <titleShort>marine</titleShort>
-    <baseDesc>[PAWN_nameDef] underwent extensive testing as a Neophyte to a Space Marine chapter, and subsequently went through the lengthy process of surgery, genetic modification, and indoctrination to become a full-fledged Astartes. [PAWN_pronoun] is now a transhuman monster, one of the Angels of Death, entirely made for war.</baseDesc>
+    <baseDesc>[PAWN_nameDef] underwent extensive training as a Neophyte in a Space Marine Chapter, and subsequently went through the lengthy process of surgery, genetic modification, and indoctrination to become a full-fledged Astartes. [PAWN_pronoun] is now a genetically enhanced superhuman, one of the Emperor’s Angels of Death, made entirely for war.</baseDesc>
     <spawnCategories>
       <li>BEWH_AstartesBackstories</li>
     </spawnCategories>
@@ -99,7 +99,7 @@
     <title>techmarine</title>
     <defName>BEWH_Techmarine</defName>
     <titleShort>techmarine</titleShort>
-    <baseDesc>[PAWN_nameDef] was inducted as a full battle brother of a Space Marine chapter and demonstrated a surprising affinity for machines. [PAWN_pronoun] was sent for extra training - both spiritual and practical - at a forge world of the Adeptus Mechanicus, and now serves as a bridge between the Cult of Mars and the Angels of Death.</baseDesc>
+    <baseDesc>[PAWN_nameDef] was inducted as a full battle brother of a Space Marine chapter and demonstrated a surprising affinity for machines. [PAWN_pronoun] was sent to a forge world of the Adeptus Mechanicus for additional doctrinal and practical training, and now serves as a link between the Cult of Mars and the Angels of Death.</baseDesc>
     <spawnCategories>
       <li>BEWH_TechmarineBackstories</li>
     </spawnCategories>
@@ -134,7 +134,7 @@
     <title>apothecary</title>
     <defName>BEWH_Apothecary</defName>
     <titleShort>apothecary</titleShort>
-    <baseDesc>[PAWN_nameDef] was inducted as a full battle brother of a Space Marine chapter and was subsequently trained in the rituals and skills of an Apothecary. [PAWN_pronoun] learned to perform battlefield medicine and oversee the recovery of wounded Astartes between battles, as well as extracting and taking care of fallen brothers' geneseed.</baseDesc>
+    <baseDesc>[PAWN_nameDef] was inducted as a full battle-brother of a Space Marine Chapter and subsequently trained in the rituals and duties of an Apothecary. [PAWN_pronoun] learned to provide battlefield medical care, oversee the recovery of wounded Astartes between battles, and extract and preserve the geneseed of fallen brothers.</baseDesc>
     <spawnCategories>
       <li>BEWH_ApothecaryBackstories</li>
     </spawnCategories>
@@ -211,7 +211,7 @@
     <title>Custodian</title>
     <defName>BEWH_Custodian</defName>
     <titleShort>Custodian</titleShort>
-    <baseDesc>[PAWN_nameDef] was transformed into one of the Custodes, The Ten Thousand, the Watchers of the Throne, through an extensive process of gene modification, indoctrination and training. [PAWN_pronoun] is now the best of humanity, a warrior monk of fine sensibilities - or a terrifying inhuman monster to [PAWN_possessive] foes. [PAWN_nameDef] shows a particular inclination towards martial pursuits.</baseDesc>
+    <baseDesc>[PAWN_nameDef] was transformed into one of the Custodes, the legendary Ten Thousand, through an extensive process of genetic modification, indoctrination, and training. [PAWN_pronoun] became the pinnacle of human achievement, a warrior with superhuman senses and a terrifying adversary to [PAWN_possessive] foes. [PAWN_nameDef] shows a particular inclination toward martial pursuits.</baseDesc>
     <spawnCategories>
       <li>BEWH_CustodesBackstories</li>
     </spawnCategories>
@@ -245,7 +245,7 @@
     <title>Custodian</title>
     <defName>BEWH_CustodianArtist</defName>
     <titleShort>Custodian</titleShort>
-    <baseDesc>[PAWN_nameDef] was transformed into one of the Custodes, The Ten Thousand, the Watchers of the Throne, through an extensive process of gene modification, indoctrination and training. [PAWN_pronoun] is now the best of humanity, a warrior monk of fine sensibilities - or a terrifying inhuman monster to [PAWN_possessive] foes. [PAWN_nameDef] shows a particular inclination towards peaceful pursuits, but is a peerless warrior when [PAWN_pronoun] needs to be.</baseDesc>
+    <baseDesc>[PAWN_nameDef] was transformed into one of the Custodes, the legendary Ten Thousand, through an extensive process of genetic modification, indoctrination, and training. [PAWN_pronoun] became the pinnacle of human achievement, a warrior with superhuman senses and a terrifying adversary to [PAWN_possessive] foes. [PAWN_nameDef] shows a particular inclination toward peaceful pursuits but is a peerless warrior when [PAWN_pronoun] needs to be.</baseDesc>
     <spawnCategories>
       <li>BEWH_CustodesBackstories</li>
     </spawnCategories>
