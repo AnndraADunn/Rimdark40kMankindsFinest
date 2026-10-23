@@ -35,7 +35,7 @@
     <title>Militarum brat</title>
     <defName>BEWH_MilitarumBrat</defName>
     <titleShort>Militarum brat</titleShort>
-    <baseDesc>[PAWN_nameDef] was born and raised among the camp followers of a Militarum regiment. [PAWN_pronoun] spent [PAWN_possessive] childhood running errands for soldiers and support troops, while trying to grab some normality with other children in the same situation.</baseDesc>
+    <baseDesc>[PAWN_nameDef] was born and raised among the camp followers of a Militarum regiment. [PAWN_pronoun] spent [PAWN_possessive] childhood running errands for soldiers and support troops, while trying to find some semblance of a normal life alongside other children in the same situation.</baseDesc>
     <spawnCategories>
       <li>BEWH_MilitarumBackstories</li>
       <li>BEWH_ImperiumChildBackstories</li>
@@ -83,7 +83,7 @@
     <title>Cadian Whiteshield</title>
     <defName>BEWH_Whiteshield</defName>
     <titleShort>Whiteshield</titleShort>
-    <baseDesc>[PAWN_nameDef] was made a Whiteshield, a cadet soldier in a Cadian regiment, at a young age, training with live rounds and doing intense drill in addition to regular labour or education.</baseDesc>
+    <baseDesc>[PAWN_nameDef] was made a Whiteshield, a cadet soldier in a Cadian regiment, at a young age, training with live rounds and doing intense drill in addition to regular labor or education.</baseDesc>
     <spawnCategories>
       <li>BEWH_ImperiumBackstories</li>
       <li>BEWH_ImperiumChildBackstories</li>
@@ -275,7 +275,7 @@
     <title>cultist child</title>
     <defName>BEWH_FormerCultistChild</defName>
     <titleShort>cultist child</titleShort>
-    <baseDesc>[PAWN_nameDef] was raised among a cult worshipping the Ruinous Powers. The cultists were wiped out in an Ordo Hereticus raid, but an uncharacteristically merciful interrogator deemed [PAWN_nameDef] to be free from corruption, and [PAWN_pronoun] escaped execution or servitorisation.</baseDesc>
+    <baseDesc>[PAWN_nameDef] was raised among a cult worshipping the Ruinous Powers. The cultists were wiped out in an Ordo Hereticus raid, but an uncharacteristically merciful Inquisitorial interrogator judged [PAWN_nameDef] to be free from corruption, sparing [PAWN_pronoun] from execution or servitorization.</baseDesc>
     <spawnCategories>
 	  <li>BEWH_ImperiumBackstories</li>
       <li>BEWH_ImperiumChildBackstories</li>
@@ -304,7 +304,7 @@
     <title>deathworlder</title>
     <defName>BEWH_DeathworldChild</defName>
     <titleShort>deathworlder</titleShort>
-    <baseDesc>[PAWN_nameDef] was born in the unforgiving hell of a death world where the very flora and fauna is inimical to human survival. Only the toughest survive such a childhood.</baseDesc>
+    <baseDesc>[PAWN_nameDef] was born in the unforgiving hell of a death world, where the very flora and fauna are inimical to human survival. Only the toughest survive such a childhood.</baseDesc>
     <spawnCategories>
       <li>BEWH_ImperiumBackstories</li>
       <li>Pirate</li>
@@ -360,7 +360,7 @@
     <title>manufactorum child</title>
     <defName>BEWH_ManufactorumChild</defName>
     <titleShort>manufactorum child</titleShort>
-    <baseDesc>[PAWN_nameDef] was pressed into service in a manufactorum while still a child due to a need for fine-detail work and a shortage of appropriate servitors. [PAWN_pronoun] has quite the manual dexterity to show for it, unlike the unfortunate ones who lost fingers or worse.</baseDesc>
+    <baseDesc>[PAWN_nameDef] was pressed into service in a manufactorum as a child, due to a need for fine-detail work and a shortage of appropriate servitors. [PAWN_pronoun] has quite the manual dexterity to show for it, unlike the less fortunate workers who lost fingers or worse.</baseDesc>
     <spawnCategories>
       <li>BEWH_ImperiumBackstories</li>
       <li>BEWH_ImperiumChildBackstories</li>
@@ -386,7 +386,7 @@
     <title>voidship child</title>
     <defName>BEWH_VoidshipClanChild</defName>
     <titleShort>lowerdecker</titleShort>
-    <baseDesc>[PAWN_nameDef] was a child of a voidship clan tasked with menial maintenance of a machine none of them understood but regarded almost as divine. [PAWN_pronoun] is unused to open skies but good with [PAWN_possessive] hands.</baseDesc>
+    <baseDesc>[PAWN_nameDef] was a child of a voidship clan tasked with menial maintenance of a machine none of them understood but regarded as almost divine. [PAWN_pronoun] is unused to open skies but skilled with [PAWN_possessive] hands.</baseDesc>
     <spawnCategories>
       <li>BEWH_ImperiumBackstories</li>
 	  <li>Pirate</li>
@@ -579,12 +579,12 @@
     <bodyTypeFemale>Thin</bodyTypeFemale>
   </BackstoryDef>
 
-  <BackstoryDef>
+ <BackstoryDef>
     <slot>Adulthood</slot>
     <title>redeemed penal legionary</title>
     <defName>BEWH_RedeemedPenalLegionary</defName>
     <titleShort>penal legionary</titleShort>
-    <baseDesc>[PAWN_nameDef] was convicted of a capital crime on an Imperial world and pressed into a Penal Legion as las fodder. [PAWN_pronoun] managed to survive, however, and on [PAWN_possessive] sixth deployment [PAWN_pronoun] saved the life of a Militarum staff officer in the face of overwhelming heretical numbers. As a reward for this act of exceptional valour, [PAWN_nameDef] was granted the Emperor's forgiveness and the high honour of joining a regiment as a regular Guardsman. </baseDesc>
+    <baseDesc>[PAWN_nameDef] was convicted of a capital crime on an Imperial world and pressed into a Penal Legion as las fodder. [PAWN_pronoun] managed to survive, however, and on [PAWN_possessive] sixth deployment [PAWN_pronoun] saved the life of a Militarum staff officer in the face of overwhelming heretical numbers. As a reward for this act of exceptional valor, [PAWN_nameDef] was granted the Emperor's forgiveness and the high honor of joining a regiment as a regular Guardsman.</baseDesc>
     <spawnCategories>
 	  <li>BEWH_MilitarumBackstories</li>
     </spawnCategories>
@@ -707,7 +707,7 @@
     <title>PDF trooper</title>
     <defName>BEWH_PDFTrooper</defName>
     <titleShort>PDF trooper</titleShort>
-    <baseDesc>[PAWN_nameDef] was part of [PAWN_possessive] homeworld's Planetary Defence Forces and trained in the basic use of a lasgun and bayonet. Although [PAWN_pronoun] did not see combat, this familiarity is still useful.</baseDesc>
+    <baseDesc>[PAWN_nameDef] was part of [PAWN_possessive] homeworld's Planetary Defense Forces and received basic training in the use of a lasgun and bayonet. Although [PAWN_pronoun] never saw combat, this familiarity is still useful.</baseDesc>
     <spawnCategories>
       <li>BEWH_ImperiumBackstories</li>
       <li>Offworld</li>
@@ -732,7 +732,7 @@
     <title>PDF veteran</title>
     <defName>BEWH_PDFVeteran</defName>
     <titleShort>PDF veteran</titleShort>
-    <baseDesc>[PAWN_nameDef] was part of [PAWN_possessive] homeworld's Planetary Defence Forces and trained in the basic use of a lasgun and bayonet. [PAWN_pronoun] participated in a bloody defence of [PAWN_possessive] world and miraculously survived.</baseDesc>
+    <baseDesc>[PAWN_nameDef] was part of [PAWN_possessive] homeworld's Planetary Defense Forces and received basic training in the use of a lasgun and bayonet. [PAWN_pronoun] participated in a bloody defense of [PAWN_possessive] world and miraculously survived.</baseDesc>
     <spawnCategories>
       <li>BEWH_ImperiumBackstories</li>
       <li>Offworld</li>
@@ -855,7 +855,7 @@
     <title>Militarum tank crew</title>
     <defName>BEWH_TankCrew</defName>
     <titleShort>tanker</titleShort>
-    <baseDesc>[PAWN_nameDef] was conscripted into the Astra Militarum and trained to operate armoured vehicles. [PAWN_pronoun] also learned the basics of vehicle maintenance when the regimental Enginseers and tech-adepts weren't looking.</baseDesc>
+    <baseDesc>[PAWN_nameDef] was conscripted into the Astra Militarum and trained to operate armored vehicles. [PAWN_pronoun] also learned the basics of vehicle maintenance when the regimental Enginseers and tech-adepts weren't looking.</baseDesc>
     <spawnCategories>
       <li>BEWH_MilitarumBackstories</li>
     </spawnCategories>
@@ -982,7 +982,7 @@
     <title>voidship chirurgeon</title>
     <defName>BEWH_VoidshipChirurgeon</defName>
     <titleShort>chirurgeon</titleShort>
-    <baseDesc>[PAWN_nameDef] was a chirurgeon aboard a voidship, providing medical care for the crew when needed. [PAWN_pronoun] became proficient with suturing wounds, treating diseases, and affixing augmetic limbs to unlucky ratings who got their extremities caught in the machinery of the voidship's systems.</baseDesc>
+    <baseDesc>[PAWN_nameDef] was a chirurgeon aboard a voidship, providing medical care for the crew when needed. [PAWN_pronoun] became proficient with suturing wounds, treating diseases, and fitting augmetic limbs to unlucky ratings who got their extremities caught in the ship's machinery.</baseDesc>
     <spawnCategories>
       <li>BEWH_ImperiumBackstories</li>
       <li>BEWH_ImperialNavyBackstories</li>
@@ -1019,7 +1019,7 @@
     <title>Militarum engineer</title>
     <defName>BEWH_MilitarumEngineer</defName>
     <titleShort>engineer</titleShort>
-    <baseDesc>[PAWN_nameDef] was conscripted into the Astra Militarum and trained as a field engineer. Over several campaigns [PAWN_pronoun] has become familiar with constructing field defences and doing basic maintenance on equipment when the Enginseers aren't watching.</baseDesc>
+    <baseDesc>[PAWN_nameDef] was conscripted into the Astra Militarum and trained as a field engineer. Over several campaigns [PAWN_pronoun] has become familiar with constructing field defenses and doing basic maintenance on equipment when the Enginseers aren't watching.</baseDesc>
     <spawnCategories>
       <li>BEWH_MilitarumBackstories</li>
     </spawnCategories>
@@ -1254,7 +1254,7 @@
     <title>medicae</title>
     <defName>BEWH_Medicae</defName>
     <titleShort>medicae</titleShort>
-    <baseDesc>[PAWN_nameDef] operated a medicae practice in an Imperial hive city. [PAWN_pronoun] had to contend with innumerable diseases and labouring accidents in his line of work, and is a skilled surgeon.</baseDesc>
+    <baseDesc>[PAWN_nameDef] operated a medicae practice in an Imperial hive city. [PAWN_pronoun] had to contend with innumerable diseases and laboring accidents in his line of work, and is a skilled surgeon.</baseDesc>
     <spawnCategories>
       <li>BEWH_ImperiumBackstories</li>
 	  <li>Offworld</li>
@@ -1347,7 +1347,7 @@
 	<titleFemale>voidswoman</titleFemale>
     <defName>BEWH_Voidsman</defName>
     <titleShort>voidsman</titleShort>
-    <baseDesc>[PAWN_nameDef] served in the middle-deck crew of an Imperial voidship, performing skilled tasks and being expected to stand in the ship's defence in case of boarding actions.</baseDesc>
+    <baseDesc>[PAWN_nameDef] served in the middle-deck crew of an Imperial voidship, performing skilled tasks and being expected to stand in the ship's defense in case of boarding actions.</baseDesc>
     <spawnCategories>
       <li>BEWH_ImperiumBackstories</li>
 	  <li>BEWH_ImperialNavyBackstories</li>
@@ -1407,10 +1407,10 @@
 
   <BackstoryDef>
     <slot>Adulthood</slot>
-    <title>agriworld labourer</title>
+    <title>agriworld laborer</title>
     <defName>BEWH_AgriworldLabourer</defName>
-    <titleShort>agriworld labourer</titleShort>
-    <baseDesc>[PAWN_nameDef] worked as a field labourer on an agriworld in a planet-wide food production operation. [PAWN_pronoun] spent 14-hour shifts tending to endless fields of crops, and had little time for anything else.</baseDesc>
+    <titleShort>agriworld laborer</titleShort>
+    <baseDesc>[PAWN_nameDef] worked as a field laborer on an agriworld in a planet-wide food production operation. [PAWN_pronoun] spent 14-hour shifts tending to endless fields of crops, and had little time for anything else.</baseDesc>
     <spawnCategories>
       <li>BEWH_ImperiumBackstories</li>
 	  <li>Offworld</li>
@@ -1472,7 +1472,7 @@
     <title>manufactorum worker</title>
     <defName>BEWH_ManufactorumWorker</defName>
     <titleShort>worker</titleShort>
-    <baseDesc>[PAWN_nameDef] worked on a production line in a gargantuan manufactorum. [PAWN_possessive] days were spent on repetitive tasks and backbreaking labour.</baseDesc>
+    <baseDesc>[PAWN_nameDef] worked on a production line in a gargantuan manufactorum. [PAWN_possessive] days were spent on repetitive tasks and backbreaking labor.</baseDesc>
     <spawnCategories>
       <li>BEWH_ImperiumBackstories</li>
       <li>BEWH_MechanicusBackstories</li>
@@ -1534,7 +1534,7 @@
     <title>manufactorum worker</title>
     <defName>BEWH_ManufactorumWorkerAddict</defName>
     <titleShort>worker</titleShort>
-    <baseDesc>[PAWN_nameDef] worked on a production line in a gargantuan manufactorum. [PAWN_possessive] days were spent on repetitive tasks and backbreaking labour, and [PAWN_pronoun] spent much of [PAWN_possessive] meagre pay on stims and chems to cope.</baseDesc>
+    <baseDesc>[PAWN_nameDef] worked on a production line in a gargantuan manufactorum. [PAWN_possessive] days were spent on repetitive tasks and backbreaking labor, and [PAWN_pronoun] spent much of [PAWN_possessive] meagre pay on stims and chems to cope.</baseDesc>
     <spawnCategories>
       <li>BEWH_ImperiumBackstories</li>
       <li>BEWH_MechanicusBackstories</li>
@@ -1631,7 +1631,7 @@
     <title>lay Ministorum adept</title>
     <defName>BEWH_LayMinistorumAdept</defName>
     <titleShort>lay adept</titleShort>
-    <baseDesc>[PAWN_nameDef] was a lay cleric of the Adeptus Ministorum. [PAWN_pronoun] assisted with cathedrum services and breathed enough incense to last a lifetime, but is unused to manual labour.</baseDesc>
+    <baseDesc>[PAWN_nameDef] was a lay cleric of the Adeptus Ministorum. [PAWN_pronoun] assisted with cathedrum services and breathed enough incense to last a lifetime, but is unused to manual labor.</baseDesc>
     <spawnCategories>
       <li>BEWH_ImperiumBackstories</li>
 	  <li>Pirate</li>
@@ -1888,7 +1888,7 @@
     <title>feudal noble</title>
     <defName>BEWH_FeudalNoble</defName>
     <titleShort>noble</titleShort>
-    <baseDesc>[PAWN_nameDef] was a vassal noble on a feudal world with a largely medieval level of technology, expected to fulfill [PAWN_possessive] duty to [PAWN_possessive] liege lord and living off the labour of serfs and tenants.</baseDesc>
+    <baseDesc>[PAWN_nameDef] was a vassal noble on a feudal world with a largely medieval level of technology, expected to fulfill [PAWN_possessive] duty to [PAWN_possessive] liege lord and living off the labor of serfs and tenants.</baseDesc>
     <spawnCategories>
       <li>BEWH_ImperiumBackstories</li>
     </spawnCategories>
@@ -1917,7 +1917,7 @@
 	<titleFemale>footwoman</titleFemale>
     <defName>BEWH_KnightWorldFootman</defName>
     <titleShort>footman</titleShort>
-    <baseDesc>[PAWN_nameDef] lived on a Knight world, a planet organised along feudal aristocratic lines in service to maintaining and operating Knights, the ancient walking machines who can dominate most battlefields throughout the galaxy. [PAWN_pronoun] was a lower-class subject serving in the standing army of the Knight Houses - part soldier, part constable.</baseDesc>
+    <baseDesc>[PAWN_nameDef] lived on a Knight world, a planet organized along feudal aristocratic lines in service to maintaining and operating Knights, the ancient walking machines who can dominate most battlefields throughout the galaxy. [PAWN_pronoun] was a lower-class subject serving in the standing army of the Knight Houses - part soldier, part constable.</baseDesc>
     <spawnCategories>
       <li>BEWH_ImperiumBackstories</li>
     </spawnCategories>
@@ -2035,7 +2035,7 @@
 
   <BackstoryDef>
     <slot>Adulthood</slot>
-    <title>nightshift labourer</title>
+    <title>nightshift laborer</title>
     <defName>BEWH_NightshiftLabourer</defName>
     <titleShort>night worker</titleShort>
     <baseDesc>[PAWN_nameDef] was a manufactorum worker assigned to the night shift to allow production to continue around the clock. [PAWN_pronoun] has never been able to adapt to different hours.</baseDesc>
@@ -2521,7 +2521,7 @@
     <title>stallholder</title>
     <defName>BEWH_Stallholder</defName>
     <titleShort>stallholder</titleShort>
-    <baseDesc>[PAWN_nameDef] operated a vendor stall in a mid-hive mercatorium, preparing and serving hot food for the labourers who flooded the block every shift change. [PAWN_possessive] food was edible, but the real trick was standing out from the crowd and selling it.</baseDesc>
+    <baseDesc>[PAWN_nameDef] operated a vendor stall in a mid-hive mercatorium, preparing and serving hot food for the laborers who flooded the block every shift change. [PAWN_possessive] food was edible, but the real trick was standing out from the crowd and selling it.</baseDesc>
     <spawnCategories>
       <li>BEWH_ImperiumBackstories</li>
 	  <li>Offworld</li>
@@ -2549,7 +2549,7 @@
     <title>manufactorum overseer</title>
     <defName>BEWH_Overseer</defName>
     <titleShort>overseer</titleShort>
-    <baseDesc>[PAWN_nameDef] worked as a floor supervisor in a huge manufactorum. [PAWN_pronoun] is used to bossing menials around and needed some familiarity with [PAWN_possessive] underlings' work to organise each shift properly.</baseDesc>
+    <baseDesc>[PAWN_nameDef] worked as a floor supervisor in a huge manufactorum. [PAWN_pronoun] is used to bossing menials around and needed some familiarity with [PAWN_possessive] underlings' work to organize each shift properly.</baseDesc>
     <spawnCategories>
       <li>BEWH_ImperiumBackstories</li>
 	  <li>Offworld</li>
@@ -2641,7 +2641,7 @@
     <title>flect addict</title>
     <defName>BEWH_FlectAddict</defName>
     <titleShort>flect addict</titleShort>
-    <baseDesc>[PAWN_nameDef] was a hive city labourer who got hooked on flects, shards of warp-tainted glass that gave visions of other lives and otherworldly beings. The lure of staring into the flects and imbibing the sights they showed was too much for [PAWN_objective], who spent every coin [PAWN_pronoun] he could scrounge on more of them. The warp has left its mark on [PAWN_possessive] psyche.</baseDesc>
+    <baseDesc>[PAWN_nameDef] was a hive city laborer who got hooked on flects, shards of warp-tainted glass that gave visions of other lives and otherworldly beings. The lure of staring into the flects and imbibing the sights they showed was too much for [PAWN_objective], who spent every coin [PAWN_pronoun] he could scrounge on more of them. The warp has left its mark on [PAWN_possessive] psyche.</baseDesc>
     <spawnCategories>
 	  <li>BEWH_ImperiumBackstories</li>
       <li>BEWH_GangerBackstories</li>
